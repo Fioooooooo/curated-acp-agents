@@ -15,42 +15,48 @@
         "cmd": "./package/bin/cline",
         "args": [
           "--acp"
-        ]
+        ],
+        "sha256": "ff65cb29c71fa103901f7543f62b82bccdb6041b3077d6569b2a968a6b70b38f"
       },
       "darwin-x86_64": {
         "archive": "https://registry.npmjs.org/@cline/cli-darwin-x64/-/cli-darwin-x64-3.0.55.tgz",
         "cmd": "./package/bin/cline",
         "args": [
           "--acp"
-        ]
+        ],
+        "sha256": "38977816642e09484b400576fd0681effc52c7a9f0035321526f744bc6f0688b"
       },
       "linux-aarch64": {
         "archive": "https://registry.npmjs.org/@cline/cli-linux-arm64/-/cli-linux-arm64-3.0.55.tgz",
         "cmd": "./package/bin/cline",
         "args": [
           "--acp"
-        ]
+        ],
+        "sha256": "795ea9293a318aadb00fae254593b473a3921b2f605ed92fbb2c450f30b6be32"
       },
       "linux-x86_64": {
         "archive": "https://registry.npmjs.org/@cline/cli-linux-x64/-/cli-linux-x64-3.0.55.tgz",
         "cmd": "./package/bin/cline",
         "args": [
           "--acp"
-        ]
+        ],
+        "sha256": "821876f8bd2f2228c2fdd3fea71af9d0992087a09cab6b85973ea85538aeb8a5"
       },
       "windows-aarch64": {
         "archive": "https://registry.npmjs.org/@cline/cli-windows-arm64/-/cli-windows-arm64-3.0.55.tgz",
         "cmd": "./package/bin/cline.exe",
         "args": [
           "--acp"
-        ]
+        ],
+        "sha256": "e5f184ed687864f0e92badff815df283c40a1541635bec66421a1edf6efe86f1"
       },
       "windows-x86_64": {
         "archive": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.55.tgz",
         "cmd": "./package/bin/cline.exe",
         "args": [
           "--acp"
-        ]
+        ],
+        "sha256": "5ecef1e9667e16ad2544f72357e1b69d63ce650e92ff7786bb1419ef1519dfd7"
       }
     }
   }

@@ -16,7 +16,7 @@
           "package": "@agentclientprotocol/claude-agent-acp@0.70.0"
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/claude-acp.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/claude-acp.svg"
     },
     {
       "id": "cline",
@@ -35,46 +35,52 @@
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
-            ]
+            ],
+            "sha256": "ff65cb29c71fa103901f7543f62b82bccdb6041b3077d6569b2a968a6b70b38f"
           },
           "darwin-x86_64": {
             "archive": "https://registry.npmjs.org/@cline/cli-darwin-x64/-/cli-darwin-x64-3.0.55.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
-            ]
+            ],
+            "sha256": "38977816642e09484b400576fd0681effc52c7a9f0035321526f744bc6f0688b"
           },
           "linux-aarch64": {
             "archive": "https://registry.npmjs.org/@cline/cli-linux-arm64/-/cli-linux-arm64-3.0.55.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
-            ]
+            ],
+            "sha256": "795ea9293a318aadb00fae254593b473a3921b2f605ed92fbb2c450f30b6be32"
           },
           "linux-x86_64": {
             "archive": "https://registry.npmjs.org/@cline/cli-linux-x64/-/cli-linux-x64-3.0.55.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
-            ]
+            ],
+            "sha256": "821876f8bd2f2228c2fdd3fea71af9d0992087a09cab6b85973ea85538aeb8a5"
           },
           "windows-aarch64": {
             "archive": "https://registry.npmjs.org/@cline/cli-windows-arm64/-/cli-windows-arm64-3.0.55.tgz",
             "cmd": "./package/bin/cline.exe",
             "args": [
               "--acp"
-            ]
+            ],
+            "sha256": "e5f184ed687864f0e92badff815df283c40a1541635bec66421a1edf6efe86f1"
           },
           "windows-x86_64": {
             "archive": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.55.tgz",
             "cmd": "./package/bin/cline.exe",
             "args": [
               "--acp"
-            ]
+            ],
+            "sha256": "5ecef1e9667e16ad2544f72357e1b69d63ce650e92ff7786bb1419ef1519dfd7"
           }
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/cline.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/cline.svg"
     },
     {
       "id": "codebuddy-code",
@@ -94,12 +100,12 @@
           ]
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/codebuddy-code.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/codebuddy-code.svg"
     },
     {
       "id": "codex-acp",
       "name": "Codex CLI",
-      "version": "1.6.0",
+      "version": "1.6.2",
       "description": "ACP adapter for OpenAI's coding assistant",
       "repository": "https://github.com/agentclientprotocol/codex-acp",
       "authors": [
@@ -109,10 +115,10 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@agentclientprotocol/codex-acp@1.6.0"
+          "package": "@agentclientprotocol/codex-acp@1.6.2"
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/codex-acp.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/codex-acp.svg"
     },
     {
       "id": "cursor",
@@ -170,7 +176,7 @@
           }
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/cursor.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/cursor.svg"
     },
     {
       "id": "gemini",
@@ -190,7 +196,7 @@
           ]
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/gemini.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/gemini.svg"
     },
     {
       "id": "github-copilot-cli",
@@ -211,7 +217,7 @@
           ]
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/github-copilot-cli.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/github-copilot-cli.svg"
     },
     {
       "id": "goose",
@@ -267,12 +273,12 @@
           }
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/goose.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/goose.svg"
     },
     {
       "id": "kimi-code",
       "name": "Kimi Code CLI",
-      "version": "0.37.2",
+      "version": "0.38.0",
       "description": "Moonshot AI's terminal coding agent, successor to Kimi CLI",
       "repository": "https://github.com/MoonshotAI/kimi-code",
       "authors": [
@@ -281,13 +287,13 @@
       "license": "MIT",
       "distribution": {
         "npx": {
-          "package": "@moonshot-ai/kimi-code@0.37.2",
+          "package": "@moonshot-ai/kimi-code@0.38.0",
           "args": [
             "acp"
           ]
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/kimi-code.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/kimi-code.svg"
     },
     {
       "id": "mistral-vibe",
@@ -328,7 +334,7 @@
           }
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/mistral-vibe.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/mistral-vibe.svg"
     },
     {
       "id": "opencode",
@@ -384,12 +390,12 @@
           }
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/opencode.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/opencode.svg"
     },
     {
       "id": "qoder",
       "name": "Qoder CLI",
-      "version": "1.1.26",
+      "version": "1.1.27",
       "description": "AI coding assistant with agentic capabilities",
       "authors": [
         "Qoder AI"
@@ -397,13 +403,13 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@qoder-ai/qodercli@1.1.26",
+          "package": "@qoder-ai/qodercli@1.1.27",
           "args": [
             "--acp"
           ]
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/qoder.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/qoder.svg"
     },
     {
       "id": "qwen-code",
@@ -424,7 +430,7 @@
           ]
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/qwen-code.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/qwen-code.svg"
     }
   ],
   "curation": {
