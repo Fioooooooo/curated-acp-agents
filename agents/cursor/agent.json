@@ -1,0 +1,43 @@
+{
+  "id": "cursor",
+  "name": "Cursor CLI",
+  "version": "2026.8.11-e8db854",
+  "description": "Cursor's coding agent CLI with a native ACP server",
+  "website": "https://cursor.com/cli",
+  "authors": [
+    "Cursor"
+  ],
+  "license": "proprietary",
+  "distribution": {
+    "binary": {
+      "darwin-aarch64": {
+        "archive": "https://downloads.cursor.com/lab/2026.08.11-e8db854/darwin/arm64/agent-cli-package.tar.gz",
+        "cmd": "./dist-package/cursor-agent",
+        "args": [
+          "acp"
+        ]
+      },
+      "darwin-x86_64": {
+        "archive": "https://downloads.cursor.com/lab/2026.08.11-e8db854/darwin/x64/agent-cli-package.tar.gz",
+        "cmd": "./dist-package/cursor-agent",
+        "args": [
+          "acp"
+        ]
+      },
+      "linux-aarch64": {
+        "archive": "https://downloads.cursor.com/lab/2026.08.11-e8db854/linux/arm64/agent-cli-package.tar.gz",
+        "cmd": "./dist-package/cursor-agent",
+        "args": [
+          "acp"
+        ]
+      },
+      "linux-x86_64": {
+        "archive": "https://downloads.cursor.com/lab/2026.08.11-e8db854/linux/x64/agent-cli-package.tar.gz",
+        "cmd": "./dist-package/cursor-agent",
+        "args": [
+          "acp"
+        ]
+      }
+    }
+  }
+}

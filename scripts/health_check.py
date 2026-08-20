@@ -140,6 +140,20 @@ def check_agent(agent_file):
     return agent_id, ok, detail
 
 
+def requires_auth(agent_dir):
+    # Minimal parse of curated.yaml; agents flagged "health: requires-auth"
+    # need an interactive login before they answer the ACP handshake, so the
+    # smoke test cannot verify them in CI.
+    curated = agent_dir / "curated.yaml"
+    if not curated.is_file():
+        return False
+    for line in curated.read_text().splitlines():
+        if line.strip().startswith("health:"):
+            value = line.split(":", 1)[1].split("#", 1)[0].strip()
+            return value == "requires-auth"
+    return False
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--agent", help="comma-separated agent ids to check")
@@ -151,6 +165,11 @@ def main():
     for agent_file in sorted(AGENTS_DIR.glob("*/agent.json")):
         agent_id = json.loads(agent_file.read_text())["id"]
         if only and agent_id not in only:
+            continue
+        if requires_auth(agent_file.parent):
+            results[agent_id] = {"ok": True, "skipped": True,
+                                 "detail": "requires interactive login, handshake not verifiable in CI"}
+            print(f"SKIP: {agent_id} (requires-auth)", flush=True)
             continue
         print(f"checking {agent_id} ...", flush=True)
         _, ok, detail = check_agent(agent_file)

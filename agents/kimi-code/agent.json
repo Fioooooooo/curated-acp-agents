@@ -1,0 +1,19 @@
+{
+  "id": "kimi-code",
+  "name": "Kimi Code CLI",
+  "version": "0.37.2",
+  "description": "Moonshot AI's terminal coding agent, successor to Kimi CLI",
+  "repository": "https://github.com/MoonshotAI/kimi-code",
+  "authors": [
+    "Moonshot AI"
+  ],
+  "license": "MIT",
+  "distribution": {
+    "npx": {
+      "package": "@moonshot-ai/kimi-code@0.37.2",
+      "args": [
+        "acp"
+      ]
+    }
+  }
+}

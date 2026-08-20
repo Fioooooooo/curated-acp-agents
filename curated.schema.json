@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/curated.schema.json",
+  "title": "curated.yaml",
+  "description": "Curation metadata for one agent entry (agents/<id>/curated.yaml). Not part of the ACP registry schema and never merged into dist/registry.json. To add a new field, extend this schema first — scripts/build.py rejects unknown keys.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tier",
+    "status",
+    "added",
+    "reason"
+  ],
+  "properties": {
+    "tier": {
+      "type": "integer",
+      "enum": [
+        1,
+        2
+      ],
+      "description": "1 = core (major vendor or high adoption), 2 = watchlist (meets criteria but less proven)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "stale"
+      ],
+      "description": "stale entries are candidates for removal per CRITERIA.md"
+    },
+    "added": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "description": "Date the agent was admitted, YYYY-MM-DD"
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Why this agent is curated"
+    },
+    "health": {
+      "type": "string",
+      "enum": [
+        "requires-auth"
+      ],
+      "description": "requires-auth = the agent needs an interactive login before answering the ACP handshake; scripts/health_check.py skips it"
+    },
+    "version_source_url": {
+      "type": "string",
+      "pattern": "^https://",
+      "description": "Page to fetch when the agent has no npm/PyPI/GitHub Releases source; must be paired with version_source_pattern"
+    },
+    "version_source_pattern": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Regex applied to version_source_url's body; the first capture group is the upstream version"
+    }
+  },
+  "dependentRequired": {
+    "version_source_url": [
+      "version_source_pattern"
+    ],
+    "version_source_pattern": [
+      "version_source_url"
+    ]
+  }
+}

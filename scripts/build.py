@@ -35,7 +35,22 @@ PLATFORMS = {
 }
 ARCHIVE_EXTS = (".zip", ".tar.gz", ".tgz", ".tar.bz2", ".tbz2")
 ID_RE = re.compile(r"^[a-z][a-z0-9-]*$")
-SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+$")
+SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+(-[0-9A-Za-z.-]+)?$")
+
+
+def version_url_variants(version):
+    # Some vendors embed a zero-padded date version in URLs while the
+    # canonical semver drops leading zeros ("2026.8.11-x" vs "2026.08.11-x").
+    # Accept both forms when checking that an archive URL pins the version.
+    variants = {version}
+    padded = []
+    for part in version.split("."):
+        num, sep, rest = part.partition("-")
+        if num.isdigit():
+            part = num.zfill(2) + (sep + rest if sep else "")
+        padded.append(part)
+    variants.add(".".join(padded))
+    return variants
 
 
 def fail(errors, msg):
@@ -57,7 +72,7 @@ def validate_agent(agent, agent_dir, errors):
 
     version = agent.get("version", "")
     if not SEMVER_RE.match(version):
-        fail(errors, f"{ctx}: version '{version}' is not semver (x.y.z)")
+        fail(errors, f"{ctx}: version '{version}' is not semver (x.y.z[-prerelease])")
 
     dist = agent.get("distribution", {})
     if not any(k in dist for k in ("binary", "npx", "uvx")):
@@ -89,11 +104,72 @@ def validate_agent(agent, agent_dir, errors):
             base = archive.split("?")[0]
             if not base.endswith(ARCHIVE_EXTS) and "." in base.rsplit("/", 1)[-1]:
                 fail(errors, f"{ctx}: binary.{platform} unsupported archive format: {archive}")
-            if version not in archive:
+            if not any(v in archive for v in version_url_variants(version)):
                 fail(errors, f"{ctx}: binary.{platform} URL does not contain version {version}")
 
     if not (agent_dir / "icon.svg").is_file():
         fail(errors, f"{ctx}: missing icon.svg")
+
+
+# Allowed keys in curated.yaml, mirroring curated.schema.json. Extend the
+# schema file first, then this set — unknown keys fail the build.
+CURATED_ALLOWED_KEYS = {
+    "tier",
+    "status",
+    "added",
+    "reason",
+    "health",
+    "version_source_url",
+    "version_source_pattern",
+}
+CURATED_REQUIRED_KEYS = {"tier", "status", "added", "reason"}
+CURATED_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def validate_curated(agent_dir, errors):
+    # Minimal flat "key: value" reader; curated.yaml must stay flat by design.
+    curated = agent_dir / "curated.yaml"
+    ctx = f"{agent_dir.name}/curated.yaml"
+    if not curated.is_file():
+        fail(errors, f"{ctx}: missing file")
+        return
+    values = {}
+    for line in curated.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or ":" not in line:
+            continue
+        key, _, value = line.partition(":")
+        value = value.strip()
+        if value[:1] in {'"', "'"} and value.endswith(value[0]):
+            value = value[1:-1]  # quoted value: keep verbatim (may contain '#')
+        else:
+            value = value.split(" #", 1)[0].strip()  # unquoted: drop inline comment
+        values[key.strip()] = value
+
+    for key in values:
+        if key not in CURATED_ALLOWED_KEYS:
+            fail(errors, f"{ctx}: unknown key '{key}' (extend curated.schema.json first)")
+    for key in CURATED_REQUIRED_KEYS - values.keys():
+        fail(errors, f"{ctx}: missing required key '{key}'")
+
+    if values.get("tier") not in {"1", "2"}:
+        fail(errors, f"{ctx}: tier must be 1 or 2")
+    if values.get("status") not in {"active", "stale"}:
+        fail(errors, f"{ctx}: status must be active or stale")
+    if not CURATED_DATE_RE.match(values.get("added", "")):
+        fail(errors, f"{ctx}: added must be YYYY-MM-DD")
+    if not values.get("reason"):
+        fail(errors, f"{ctx}: reason must not be empty")
+    if "health" in values:
+        health = values["health"].split("#", 1)[0].strip()
+        if health != "requires-auth":
+            fail(errors, f"{ctx}: health may only be 'requires-auth'")
+    has_url = bool(values.get("version_source_url"))
+    has_pattern = bool(values.get("version_source_pattern"))
+    if has_url != has_pattern:
+        fail(errors, f"{ctx}: version_source_url and version_source_pattern must appear together")
+    if has_url and not values["version_source_url"].startswith("https://"):
+        fail(errors, f"{ctx}: version_source_url must be an https URL")
 
 
 def main():
@@ -113,6 +189,7 @@ def main():
             fail(errors, f"{agent_dir.name}: invalid JSON: {e}")
             continue
         validate_agent(agent, agent_dir, errors)
+        validate_curated(agent_dir, errors)
         agent["icon"] = f"{ICON_BASE_URL}/{agent['id']}.svg"
         agents.append(agent)
 

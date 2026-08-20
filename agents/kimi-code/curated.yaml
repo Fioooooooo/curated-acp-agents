@@ -1,0 +1,5 @@
+# Curation metadata for kimi-code. Not part of the ACP registry schema.
+tier: 1
+status: active   # active | stale
+added: "2026-08-20"
+reason: "Successor to the Python kimi-cli (being wound down upstream). Node.js rewrite, native 'kimi acp' subcommand, active releases."

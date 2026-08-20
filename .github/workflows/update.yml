@@ -1,16 +1,19 @@
 name: Update versions
 
-# Daily check for new upstream releases (npm / PyPI / GitHub Releases).
-# Bumped entries are submitted as a pull request for human review.
+# Checks for new upstream releases twice a day (npm / PyPI / GitHub Releases).
+# Bumps agents/*/agent.json, rebuilds dist/registry.json, and commits
+# directly to main. scripts/build.py validates the bumped entries first;
+# if validation fails (e.g. upstream changed its URL pattern), nothing is
+# committed.
 
 on:
   schedule:
-    - cron: "41 3 * * *"
+    - cron: "41 3,15 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
-  pull-requests: write
+  issues: write
 
 jobs:
   update:
@@ -24,19 +27,39 @@ jobs:
         run: python3 scripts/check_updates.py
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Validate bumped entries
+      - name: Rebuild registry.json (fails the job on invalid entries)
         run: python3 scripts/build.py
         env:
           ICON_BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/main/agents
-      - uses: peter-evans/create-pull-request@v7
-        with:
-          branch: chore/version-bump
-          delete-branch: true
-          commit-message: "chore: bump agent versions"
-          title: "chore: bump agent versions"
-          body: |
-            Automated version bump from upstream releases (npm / PyPI / GitHub Releases).
+      - name: Commit and push version bumps
+        run: |
+          if git diff --quiet; then
+            echo "All agents up to date, nothing to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add agents dist/registry.json
+          git commit -m "chore: bump agent versions
 
-            Review checklist:
-            - [ ] Distribution URLs still follow the expected pattern
-            - [ ] Weekly health check is green for the bumped agents
+          $(git diff --cached --stat | tail -1)"
+          git push
+      - name: Open issue for failed update checks
+        if: always()
+        run: |
+          if [ ! -s dist/update-failures.md ]; then
+            echo "No update check failures."
+            exit 0
+          fi
+          gh label create update-check --force --description "Automated version update check failures" || true
+          cp dist/update-failures.md /tmp/failures.md
+          echo >> /tmp/failures.md
+          echo "Run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" >> /tmp/failures.md
+          existing=$(gh issue list --label update-check --state open --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file /tmp/failures.md
+          else
+            gh issue create --title "Version update check failures" --body-file /tmp/failures.md --label update-check
+          fi
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

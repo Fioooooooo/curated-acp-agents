@@ -4,7 +4,7 @@
     {
       "id": "claude-acp",
       "name": "Claude Agent",
-      "version": "0.23.1",
+      "version": "0.70.0",
       "description": "ACP adapter for Anthropic's Claude",
       "repository": "https://github.com/agentclientprotocol/claude-agent-acp",
       "authors": [
@@ -13,7 +13,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@zed-industries/claude-agent-acp@0.23.1"
+          "package": "@agentclientprotocol/claude-agent-acp@0.70.0"
         }
       },
       "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/claude-acp.svg"
@@ -39,9 +39,29 @@
       "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/cline.svg"
     },
     {
+      "id": "codebuddy-code",
+      "name": "CodeBuddy Code",
+      "version": "2.137.1",
+      "description": "Tencent Cloud's official intelligent coding tool",
+      "website": "https://www.codebuddy.cn/cli/",
+      "authors": [
+        "Tencent Cloud"
+      ],
+      "license": "Proprietary",
+      "distribution": {
+        "npx": {
+          "package": "@tencent-ai/codebuddy-code@2.137.1",
+          "args": [
+            "--acp"
+          ]
+        }
+      },
+      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/codebuddy-code.svg"
+    },
+    {
       "id": "codex-acp",
       "name": "Codex CLI",
-      "version": "0.16.0",
+      "version": "1.6.0",
       "description": "ACP adapter for OpenAI's coding assistant",
       "repository": "https://github.com/agentclientprotocol/codex-acp",
       "authors": [
@@ -51,10 +71,54 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@zed-industries/codex-acp@0.16.0"
+          "package": "@agentclientprotocol/codex-acp@1.6.0"
         }
       },
       "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/codex-acp.svg"
+    },
+    {
+      "id": "cursor",
+      "name": "Cursor CLI",
+      "version": "2026.8.11-e8db854",
+      "description": "Cursor's coding agent CLI with a native ACP server",
+      "website": "https://cursor.com/cli",
+      "authors": [
+        "Cursor"
+      ],
+      "license": "proprietary",
+      "distribution": {
+        "binary": {
+          "darwin-aarch64": {
+            "archive": "https://downloads.cursor.com/lab/2026.08.11-e8db854/darwin/arm64/agent-cli-package.tar.gz",
+            "cmd": "./dist-package/cursor-agent",
+            "args": [
+              "acp"
+            ]
+          },
+          "darwin-x86_64": {
+            "archive": "https://downloads.cursor.com/lab/2026.08.11-e8db854/darwin/x64/agent-cli-package.tar.gz",
+            "cmd": "./dist-package/cursor-agent",
+            "args": [
+              "acp"
+            ]
+          },
+          "linux-aarch64": {
+            "archive": "https://downloads.cursor.com/lab/2026.08.11-e8db854/linux/arm64/agent-cli-package.tar.gz",
+            "cmd": "./dist-package/cursor-agent",
+            "args": [
+              "acp"
+            ]
+          },
+          "linux-x86_64": {
+            "archive": "https://downloads.cursor.com/lab/2026.08.11-e8db854/linux/x64/agent-cli-package.tar.gz",
+            "cmd": "./dist-package/cursor-agent",
+            "args": [
+              "acp"
+            ]
+          }
+        }
+      },
+      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/cursor.svg"
     },
     {
       "id": "gemini",
@@ -148,48 +212,24 @@
       "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/goose.svg"
     },
     {
-      "id": "kimi",
-      "name": "Kimi CLI",
-      "version": "1.49.0",
-      "description": "Moonshot AI's coding assistant",
-      "repository": "https://github.com/MoonshotAI/kimi-cli",
+      "id": "kimi-code",
+      "name": "Kimi Code CLI",
+      "version": "0.37.2",
+      "description": "Moonshot AI's terminal coding agent, successor to Kimi CLI",
+      "repository": "https://github.com/MoonshotAI/kimi-code",
       "authors": [
         "Moonshot AI"
       ],
       "license": "MIT",
       "distribution": {
-        "binary": {
-          "darwin-aarch64": {
-            "archive": "https://github.com/MoonshotAI/kimi-cli/releases/download/1.49.0/kimi-1.49.0-aarch64-apple-darwin.tar.gz",
-            "cmd": "./kimi",
-            "args": [
-              "acp"
-            ]
-          },
-          "linux-aarch64": {
-            "archive": "https://github.com/MoonshotAI/kimi-cli/releases/download/1.49.0/kimi-1.49.0-aarch64-unknown-linux-gnu.tar.gz",
-            "cmd": "./kimi",
-            "args": [
-              "acp"
-            ]
-          },
-          "linux-x86_64": {
-            "archive": "https://github.com/MoonshotAI/kimi-cli/releases/download/1.49.0/kimi-1.49.0-x86_64-unknown-linux-gnu.tar.gz",
-            "cmd": "./kimi",
-            "args": [
-              "acp"
-            ]
-          },
-          "windows-x86_64": {
-            "archive": "https://github.com/MoonshotAI/kimi-cli/releases/download/1.49.0/kimi-1.49.0-x86_64-pc-windows-msvc.zip",
-            "cmd": "./kimi.exe",
-            "args": [
-              "acp"
-            ]
-          }
+        "npx": {
+          "package": "@moonshot-ai/kimi-code@0.37.2",
+          "args": [
+            "acp"
+          ]
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/kimi.svg"
+      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/kimi-code.svg"
     },
     {
       "id": "mistral-vibe",
@@ -230,7 +270,7 @@
     {
       "id": "opencode",
       "name": "OpenCode",
-      "version": "1.18.18",
+      "version": "1.18.19",
       "description": "The open source coding agent",
       "repository": "https://github.com/anomalyco/opencode",
       "authors": [
@@ -240,35 +280,35 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.18/opencode-darwin-arm64.zip",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.19/opencode-darwin-arm64.zip",
             "cmd": "./opencode",
             "args": [
               "acp"
             ]
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.18/opencode-darwin-x64.zip",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.19/opencode-darwin-x64.zip",
             "cmd": "./opencode",
             "args": [
               "acp"
             ]
           },
           "linux-aarch64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.18/opencode-linux-arm64.tar.gz",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.19/opencode-linux-arm64.tar.gz",
             "cmd": "./opencode",
             "args": [
               "acp"
             ]
           },
           "linux-x86_64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.18/opencode-linux-x64.tar.gz",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.19/opencode-linux-x64.tar.gz",
             "cmd": "./opencode",
             "args": [
               "acp"
             ]
           },
           "windows-x86_64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.18/opencode-windows-x64.zip",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.19/opencode-windows-x64.zip",
             "cmd": "opencode.exe",
             "args": [
               "acp"
@@ -277,6 +317,25 @@
         }
       },
       "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/opencode.svg"
+    },
+    {
+      "id": "qoder",
+      "name": "Qoder CLI",
+      "version": "1.1.26",
+      "description": "AI coding assistant with agentic capabilities",
+      "authors": [
+        "Qoder AI"
+      ],
+      "license": "Proprietary",
+      "distribution": {
+        "npx": {
+          "package": "@qoder-ai/qodercli@1.1.26",
+          "args": [
+            "--acp"
+          ]
+        }
+      },
+      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/qoder.svg"
     },
     {
       "id": "qwen-code",

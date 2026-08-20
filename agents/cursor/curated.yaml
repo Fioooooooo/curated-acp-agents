@@ -1,0 +1,9 @@
+# Curation metadata for cursor. Not part of the ACP registry schema.
+tier: 1
+status: active   # active | stale
+added: "2026-08-20"
+reason: "Cursor's official CLI with a native 'agent acp' ACP server. Binary-only distribution via downloads.cursor.com; no public source repo, no Windows build."
+# Cursor publishes no registry/repo to poll; the latest version is embedded
+# in the install script. Declared here so check_updates.py can stay generic.
+version_source_url: https://cursor.com/install
+version_source_pattern: "lab/([0-9.]+-[0-9a-f]+)/"

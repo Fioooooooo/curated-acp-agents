@@ -23,13 +23,16 @@ https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/dist/regist
 | [Claude Agent](https://github.com/agentclientprotocol/claude-agent-acp) | npx | Official Anthropic adapter |
 | [Codex CLI](https://github.com/agentclientprotocol/codex-acp) | npx | Official OpenAI adapter |
 | [Gemini CLI](https://github.com/google-gemini/gemini-cli) | npx | `--experimental-acp` |
-| [Kimi CLI](https://github.com/MoonshotAI/kimi-cli) | binary | `kimi acp` |
+| [Kimi Code CLI](https://github.com/MoonshotAI/kimi-code) | npx | `kimi acp`; successor to Kimi CLI |
+| [Cursor CLI](https://cursor.com/cli) | binary | `agent acp`; version tracked via cursor.com/install |
 | [OpenCode](https://github.com/anomalyco/opencode) | binary | `opencode acp` |
 | [goose](https://github.com/aaif-goose/goose) | binary | `goose acp` |
 | [Qwen Code](https://github.com/QwenLM/qwen-code) | npx | `--acp` |
 | [Cline](https://github.com/cline/cline) | npx | `--acp` |
 | [GitHub Copilot](https://github.com/github/copilot-language-server-release) | npx | `--acp` |
 | [Mistral Vibe](https://github.com/mistralai/mistral-vibe) | binary | dedicated `vibe-acp` binaries |
+| [CodeBuddy Code](https://www.codebuddy.cn/cli/) | npx | `--acp`; Tencent Cloud, proprietary |
+| Qoder CLI | npx | `--acp`; Qoder AI, proprietary, no public repo |
 
 ## How it works
 
@@ -38,7 +41,8 @@ https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/dist/regist
   part of the registry schema
 - `scripts/build.py` — validates all entries and builds `dist/registry.json`
 - `scripts/check_updates.py` — bumps versions from npm / PyPI / GitHub
-  Releases (runs daily, opens a PR)
+  Releases (runs twice a day, auto-commits to `main` with a rebuilt
+  `registry.json`)
 - `scripts/health_check.py` — ACP `initialize` handshake smoke test for every
   agent (runs weekly on ubuntu-latest, opens an issue on failure)
 

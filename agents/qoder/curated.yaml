@@ -1,0 +1,5 @@
+# Curation metadata for qoder. Not part of the ACP registry schema.
+tier: 2
+status: active   # active | stale
+added: "2026-08-20"
+reason: "Qoder AI CLI with --acp support. Proprietary, no public source repo; version tracking via npm. ACP handshake verified without login."

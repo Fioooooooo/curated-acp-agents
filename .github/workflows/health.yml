@@ -35,6 +35,7 @@ jobs:
       - name: Open issue on failure
         if: failure()
         run: |
+          gh label create health --force --description "ACP health check failures" || true
           {
             echo "## ACP health check failed ($(date +%F))"
             echo
@@ -44,6 +45,11 @@ jobs:
             echo
             echo "Run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
           > /tmp/issue.md
-          gh issue create --title "Health check failed $(date +%F)" --body-file /tmp/issue.md --label health
+          existing=$(gh issue list --label health --state open --json number --jq '.[0].number // empty')
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body-file /tmp/issue.md
+          else
+            gh issue create --title "Health check failed" --body-file /tmp/issue.md --label health
+          fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
