@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curated ACP Agents</title>
+<meta name="description" content="A curated, health-checked list of Agent Client Protocol agents — actively maintained and safe to recommend.">
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #666666;
+    --card: #f7f7f8;
+    --border: #e4e4e7;
+    --accent: #4f46e5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0f0f10;
+      --fg: #ececee;
+      --muted: #9a9aa0;
+      --card: #1a1a1d;
+      --border: #2c2c31;
+      --accent: #818cf8;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+  }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 3rem 1.25rem; }
+  header h1 { font-size: 1.9rem; letter-spacing: -0.02em; }
+  header p { color: var(--muted); margin-top: 0.5rem; max-width: 44rem; }
+  header a { color: var(--accent); text-decoration: none; }
+  header a:hover { text-decoration: underline; }
+
+  .endpoint {
+    display: flex; gap: 0.5rem; align-items: center;
+    margin: 1.5rem 0 3rem;
+  }
+  .endpoint code {
+    flex: 1; overflow-x: auto; white-space: nowrap;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 8px; padding: 0.6rem 0.9rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.82rem;
+  }
+  .endpoint button {
+    background: var(--accent); color: #fff; border: 0; border-radius: 8px;
+    padding: 0.6rem 1rem; font-size: 0.82rem; cursor: pointer; flex-shrink: 0;
+  }
+  .endpoint button:hover { opacity: 0.88; }
+
+  .grid {
+    display: grid; gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.1rem 1.25rem;
+    display: flex; flex-direction: column; gap: 0.55rem;
+  }
+  .card-head { display: flex; align-items: center; gap: 0.6rem; }
+  .card-head img { width: 22px; height: 22px; color: var(--fg); }
+  .card-head h2 { font-size: 1.02rem; font-weight: 600; }
+  .card-head .ver {
+    margin-left: auto; font-size: 0.72rem; color: var(--muted);
+    border: 1px solid var(--border); border-radius: 999px;
+    padding: 0.1rem 0.55rem; white-space: nowrap;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  .card p { font-size: 0.85rem; color: var(--muted); flex: 1; }
+  .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+  .tags span {
+    font-size: 0.7rem; color: var(--muted);
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 6px; padding: 0.08rem 0.45rem;
+  }
+  .card nav { display: flex; gap: 0.9rem; font-size: 0.8rem; }
+  .card nav a { color: var(--accent); text-decoration: none; }
+  .card nav a:hover { text-decoration: underline; }
+
+  footer {
+    margin-top: 3rem; padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted); font-size: 0.8rem;
+  }
+  footer a { color: var(--accent); text-decoration: none; }
+  #status { color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Curated ACP Agents</h1>
+    <p>
+      A curated, health-checked list of
+      <a href="https://agentclientprotocol.com">Agent Client Protocol</a> agents —
+      actively maintained, automatically version-tracked, and removed when they go
+      stale. Drop-in compatible with the official registry format.
+      <a href="https://github.com/Fioooooooo/curated-acp-agents">Source &amp; criteria on GitHub</a>.
+    </p>
+    <div class="endpoint">
+      <code id="registry-url">registry.json</code>
+      <button id="copy" type="button">Copy</button>
+    </div>
+  </header>
+
+  <main>
+    <p id="status">Loading agents…</p>
+    <div class="grid" id="grid"></div>
+  </main>
+
+  <footer>
+    <span id="foot-count"></span>
+    Data: <a href="registry.json">registry.json</a> ·
+    Built automatically twice a day ·
+    <a href="https://github.com/Fioooooooo/curated-acp-agents/blob/main/CRITERIA.md">Curation criteria</a>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var base = location.href.replace(/[^/]*$/, "");
+  document.getElementById("registry-url").textContent = base + "registry.json";
+
+  document.getElementById("copy").addEventListener("click", function () {
+    navigator.clipboard.writeText(base + "registry.json").then(function () {
+      var btn = document.getElementById("copy");
+      btn.textContent = "Copied";
+      setTimeout(function () { btn.textContent = "Copy"; }, 1500);
+    });
+  });
+
+  function tag(text) {
+    var s = document.createElement("span");
+    s.textContent = text;
+    return s;
+  }
+
+  function card(agent) {
+    var el = document.createElement("article");
+    el.className = "card";
+
+    var head = document.createElement("div");
+    head.className = "card-head";
+    var img = document.createElement("img");
+    img.src = "icons/" + agent.id + ".svg";
+    img.alt = "";
+    img.onerror = function () { img.style.display = "none"; };
+    head.appendChild(img);
+    var h2 = document.createElement("h2");
+    h2.textContent = agent.name;
+    head.appendChild(h2);
+    var ver = document.createElement("span");
+    ver.className = "ver";
+    ver.textContent = "v" + agent.version;
+    head.appendChild(ver);
+    el.appendChild(head);
+
+    var desc = document.createElement("p");
+    desc.textContent = agent.description || "";
+    el.appendChild(desc);
+
+    var tags = document.createElement("div");
+    tags.className = "tags";
+    Object.keys(agent.distribution || {}).forEach(function (kind) {
+      if (kind === "binary") {
+        tags.appendChild(tag("binary · " + Object.keys(agent.distribution.binary).length + " platforms"));
+      } else {
+        tags.appendChild(tag(kind));
+      }
+    });
+    if (agent.license) tags.appendChild(tag(agent.license));
+    el.appendChild(tags);
+
+    var nav = document.createElement("nav");
+    [["Repository", agent.repository], ["Website", agent.website]].forEach(function (pair) {
+      if (!pair[1]) return;
+      var a = document.createElement("a");
+      a.href = pair[1];
+      a.textContent = pair[0];
+      a.rel = "noopener";
+      a.target = "_blank";
+      nav.appendChild(a);
+    });
+    el.appendChild(nav);
+    return el;
+  }
+
+  fetch("registry.json")
+    .then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    })
+    .then(function (data) {
+      var grid = document.getElementById("grid");
+      (data.agents || []).forEach(function (a) { grid.appendChild(card(a)); });
+      document.getElementById("status").textContent = "";
+      document.getElementById("foot-count").textContent =
+        (data.agents || []).length + " agents curated · ";
+    })
+    .catch(function (e) {
+      document.getElementById("status").textContent = "Failed to load registry.json: " + e.message;
+    });
+})();
+</script>
+</body>
+</html>

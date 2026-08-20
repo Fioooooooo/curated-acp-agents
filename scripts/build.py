@@ -12,6 +12,7 @@ Stdlib only, no dependencies.
 import json
 import os
 import re
+import shutil
 import sys
 from pathlib import Path
 
@@ -204,6 +205,14 @@ def main():
     DIST_DIR.mkdir(exist_ok=True)
     out = DIST_DIR / "registry.json"
     out.write_text(json.dumps(registry, indent=2, ensure_ascii=False) + "\n")
+
+    # Copy icons alongside so dist/ can be published as a self-contained
+    # static site (index.html references icons/<id>.svg).
+    icons_dir = DIST_DIR / "icons"
+    icons_dir.mkdir(exist_ok=True)
+    for agent in agents:
+        shutil.copy2(AGENTS_DIR / agent["id"] / "icon.svg", icons_dir / f"{agent['id']}.svg")
+
     print(f"OK: {len(agents)} agents -> {out}")
 
 

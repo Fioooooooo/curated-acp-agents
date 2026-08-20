@@ -30,7 +30,9 @@ jobs:
       - name: Rebuild registry.json (fails the job on invalid entries)
         run: python3 scripts/build.py
         env:
-          ICON_BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/main/agents
+          # After publishing dist/ to a CDN (e.g. render.com), set the
+          # ICON_BASE_URL repository variable to e.g. https://<app>.onrender.com/icons
+          ICON_BASE_URL: ${{ vars.ICON_BASE_URL || format('https://raw.githubusercontent.com/{0}/main/agents', github.repository) }}
       - name: Commit and push version bumps
         run: |
           if git diff --quiet; then
