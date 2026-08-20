@@ -7,205 +7,787 @@
 <meta name="description" content="A curated, health-checked list of Agent Client Protocol agents — actively maintained and safe to recommend.">
 <style>
   :root {
-    --bg: #ffffff;
-    --fg: #1a1a1a;
-    --muted: #666666;
-    --card: #f7f7f8;
-    --border: #e4e4e7;
-    --accent: #4f46e5;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0f0f10;
-      --fg: #ececee;
-      --muted: #9a9aa0;
-      --card: #1a1a1d;
-      --border: #2c2c31;
-      --accent: #818cf8;
-    }
+    --bg: oklch(0.155 0.006 265);
+    --fg: oklch(0.95 0.004 265);
+    --muted: oklch(0.72 0.01 265);
+    --dim: oklch(0.62 0.01 265);
+    --faint: oklch(0.55 0.01 265);
+    --card: oklch(0.18 0.007 265);
+    --card-2: oklch(0.205 0.008 265);
+    --well: oklch(0.19 0.007 265);
+    --border: oklch(0.26 0.008 265);
+    --border-2: oklch(0.3 0.008 265);
+    --accent: oklch(0.84 0.12 155);
+    --accent-dot: oklch(0.8 0.16 155);
+    --accent-border: oklch(0.78 0.15 155 / 0.3);
+    --accent-bg: oklch(0.78 0.15 155 / 0.08);
+    --err-border: oklch(0.35 0.06 40);
+    --err-bg: oklch(0.2 0.02 40);
+    --err-fg: oklch(0.9 0.05 45);
+    --err-muted: oklch(0.72 0.03 45);
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     background: var(--bg);
     color: var(--fg);
+    font-family: var(--sans);
     line-height: 1.6;
+    overflow-x: hidden;
   }
-  .wrap { max-width: 960px; margin: 0 auto; padding: 3rem 1.25rem; }
-  header h1 { font-size: 1.9rem; letter-spacing: -0.02em; }
-  header p { color: var(--muted); margin-top: 0.5rem; max-width: 44rem; }
-  header a { color: var(--accent); text-decoration: none; }
-  header a:hover { text-decoration: underline; }
+  ::selection { background: oklch(0.78 0.15 155 / 0.28); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: oklch(0.9 0.13 155); }
+  input::placeholder { color: var(--faint); }
+  @keyframes acpPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.28; } }
+  @keyframes acpShimmer { 0% { background-position: -320px 0; } 100% { background-position: 320px 0; } }
 
-  .endpoint {
-    display: flex; gap: 0.5rem; align-items: center;
-    margin: 1.5rem 0 3rem;
+  .wrap { max-width: 1160px; margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+  .mono { font-family: var(--mono); }
+  .section { padding-top: 76px; }
+  .section-num {
+    font-family: var(--mono); font-size: 12px; color: var(--dim);
+    letter-spacing: 0.06em; text-transform: uppercase;
   }
-  .endpoint code {
-    flex: 1; overflow-x: auto; white-space: nowrap;
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 8px; padding: 0.6rem 0.9rem;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    font-size: 0.82rem;
+  .section h2 {
+    margin-top: 14px; font-size: clamp(26px, 3.4vw, 34px);
+    letter-spacing: -0.025em; font-weight: 600; line-height: 1.2;
   }
-  .endpoint button {
-    background: var(--accent); color: #fff; border: 0; border-radius: 8px;
-    padding: 0.6rem 1rem; font-size: 0.82rem; cursor: pointer; flex-shrink: 0;
-  }
-  .endpoint button:hover { opacity: 0.88; }
+  section[id] { scroll-margin-top: 70px; }
 
-  .grid {
-    display: grid; gap: 1rem;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  /* ── sticky header ── */
+  .site-header {
+    position: sticky; top: 0; z-index: 20;
+    backdrop-filter: blur(12px);
+    background: oklch(0.155 0.006 265 / 0.82);
+    border-bottom: 1px solid var(--border);
   }
-  .card {
-    background: var(--card); border: 1px solid var(--border);
-    border-radius: 12px; padding: 1.1rem 1.25rem;
-    display: flex; flex-direction: column; gap: 0.55rem;
+  .site-header .wrap { display: flex; align-items: center; gap: 16px; padding-top: 14px; padding-bottom: 14px; }
+  .brand { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+  .brand .tile {
+    width: 26px; height: 26px; border-radius: 6px;
+    border: 1px solid oklch(0.78 0.15 155 / 0.5);
+    background: oklch(0.78 0.15 155 / 0.12);
+    display: grid; place-items: center;
+    font-family: var(--mono); font-size: 10px; font-weight: 600;
+    color: var(--accent); letter-spacing: -0.02em;
   }
-  .card-head { display: flex; align-items: center; gap: 0.6rem; }
-  .card-head img { width: 22px; height: 22px; color: var(--fg); }
-  .card-head h2 { font-size: 1.02rem; font-weight: 600; }
-  .card-head .ver {
-    margin-left: auto; font-size: 0.72rem; color: var(--muted);
-    border: 1px solid var(--border); border-radius: 999px;
-    padding: 0.1rem 0.55rem; white-space: nowrap;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  .brand .name { font-size: 14.5px; font-weight: 600; letter-spacing: -0.015em; white-space: nowrap; }
+  .brand .name .acp { font-family: var(--mono); font-size: 13.5px; font-weight: 500; }
+  .site-nav { display: flex; align-items: center; gap: 22px; font-size: 13.5px; }
+  .site-nav a { color: var(--muted); }
+  .site-nav a:hover { color: var(--fg); }
+  .site-nav .gh {
+    border: 1px solid var(--border-2); border-radius: 7px;
+    padding: 6px 12px; color: var(--fg); font-size: 13px;
   }
-  .card p { font-size: 0.85rem; color: var(--muted); flex: 1; }
-  .tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
-  .tags span {
-    font-size: 0.7rem; color: var(--muted);
-    background: var(--bg); border: 1px solid var(--border);
-    border-radius: 6px; padding: 0.08rem 0.45rem;
-  }
-  .card nav { display: flex; gap: 0.9rem; font-size: 0.8rem; }
-  .card nav a { color: var(--accent); text-decoration: none; }
-  .card nav a:hover { text-decoration: underline; }
+  .site-nav .gh:hover { border-color: oklch(0.45 0.01 265); color: #fff; }
+  @media (max-width: 640px) { .site-nav a:not(.gh) { display: none; } }
 
-  footer {
-    margin-top: 3rem; padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-    color: var(--muted); font-size: 0.8rem;
+  /* ── buttons ── */
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 12px 20px; border-radius: 9px; border: 0;
+    background: var(--fg); color: oklch(0.16 0.006 265);
+    font-size: 14.5px; font-weight: 600; cursor: pointer;
   }
-  footer a { color: var(--accent); text-decoration: none; }
-  #status { color: var(--muted); }
+  .btn-primary:hover { background: #fff; color: oklch(0.16 0.006 265); }
+  .btn-ghost {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 18px; border-radius: 9px;
+    border: 1px solid oklch(0.32 0.008 265);
+    background: oklch(0.21 0.008 265); color: var(--fg);
+    font-family: var(--mono); font-size: 13px; cursor: pointer;
+  }
+  .btn-ghost:hover { border-color: oklch(0.5 0.01 265); }
+
+  /* ── hero ── */
+  .hero {
+    position: relative; border-bottom: 1px solid var(--border);
+    background-image: radial-gradient(oklch(0.32 0.01 265) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+  .hero::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(120% 80% at 50% -10%, transparent 20%, var(--bg) 72%);
+  }
+  .hero .wrap {
+    position: relative;
+    padding-top: clamp(56px, 8vw, 88px); padding-bottom: 76px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 56px; align-items: center;
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 5px 11px 5px 9px;
+    border: 1px solid var(--accent-border); background: var(--accent-bg);
+    border-radius: 999px;
+    font-family: var(--mono); font-size: 11.5px; color: var(--accent); letter-spacing: 0.02em;
+  }
+  .badge .dot {
+    width: 6px; height: 6px; border-radius: 999px; background: var(--accent-dot);
+    animation: acpPulse 2.4s ease-in-out infinite;
+  }
+  .hero h1 {
+    margin-top: 22px;
+    font-size: clamp(38px, 6vw, 58px); line-height: 1.03;
+    letter-spacing: -0.035em; font-weight: 600; text-wrap: balance;
+  }
+  .hero .lede { margin-top: 20px; font-size: 18.5px; line-height: 1.55; color: oklch(0.74 0.01 265); max-width: 30em; text-wrap: pretty; }
+  .hero .lede strong { color: var(--fg); font-weight: 500; }
+  .hero .sub { margin-top: 14px; font-size: 15px; color: oklch(0.63 0.01 265); max-width: 32em; text-wrap: pretty; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .hero .url-line { margin-top: 18px; font-family: var(--mono); font-size: 12px; color: oklch(0.58 0.01 265); word-break: break-all; }
+
+  /* ── registry preview card ── */
+  .preview {
+    border: 1px solid oklch(0.28 0.008 265); border-radius: 12px;
+    background: oklch(0.185 0.007 265);
+    box-shadow: 0 24px 60px -30px oklch(0.05 0.01 265 / 0.9);
+    overflow: hidden;
+    font-family: var(--mono); font-size: 12px;
+  }
+  .preview-bar {
+    display: flex; align-items: center; gap: 10px;
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border); background: var(--card-2);
+  }
+  .preview-bar .file { font-size: 11.5px; color: oklch(0.88 0.004 265); flex: 1; }
+  .preview-bar .schema { font-size: 11px; color: var(--dim); }
+  .preview .json-head, .preview .json-tail { padding: 16px 18px 4px; line-height: 1.85; color: var(--dim); }
+  .preview .json-tail { padding: 8px 18px 16px; }
+  .preview .indent { padding-left: 14px; }
+  .preview .json-val { color: oklch(0.86 0.004 265); }
+  .preview-rows { padding: 0 18px; display: grid; gap: 6px; }
+  .preview-row {
+    display: flex; align-items: center; gap: 10px;
+    border: 1px solid var(--border); border-radius: 8px;
+    background: var(--card-2); padding: 9px 11px;
+  }
+  .preview-row img {
+    width: 18px; height: 18px; border-radius: 5px; flex: none;
+    background: oklch(0.96 0.003 265); padding: 3px;
+  }
+  .preview-row .id {
+    font-size: 11.5px; color: oklch(0.88 0.004 265); flex: 1;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .preview-row .dist { font-size: 11px; color: var(--dim); white-space: nowrap; }
+  .preview-row .ver { font-size: 11px; color: var(--accent); white-space: nowrap; }
+  .preview-status {
+    display: flex; align-items: center; gap: 10px;
+    padding: 11px 14px; font-size: 11.5px;
+    border-top: 1px solid var(--border); background: oklch(0.2 0.008 265);
+  }
+  .preview-status .get { color: var(--dim); }
+  .preview-status .ok { color: var(--accent); }
+  .preview-status .count { margin-left: auto; color: var(--dim); }
+
+  /* ── feature cards (01) ── */
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; margin-top: 36px; }
+  .feature {
+    border: 1px solid var(--border); border-radius: 12px;
+    padding: 24px; background: var(--card);
+  }
+  .feature:hover { border-color: oklch(0.36 0.01 265); }
+  .feature .glyph {
+    display: inline-grid; place-items: center;
+    width: 34px; height: 34px; border-radius: 8px;
+    border: 1px solid oklch(0.32 0.008 265); background: oklch(0.22 0.008 265);
+    font-family: var(--mono); font-size: 15px; color: var(--accent);
+  }
+  .feature h3 { margin-top: 18px; font-size: 17.5px; font-weight: 600; letter-spacing: -0.01em; }
+  .feature p { margin-top: 9px; font-size: 14.5px; line-height: 1.62; color: var(--muted); text-wrap: pretty; }
+  .feature p code { font-family: var(--mono); font-size: 13px; color: oklch(0.88 0.004 265); }
+  .feature .foot { margin-top: 16px; font-family: var(--mono); font-size: 12px; color: var(--dim); }
+  .feature .pill {
+    margin-top: 16px; display: inline-flex; align-items: center; gap: 7px;
+    padding: 4px 10px; border-radius: 999px;
+    border: 1px solid var(--accent-border); background: var(--accent-bg);
+    font-family: var(--mono); font-size: 11.5px; color: var(--accent);
+  }
+
+  /* ── agents list (02) ── */
+  .agents-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 20px; }
+  .count-label { font-family: var(--mono); font-size: 12.5px; color: var(--dim); }
+  .controls { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; align-items: center; }
+  .search {
+    display: flex; align-items: center; gap: 9px;
+    flex: 1 1 260px; min-width: 220px; height: 40px;
+    border: 1px solid oklch(0.28 0.008 265); background: var(--well); border-radius: 9px;
+    padding: 0 12px;
+  }
+  .search .slash { font-family: var(--mono); font-size: 13px; color: var(--faint); }
+  .search input {
+    flex: 1; background: transparent; border: none; outline: none;
+    color: var(--fg); font-family: var(--sans); font-size: 14px; height: 100%;
+  }
+  .chips {
+    display: flex; gap: 6px; padding: 4px;
+    border: 1px solid oklch(0.28 0.008 265); background: var(--well); border-radius: 9px;
+  }
+  .chips button {
+    font-family: var(--mono); font-size: 12px;
+    padding: 6px 12px; border-radius: 6px; border: none; cursor: pointer; white-space: nowrap;
+    background: transparent; color: var(--dim);
+  }
+  .chips button.active { background: oklch(0.29 0.01 265); color: oklch(0.96 0.004 265); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; margin-top: 24px; }
+  .agent-card {
+    display: block; border: 1px solid var(--border); border-radius: 12px;
+    padding: 20px; background: var(--card); color: inherit;
+  }
+  .agent-card:hover { border-color: oklch(0.4 0.01 265); background: oklch(0.2 0.008 265); color: inherit; }
+  .agent-card .head { display: flex; align-items: center; gap: 12px; }
+  .agent-card .tile {
+    position: relative; width: 38px; height: 38px; border-radius: 9px; flex: none;
+    display: grid; place-items: center; overflow: hidden;
+    border: 1px solid var(--border-2); background: oklch(0.23 0.008 265);
+  }
+  .agent-card .tile .letter {
+    font-family: var(--mono); font-size: 15px; font-weight: 600; color: oklch(0.78 0.01 265);
+  }
+  .agent-card .tile img {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    padding: 7px; background: oklch(0.96 0.003 265);
+  }
+  .agent-card .titles { min-width: 0; flex: 1; }
+  .agent-card .name {
+    font-size: 15.5px; font-weight: 600; letter-spacing: -0.01em;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .agent-card .authors {
+    margin-top: 3px; font-family: var(--mono); font-size: 12px; color: var(--dim);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .agent-card .ver {
+    font-family: var(--mono); font-size: 11.5px; color: var(--accent);
+    border: 1px solid oklch(0.78 0.15 155 / 0.28); background: var(--accent-bg);
+    border-radius: 999px; padding: 3px 9px; flex: none;
+  }
+  .agent-card .desc {
+    margin-top: 16px; font-size: 14px; line-height: 1.55; color: oklch(0.71 0.01 265);
+    text-wrap: pretty;
+    display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .agent-card .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; align-items: center; }
+  .agent-card .tags span {
+    font-family: var(--mono); font-size: 11.5px;
+    border-radius: 5px; padding: 3px 8px;
+  }
+  .agent-card .tags .dist { color: oklch(0.85 0.004 265); border: 1px solid oklch(0.32 0.008 265); background: oklch(0.22 0.008 265); }
+  .agent-card .tags .license { color: oklch(0.68 0.01 265); border: 1px solid var(--border-2); }
+
+  /* skeletons */
+  .skeleton {
+    border: 1px solid oklch(0.24 0.008 265); border-radius: 12px;
+    padding: 20px; background: var(--card); height: 168px;
+  }
+  .skeleton .row { display: flex; gap: 12px; align-items: center; }
+  .skeleton .box { border-radius: 4px; background: oklch(0.23 0.008 265); }
+  .skeleton .avatar { width: 38px; height: 38px; border-radius: 9px; background: oklch(0.24 0.008 265); flex: none; }
+  .skeleton .shimmer {
+    background: linear-gradient(90deg, oklch(0.24 0.008 265) 25%, oklch(0.3 0.01 265) 50%, oklch(0.24 0.008 265) 75%);
+    background-size: 320px 100%; animation: acpShimmer 1.4s linear infinite;
+  }
+
+  /* error / empty states */
+  .error-box {
+    margin-top: 24px; border: 1px solid var(--err-border); border-radius: 12px;
+    background: var(--err-bg); padding: 24px;
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;
+  }
+  .error-box .title { font-size: 15.5px; font-weight: 600; color: var(--err-fg); }
+  .error-box .detail { margin-top: 6px; font-family: var(--mono); font-size: 12.5px; color: var(--err-muted); }
+  .error-box button {
+    padding: 10px 16px; border-radius: 8px;
+    border: 1px solid oklch(0.45 0.05 45); background: transparent;
+    color: oklch(0.92 0.04 45); font-size: 13.5px; cursor: pointer;
+  }
+  .empty-box {
+    margin-top: 24px; border: 1px dashed var(--border-2); border-radius: 12px;
+    padding: 44px; text-align: center; color: oklch(0.65 0.01 265); font-size: 14.5px;
+  }
+  [hidden] { display: none !important; }
+
+  /* ── how it works (03) ── */
+  .how { display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 44px; margin-top: 14px; align-items: start; }
+  .how p { margin-top: 16px; font-size: 15.5px; line-height: 1.65; color: var(--muted); max-width: 34em; text-wrap: pretty; }
+  .how p code { font-family: var(--mono); font-size: 14px; color: oklch(0.9 0.004 265); }
+  .tree {
+    border: 1px solid oklch(0.28 0.008 265); border-radius: 12px;
+    background: oklch(0.185 0.007 265); padding: 20px 22px;
+    font-family: var(--mono); font-size: 12.5px; line-height: 2; color: oklch(0.74 0.01 265);
+    overflow-x: auto; white-space: pre;
+  }
+  .tree .c { color: var(--faint); }
+  .tree .g { color: var(--accent); }
+
+  /* ── usage (04) ── */
+  .usage p { margin-top: 14px; font-size: 15.5px; line-height: 1.65; color: var(--muted); max-width: 44em; text-wrap: pretty; }
+  .snippet {
+    border: 1px solid oklch(0.28 0.008 265); border-radius: 12px;
+    background: oklch(0.185 0.007 265); margin-top: 28px; overflow: hidden;
+  }
+  .snippet .bar {
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 14px; border-bottom: 1px solid var(--border); background: var(--card-2);
+  }
+  .snippet .bar .label { font-family: var(--mono); font-size: 11.5px; color: var(--dim); flex: 1; }
+  .snippet .bar button {
+    border: 1px solid oklch(0.32 0.008 265); background: oklch(0.22 0.008 265);
+    color: oklch(0.9 0.004 265); border-radius: 7px; padding: 5px 11px;
+    font-family: var(--mono); font-size: 11.5px; cursor: pointer;
+  }
+  .snippet .bar button:hover { border-color: oklch(0.5 0.01 265); }
+  .snippet pre {
+    padding: 20px 22px; font-family: var(--mono); font-size: 12.5px;
+    line-height: 1.9; color: oklch(0.86 0.004 265); overflow-x: auto;
+  }
+
+  /* ── contributing (05) ── */
+  .contribute { padding-bottom: 84px; }
+  .contribute .panel {
+    border: 1px solid var(--border); border-radius: 14px; background: var(--card);
+    padding: clamp(24px, 4vw, 40px);
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px; align-items: center;
+  }
+  .contribute h2 { font-size: 30px; }
+  .contribute p { margin-top: 12px; font-size: 15.5px; line-height: 1.65; color: var(--muted); max-width: 34em; text-wrap: pretty; }
+  .contribute .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+  .contribute .btn-primary, .contribute .btn-secondary { font-size: 14px; padding: 11px 18px; }
+  .btn-secondary {
+    display: inline-flex; align-items: center;
+    border-radius: 9px; border: 1px solid oklch(0.32 0.008 265);
+    color: var(--fg); font-size: 14px; padding: 11px 18px;
+  }
+  .btn-secondary:hover { border-color: oklch(0.5 0.01 265); color: var(--fg); }
+  .criteria {
+    border: 1px solid oklch(0.28 0.008 265); border-radius: 10px; background: var(--bg);
+    padding: 18px 20px; font-family: var(--mono); font-size: 12.5px; line-height: 2;
+    color: oklch(0.74 0.01 265);
+  }
+  .criteria .n { color: var(--accent-dot); }
+
+  /* ── footer ── */
+  footer { border-top: 1px solid var(--border); }
+  footer .wrap {
+    padding-top: 30px; padding-bottom: 30px;
+    display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between;
+    font-size: 13.5px; color: var(--dim);
+  }
+  footer .links { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; }
+  footer .links a { color: oklch(0.8 0.01 265); }
+  footer .links a:hover { color: #fff; }
+  footer .small { font-family: var(--mono); font-size: 12.5px; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <h1>Curated ACP Agents</h1>
-    <p>
-      A curated, health-checked list of
-      <a href="https://agentclientprotocol.com">Agent Client Protocol</a> agents —
-      actively maintained, automatically version-tracked, and removed when they go
-      stale. Drop-in compatible with the official registry format.
-      <a href="https://github.com/Fioooooooo/curated-acp-agents">Source &amp; criteria on GitHub</a>.
-    </p>
-    <div class="endpoint">
-      <code id="registry-url">registry.json</code>
-      <button id="copy" type="button">Copy</button>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <div class="tile">ACP</div>
+      <span class="name">Curated <span class="acp">ACP</span> Agents</span>
     </div>
-  </header>
+    <nav class="site-nav">
+      <a href="#agents">Agents</a>
+      <a href="#usage">Usage</a>
+      <a href="#contributing">Contributing</a>
+      <a class="gh" href="https://github.com/Fioooooooo/curated-acp-agents" target="_blank" rel="noreferrer">GitHub</a>
+    </nav>
+  </div>
+</header>
 
-  <main>
-    <p id="status">Loading agents…</p>
-    <div class="grid" id="grid"></div>
-  </main>
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="badge"><span class="dot"></span>health-checked weekly</div>
+      <h1>Curated<br>ACP Agents</h1>
+      <p class="lede">A hand-picked list of Agent Client Protocol agents — <strong>actively maintained, health-checked, and safe to recommend.</strong></p>
+      <p class="sub">100% compatible with the official registry format. Drop the URL into any ACP client and it just works.</p>
+      <div class="actions">
+        <a class="btn-primary" href="https://github.com/Fioooooooo/curated-acp-agents" target="_blank" rel="noreferrer">View on GitHub</a>
+        <button class="btn-ghost" id="copy-url" type="button">Copy registry.json URL</button>
+      </div>
+      <div class="url-line" id="registry-url-line">registry.json</div>
+    </div>
 
-  <footer>
-    <span id="foot-count"></span>
-    Data: <a href="registry.json">registry.json</a> ·
-    Built automatically twice a day ·
-    <a href="https://github.com/Fioooooooo/curated-acp-agents/blob/main/CRITERIA.md">Curation criteria</a>
-  </footer>
-</div>
+    <div class="preview" aria-hidden="true">
+      <div class="preview-bar">
+        <span class="file">registry.json</span>
+        <span class="schema">official schema</span>
+      </div>
+      <div class="json-head">
+        <div>{</div>
+        <div class="indent">"version": <span class="json-val" id="preview-version">"…"</span>,</div>
+        <div class="indent">"agents": [</div>
+      </div>
+      <div class="preview-rows" id="preview-rows"></div>
+      <div class="json-tail">
+        <div class="indent" id="preview-more"></div>
+        <div class="indent">]</div>
+        <div>}</div>
+      </div>
+      <div class="preview-status">
+        <span class="get">GET /registry.json</span>
+        <span class="ok" id="fetch-status">…</span>
+        <span class="count" id="fetch-count"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap">
+  <div class="section-num">01 / why not the official registry</div>
+  <h2>The official registry lists everything. This one has an opinion.</h2>
+  <div class="features">
+    <div class="feature">
+      <div class="glyph">◆</div>
+      <h3>Curated, not exhaustive</h3>
+      <p>Every entry meets written inclusion criteria: active upstream maintenance and real users. Stale entries get removed, not archived.</p>
+      <div class="foot">CRITERIA.md</div>
+    </div>
+    <div class="feature">
+      <div class="glyph">✓</div>
+      <h3>Automated health checks</h3>
+      <p>Every agent runs a real ACP <code>initialize</code> handshake once a week. A failure opens an issue automatically.</p>
+      <div class="pill">✓ health-checked</div>
+    </div>
+    <div class="feature">
+      <div class="glyph">↻</div>
+      <h3>Versions stay current</h3>
+      <p>Twice a day a job pulls the latest releases from npm, PyPI and GitHub Releases and commits the bumps on its own.</p>
+      <div class="foot">every 12h · npm · PyPI · gh releases</div>
+    </div>
+  </div>
+</section>
+
+<section class="section wrap" id="agents">
+  <div class="agents-head">
+    <div>
+      <div class="section-num">02 / the list</div>
+      <h2>Agents in the registry</h2>
+    </div>
+    <div class="count-label" id="count-label">fetching registry.json…</div>
+  </div>
+
+  <div class="controls">
+    <div class="search">
+      <span class="slash">/</span>
+      <input type="text" id="query" placeholder="filter by name or description" aria-label="filter by name or description">
+    </div>
+    <div class="chips" id="dist-chips"></div>
+  </div>
+
+  <div class="grid" id="skeletons">
+    <div class="skeleton"><div class="row"><div class="avatar"></div><div style="flex:1"><div class="box shimmer" style="height:12px;width:55%"></div><div class="box" style="height:10px;width:30%;margin-top:9px"></div></div></div><div class="box" style="height:10px;width:92%;margin-top:22px"></div><div class="box" style="height:10px;width:68%;margin-top:10px"></div><div class="row" style="margin-top:24px;gap:8px"><div class="box" style="height:20px;width:76px;border-radius:999px"></div><div class="box" style="height:20px;width:58px;border-radius:999px"></div></div></div>
+    <div class="skeleton"><div class="row"><div class="avatar"></div><div style="flex:1"><div class="box shimmer" style="height:12px;width:55%"></div><div class="box" style="height:10px;width:30%;margin-top:9px"></div></div></div><div class="box" style="height:10px;width:92%;margin-top:22px"></div><div class="box" style="height:10px;width:68%;margin-top:10px"></div><div class="row" style="margin-top:24px;gap:8px"><div class="box" style="height:20px;width:76px;border-radius:999px"></div><div class="box" style="height:20px;width:58px;border-radius:999px"></div></div></div>
+    <div class="skeleton"><div class="row"><div class="avatar"></div><div style="flex:1"><div class="box shimmer" style="height:12px;width:55%"></div><div class="box" style="height:10px;width:30%;margin-top:9px"></div></div></div><div class="box" style="height:10px;width:92%;margin-top:22px"></div><div class="box" style="height:10px;width:68%;margin-top:10px"></div><div class="row" style="margin-top:24px;gap:8px"><div class="box" style="height:20px;width:76px;border-radius:999px"></div><div class="box" style="height:20px;width:58px;border-radius:999px"></div></div></div>
+    <div class="skeleton"><div class="row"><div class="avatar"></div><div style="flex:1"><div class="box shimmer" style="height:12px;width:55%"></div><div class="box" style="height:10px;width:30%;margin-top:9px"></div></div></div><div class="box" style="height:10px;width:92%;margin-top:22px"></div><div class="box" style="height:10px;width:68%;margin-top:10px"></div><div class="row" style="margin-top:24px;gap:8px"><div class="box" style="height:20px;width:76px;border-radius:999px"></div><div class="box" style="height:20px;width:58px;border-radius:999px"></div></div></div>
+    <div class="skeleton"><div class="row"><div class="avatar"></div><div style="flex:1"><div class="box shimmer" style="height:12px;width:55%"></div><div class="box" style="height:10px;width:30%;margin-top:9px"></div></div></div><div class="box" style="height:10px;width:92%;margin-top:22px"></div><div class="box" style="height:10px;width:68%;margin-top:10px"></div><div class="row" style="margin-top:24px;gap:8px"><div class="box" style="height:20px;width:76px;border-radius:999px"></div><div class="box" style="height:20px;width:58px;border-radius:999px"></div></div></div>
+    <div class="skeleton"><div class="row"><div class="avatar"></div><div style="flex:1"><div class="box shimmer" style="height:12px;width:55%"></div><div class="box" style="height:10px;width:30%;margin-top:9px"></div></div></div><div class="box" style="height:10px;width:92%;margin-top:22px"></div><div class="box" style="height:10px;width:68%;margin-top:10px"></div><div class="row" style="margin-top:24px;gap:8px"><div class="box" style="height:20px;width:76px;border-radius:999px"></div><div class="box" style="height:20px;width:58px;border-radius:999px"></div></div></div>
+  </div>
+
+  <div class="error-box" id="error-box" hidden>
+    <div>
+      <div class="title">Couldn’t reach the registry</div>
+      <div class="detail" id="error-detail"></div>
+    </div>
+    <button type="button" id="retry">Retry</button>
+  </div>
+
+  <div class="empty-box" id="empty-box" hidden>No agent matches those filters.</div>
+
+  <div class="grid" id="grid"></div>
+</section>
+
+<section class="section wrap">
+  <div class="section-num">03 / how it works</div>
+  <div class="how">
+    <div>
+      <h2 style="margin-top:14px">A repo, a few scripts, no dashboard.</h2>
+      <p>Each agent is a small YAML entry checked against <code>CRITERIA.md</code>. Scheduled GitHub Actions verify the ACP handshake, refresh versions from upstream package registries, and rebuild <code>registry.json</code> — the same file this page is reading right now.</p>
+    </div>
+    <div class="tree"><span class="c">curated-acp-agents/</span>
+├─ agents/<span class="c">           one entry per agent</span>
+├─ scripts/<span class="c">          build · check · bump</span>
+├─ .github/workflows/<span class="c"> schedules</span>
+├─ CRITERIA.md<span class="c">       inclusion rules</span>
+└─ registry.json<span class="g">     generated</span></div>
+  </div>
+</section>
+
+<section class="section wrap usage" id="usage">
+  <div class="section-num">04 / using the registry</div>
+  <h2>Drop-in replacement for the official source</h2>
+  <p>The output follows the official registry schema exactly, so any ACP client that reads a registry URL can point at this one instead.</p>
+  <div class="snippet">
+    <div class="bar">
+      <span class="label">acp-client config · example</span>
+      <button type="button" id="copy-snippet">copy</button>
+    </div>
+    <pre id="snippet-body"></pre>
+  </div>
+</section>
+
+<section class="section wrap contribute" id="contributing">
+  <div class="panel">
+    <div>
+      <div class="section-num">05 / contributing</div>
+      <h2>Adding an agent to the list</h2>
+      <p>Open a nomination issue with the repo, the ACP entrypoint and how it is distributed. If it passes the handshake check and the criteria, it lands in the next build.</p>
+      <div class="actions">
+        <a class="btn-primary" href="https://github.com/Fioooooooo/curated-acp-agents/issues/new" target="_blank" rel="noreferrer">Nominate an agent</a>
+        <a class="btn-secondary" href="https://github.com/Fioooooooo/curated-acp-agents/blob/main/CRITERIA.md" target="_blank" rel="noreferrer">Read CRITERIA.md</a>
+      </div>
+    </div>
+    <div class="criteria">
+      <div><span class="n">1</span> active upstream maintenance</div>
+      <div><span class="n">2</span> real users, not a demo</div>
+      <div><span class="n">3</span> passes ACP initialize</div>
+      <div><span class="n">4</span> installable without a fork</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="small">Apache-2.0 · Agents keep their own licenses</span>
+    <div class="links">
+      <a href="https://github.com/Fioooooooo/curated-acp-agents" target="_blank" rel="noreferrer">GitHub</a>
+      <a class="small" href="registry.json" target="_blank" rel="noreferrer">registry.json</a>
+      <a href="https://agentclientprotocol.com/registry" target="_blank" rel="noreferrer">Official registry</a>
+      <span class="small">Built for ACP clients</span>
+    </div>
+  </div>
+</footer>
 
 <script>
 (function () {
-  var base = location.href.replace(/[^/]*$/, "");
-  document.getElementById("registry-url").textContent = base + "registry.json";
+  "use strict";
 
-  document.getElementById("copy").addEventListener("click", function () {
-    navigator.clipboard.writeText(base + "registry.json").then(function () {
-      var btn = document.getElementById("copy");
-      btn.textContent = "Copied";
-      setTimeout(function () { btn.textContent = "Copy"; }, 1500);
-    });
+  // The page lives next to registry.json and icons/ — everything is relative.
+  var base = location.href.replace(/[^/]*$/, "");
+  var registryUrl = base + "registry.json";
+
+  var state = {
+    raw: [],            // agent entries as loaded from registry.json
+    status: "loading",  // loading | ready | error
+    error: "",
+    query: "",
+    dist: "all",
+    version: "…"
+  };
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  // ── static text that depends on the absolute registry URL ──
+
+  $("registry-url-line").textContent = registryUrl;
+  $("snippet-body").textContent =
+    '// point your ACP client at this registry\n' +
+    '{\n  "registry": {\n    "url": "' + registryUrl + '"\n  }\n}\n\n' +
+    "$ curl -s " + registryUrl + " | jq '.agents[].id'";
+
+  // ── clipboard helpers ──
+
+  function flash(btn, label, ms) {
+    var original = btn.textContent;
+    btn.textContent = label;
+    setTimeout(function () { btn.textContent = original; }, ms || 1800);
+  }
+  function copy(text, btn, label) {
+    var done = function () { flash(btn, label); };
+    if (navigator.clipboard) navigator.clipboard.writeText(text).then(done, done);
+    else done();
+  }
+  $("copy-url").addEventListener("click", function () {
+    copy(registryUrl, this, "✓ copied to clipboard");
+  });
+  $("copy-snippet").addEventListener("click", function () {
+    copy('{\n  "registry": {\n    "url": "' + registryUrl + '"\n  }\n}', this, "copied");
   });
 
-  function tag(text) {
-    var s = document.createElement("span");
-    s.textContent = text;
-    return s;
+  // ── data shaping ──
+
+  function distOf(a) {
+    var d = a.distribution || {};
+    if (d.npx) return { key: "npx", label: "npx" };
+    if (d.uvx) return { key: "uvx", label: "uvx" };
+    if (d.binary) return { key: "binary", label: "binary · " + Object.keys(d.binary).length + " platforms" };
+    var k = Object.keys(d)[0];
+    return { key: k || "other", label: k || "other" };
   }
 
-  function card(agent) {
-    var el = document.createElement("article");
-    el.className = "card";
+  function viewModel(a) {
+    var d = distOf(a);
+    var name = a.name || a.id;
+    return {
+      id: a.id,
+      name: name,
+      description: a.description || "",
+      version: a.version || "—",
+      letter: name.replace(/[^A-Za-z0-9]/g, "").charAt(0).toUpperCase() || "?",
+      authors: (a.authors || []).join(", ") || "unknown author",
+      license: /^proprietary$/i.test(a.license || "") ? "proprietary" : (a.license || "unlicensed"),
+      dist: d.label,
+      distKey: d.key,
+      link: a.repository || a.website || registryUrl
+    };
+  }
 
-    var head = document.createElement("div");
-    head.className = "card-head";
+  function filtered() {
+    var q = state.query.trim().toLowerCase();
+    return state.raw.map(viewModel).filter(function (a) {
+      if (state.dist !== "all" && a.distKey !== state.dist) return false;
+      return !q || a.name.toLowerCase().indexOf(q) !== -1 || a.description.toLowerCase().indexOf(q) !== -1;
+    });
+  }
+
+  // ── rendering ──
+
+  function el(tag, className, text) {
+    var e = document.createElement(tag);
+    if (className) e.className = className;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  function agentCard(a) {
+    var card = el("a", "agent-card");
+    card.href = a.link;
+    card.target = "_blank";
+    card.rel = "noreferrer";
+
+    var head = el("div", "head");
+    var tile = el("div", "tile");
+    tile.appendChild(el("span", "letter", a.letter));
+    // Icons ship next to this page in dist/icons/<id>.svg; hide on 404.
     var img = document.createElement("img");
-    img.src = "icons/" + agent.id + ".svg";
+    img.src = "icons/" + a.id + ".svg";
     img.alt = "";
-    img.onerror = function () { img.style.display = "none"; };
-    head.appendChild(img);
-    var h2 = document.createElement("h2");
-    h2.textContent = agent.name;
-    head.appendChild(h2);
-    var ver = document.createElement("span");
-    ver.className = "ver";
-    ver.textContent = "v" + agent.version;
-    head.appendChild(ver);
-    el.appendChild(head);
+    img.onerror = function () { img.remove(); };
+    tile.appendChild(img);
+    head.appendChild(tile);
 
-    var desc = document.createElement("p");
-    desc.textContent = agent.description || "";
-    el.appendChild(desc);
+    var titles = el("div", "titles");
+    titles.appendChild(el("div", "name", a.name));
+    titles.appendChild(el("div", "authors", a.authors));
+    head.appendChild(titles);
+    head.appendChild(el("span", "ver", a.version));
+    card.appendChild(head);
 
-    var tags = document.createElement("div");
-    tags.className = "tags";
-    Object.keys(agent.distribution || {}).forEach(function (kind) {
-      if (kind === "binary") {
-        tags.appendChild(tag("binary · " + Object.keys(agent.distribution.binary).length + " platforms"));
-      } else {
-        tags.appendChild(tag(kind));
-      }
-    });
-    if (agent.license) tags.appendChild(tag(agent.license));
-    el.appendChild(tags);
+    card.appendChild(el("p", "desc", a.description));
 
-    var nav = document.createElement("nav");
-    [["Repository", agent.repository], ["Website", agent.website]].forEach(function (pair) {
-      if (!pair[1]) return;
-      var a = document.createElement("a");
-      a.href = pair[1];
-      a.textContent = pair[0];
-      a.rel = "noopener";
-      a.target = "_blank";
-      nav.appendChild(a);
-    });
-    el.appendChild(nav);
-    return el;
+    var tags = el("div", "tags");
+    tags.appendChild(el("span", "dist", a.dist));
+    tags.appendChild(el("span", "license", a.license));
+    card.appendChild(tags);
+    return card;
   }
 
-  fetch("registry.json")
-    .then(function (r) {
-      if (!r.ok) throw new Error("HTTP " + r.status);
-      return r.json();
-    })
-    .then(function (data) {
-      var grid = document.getElementById("grid");
-      (data.agents || []).forEach(function (a) { grid.appendChild(card(a)); });
-      document.getElementById("status").textContent = "";
-      document.getElementById("foot-count").textContent =
-        (data.agents || []).length + " agents curated · ";
-    })
-    .catch(function (e) {
-      document.getElementById("status").textContent = "Failed to load registry.json: " + e.message;
+  var DIST_OPTS = [["all", "all"], ["npx", "npx"], ["uvx", "uvx"], ["binary", "binary"]];
+
+  function renderChips() {
+    var box = $("dist-chips");
+    box.textContent = "";
+    DIST_OPTS.forEach(function (opt) {
+      var b = el("button", state.dist === opt[0] ? "active" : "", opt[1]);
+      b.type = "button";
+      b.addEventListener("click", function () {
+        state.dist = opt[0];
+        render();
+      });
+      box.appendChild(b);
     });
+  }
+
+  function renderPreview() {
+    $("preview-version").textContent = '"' + state.version + '"';
+    var rows = $("preview-rows");
+    rows.textContent = "";
+    state.raw.slice(0, 4).forEach(function (a) {
+      var row = el("div", "preview-row");
+      var img = document.createElement("img");
+      img.src = "icons/" + a.id + ".svg";
+      img.alt = "";
+      img.onerror = function () { img.remove(); };
+      row.appendChild(img);
+      row.appendChild(el("span", "id", '"' + a.id + '"'));
+      row.appendChild(el("span", "dist", distOf(a).key));
+      row.appendChild(el("span", "ver", a.version || "—"));
+      rows.appendChild(row);
+    });
+    $("preview-more").textContent = state.raw.length > 4 ? "… more entries" : "";
+  }
+
+  function render() {
+    renderChips();
+
+    var isLoading = state.status === "loading";
+    var isError = state.status === "error";
+    $("skeletons").hidden = !isLoading;
+    $("error-box").hidden = !isError;
+    if (isError) $("error-detail").textContent = state.error;
+
+    var agents = filtered();
+    var isEmpty = state.status === "ready" && state.raw.length > 0 && agents.length === 0;
+    $("empty-box").hidden = !isEmpty;
+
+    var grid = $("grid");
+    grid.textContent = "";
+    if (state.status === "ready") {
+      agents.forEach(function (a) { grid.appendChild(agentCard(a)); });
+      renderPreview();
+    }
+
+    $("count-label").textContent = isLoading
+      ? "fetching registry.json…"
+      : isError
+        ? "registry unavailable"
+        : agents.length + " of " + state.raw.length + " agents · live from registry.json";
+    $("fetch-status").textContent = isLoading ? "…" : isError ? "error" : "200 OK";
+    $("fetch-count").textContent = isLoading || isError ? "" : state.raw.length + " entries";
+  }
+
+  // ── loading ──
+
+  function load() {
+    state.status = "loading";
+    state.error = "";
+    render();
+    fetch("registry.json", { cache: "no-store" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      })
+      .then(function (d) {
+        var agents = (d && Array.isArray(d.agents)) ? d.agents : [];
+        if (!agents.length) throw new Error("empty registry");
+        state.raw = agents;
+        state.version = (d && d.version) || "1.0.0";
+        state.status = "ready";
+        render();
+      })
+      .catch(function (e) {
+        state.status = "error";
+        state.error = String(e && e.message || e) + " — failed to load registry.json";
+        render();
+      });
+  }
+
+  $("query").addEventListener("input", function () {
+    state.query = this.value;
+    render();
+  });
+  $("retry").addEventListener("click", load);
+
+  load();
 })();
 </script>
 </body>
