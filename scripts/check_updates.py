@@ -2,14 +2,14 @@
 """Check upstream sources for new agent versions and bump agents/*/agent.json.
 
 Sources, in priority order:
+  - custom source declared in curated.yaml as flat keys (always wins):
+        version_source_url: https://example.com/install
+        version_source_pattern: "download/v?([0-9][0-9a-f.-]*)/"
+      (first regex capture group is the version; use when the repo's
+      releases don't track the CLI or no public repo exists)
   - npx    -> npm registry latest version
   - uvx    -> PyPI latest version
   - binary -> GitHub Releases latest tag of the agent's repository
-  - binary -> custom source declared in curated.yaml as flat keys:
-        version_source_url: https://example.com/install
-        version_source_pattern: "download/v?([0-9][0-9a-f.-]*)/"
-      (first regex capture group is the version; for vendors without a
-      GitHub repo or package registry)
 
 All upstream versions are normalized before comparison (leading zeros in
 numeric parts are stripped, so a vendor's "2026.08.11" matches a stored
@@ -121,6 +121,12 @@ def package_name(spec):
 
 
 def latest_version_for(agent, agent_dir):
+    # An explicitly declared version source in curated.yaml always wins over
+    # inferred ones (e.g. when the repo's releases don't track the CLI's
+    # versions, or the vendor has no public repo at all).
+    custom = custom_source_version(agent_dir)
+    if custom is not None:
+        return normalize_version(custom)
     dist = agent.get("distribution", {})
     if "npx" in dist:
         return npm_latest(package_name(dist["npx"]["package"]))
@@ -128,8 +134,6 @@ def latest_version_for(agent, agent_dir):
         return pypi_latest(package_name(dist["uvx"]["package"]))
     if "binary" in dist:
         version = github_latest_version(agent.get("repository"))
-        if version is None:
-            version = custom_source_version(agent_dir)
         return normalize_version(version) if version else None
     return None
 

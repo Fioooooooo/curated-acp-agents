@@ -28,7 +28,7 @@ https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/dist/regist
 | [OpenCode](https://github.com/anomalyco/opencode) | binary | `opencode acp` |
 | [goose](https://github.com/aaif-goose/goose) | binary | `goose acp` |
 | [Qwen Code](https://github.com/QwenLM/qwen-code) | npx | `--acp` |
-| [Cline](https://github.com/cline/cline) | npx | `--acp` |
+| [Cline](https://github.com/cline/cline) | binary | `--acp`; binary via `@cline/cli-*` npm tarballs (npx bin broken upstream) |
 | [GitHub Copilot](https://github.com/github/copilot-language-server-release) | npx | `--acp` |
 | [Mistral Vibe](https://github.com/mistralai/mistral-vibe) | binary | dedicated `vibe-acp` binaries |
 | [CodeBuddy Code](https://www.codebuddy.cn/cli/) | npx | `--acp`; Tencent Cloud, proprietary |

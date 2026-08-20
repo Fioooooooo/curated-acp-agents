@@ -9,11 +9,35 @@
   ],
   "license": "Apache-2.0",
   "distribution": {
-    "npx": {
-      "package": "cline@3.0.55",
-      "args": [
-        "--acp"
-      ]
+    "binary": {
+      "darwin-aarch64": {
+        "archive": "https://registry.npmjs.org/@cline/cli-darwin-arm64/-/cli-darwin-arm64-3.0.55.tgz",
+        "cmd": "./package/bin/cline",
+        "args": [
+          "--acp"
+        ]
+      },
+      "darwin-x86_64": {
+        "archive": "https://registry.npmjs.org/@cline/cli-darwin-x64/-/cli-darwin-x64-3.0.55.tgz",
+        "cmd": "./package/bin/cline",
+        "args": [
+          "--acp"
+        ]
+      },
+      "linux-aarch64": {
+        "archive": "https://registry.npmjs.org/@cline/cli-linux-arm64/-/cli-linux-arm64-3.0.55.tgz",
+        "cmd": "./package/bin/cline",
+        "args": [
+          "--acp"
+        ]
+      },
+      "linux-x86_64": {
+        "archive": "https://registry.npmjs.org/@cline/cli-linux-x64/-/cli-linux-x64-3.0.55.tgz",
+        "cmd": "./package/bin/cline",
+        "args": [
+          "--acp"
+        ]
+      }
     }
   }
 }
