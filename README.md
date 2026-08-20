@@ -13,10 +13,8 @@ users, and are removed when they go stale. See [CRITERIA.md](CRITERIA.md).
 so ACP clients can consume it as a drop-in replacement:
 
 ```
-https://raw.githubusercontent.com/<owner>/curated-acp-agents/main/dist/registry.json
+https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/dist/registry.json
 ```
-
-(Replace `<owner>` after publishing; icons resolve from the same base path.)
 
 ## Curated agents
 
