@@ -16,7 +16,7 @@
           "package": "@agentclientprotocol/claude-agent-acp@0.70.0"
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/claude-acp.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/claude-acp.svg"
     },
     {
       "id": "cline",
@@ -36,7 +36,7 @@
           ]
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/cline.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/cline.svg"
     },
     {
       "id": "codebuddy-code",
@@ -56,7 +56,7 @@
           ]
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/codebuddy-code.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/codebuddy-code.svg"
     },
     {
       "id": "codex-acp",
@@ -74,7 +74,7 @@
           "package": "@agentclientprotocol/codex-acp@1.6.0"
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/codex-acp.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/codex-acp.svg"
     },
     {
       "id": "cursor",
@@ -118,7 +118,7 @@
           }
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/cursor.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/cursor.svg"
     },
     {
       "id": "gemini",
@@ -138,7 +138,7 @@
           ]
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/gemini.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/gemini.svg"
     },
     {
       "id": "github-copilot",
@@ -158,7 +158,7 @@
           ]
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/github-copilot.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/github-copilot.svg"
     },
     {
       "id": "goose",
@@ -209,7 +209,7 @@
           }
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/goose.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/goose.svg"
     },
     {
       "id": "kimi-code",
@@ -229,7 +229,7 @@
           ]
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/kimi-code.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/kimi-code.svg"
     },
     {
       "id": "mistral-vibe",
@@ -265,7 +265,7 @@
           }
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/mistral-vibe.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/mistral-vibe.svg"
     },
     {
       "id": "opencode",
@@ -316,7 +316,7 @@
           }
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/opencode.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/opencode.svg"
     },
     {
       "id": "qoder",
@@ -335,7 +335,7 @@
           ]
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/qoder.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/qoder.svg"
     },
     {
       "id": "qwen-code",
@@ -356,7 +356,7 @@
           ]
         }
       },
-      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/qwen-code.svg"
+      "icon": "https://curated-acp-agents.onrender.com/icons/qwen-code.svg"
     }
   ]
 }
