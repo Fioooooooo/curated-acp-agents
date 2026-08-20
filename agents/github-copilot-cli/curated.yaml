@@ -1,0 +1,5 @@
+# Curation metadata for github-copilot-cli. Not part of the ACP registry schema.
+tier: 1
+status: active   # active | stale
+added: "2026-08-20"
+reason: "GitHub's official Copilot CLI (@github/copilot) with --acp support, active releases. Entry aligned with the official registry's github-copilot-cli (same ID and package)."

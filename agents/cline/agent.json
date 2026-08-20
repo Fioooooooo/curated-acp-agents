@@ -37,6 +37,20 @@
         "args": [
           "--acp"
         ]
+      },
+      "windows-aarch64": {
+        "archive": "https://registry.npmjs.org/@cline/cli-windows-arm64/-/cli-windows-arm64-3.0.55.tgz",
+        "cmd": "./package/bin/cline.exe",
+        "args": [
+          "--acp"
+        ]
+      },
+      "windows-x86_64": {
+        "archive": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.55.tgz",
+        "cmd": "./package/bin/cline.exe",
+        "args": [
+          "--acp"
+        ]
       }
     }
   }

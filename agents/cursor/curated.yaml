@@ -2,7 +2,8 @@
 tier: 1
 status: active   # active | stale
 added: "2026-08-20"
-reason: "Cursor's official CLI with a native 'agent acp' ACP server. Binary-only distribution via downloads.cursor.com; no public source repo, no Windows build."
+reason: "Cursor's official CLI with a native 'agent acp' ACP server. Binary-only distribution via downloads.cursor.com; no public source repo or upstream-published archive digest."
+divergence: "Same archives as the official registry entry, but the version keeps the full build hash as a semver prerelease ('2026.8.11-e8db854' vs official '2026.08.11') so every archive URL stays version-pinned and reproducible."
 # Cursor publishes no registry/repo to poll; the latest version is embedded
 # in the install script. Declared here so check_updates.py can stay generic.
 version_source_url: https://cursor.com/install

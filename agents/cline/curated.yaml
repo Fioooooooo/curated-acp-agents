@@ -3,6 +3,7 @@ tier: 1
 status: active   # active | stale
 added: "2026-08-20"
 reason: "60k+ stars, active releases. Distributed as binary from the @cline/cli-* platform tarballs because the meta package's npx bin is broken upstream (bin name conflict with platform packages). ACP handshake verified without login."
+divergence: "Official registry distributes via npx cline@<version>; we ship platform binaries from the @cline/cli-* npm tarballs because the meta package's bin never links (bin name conflict). Same upstream version, same --acp entrypoint."
 # The GitHub repo's latest release is a desktop build (desktop-v*) that does
 # not track CLI versions, so poll the npm registry instead.
 version_source_url: https://registry.npmjs.org/cline/latest

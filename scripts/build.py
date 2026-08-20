@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Validate agents/*/agent.json entries and build dist/registry.json.
 
-The output format is identical to the official ACP registry
-(https://github.com/agentclientprotocol/registry), so ACP clients can
-consume it as a drop-in replacement.
+Each entry in the "agents" array follows the official ACP registry format
+(https://github.com/agentclientprotocol/registry) exactly. The envelope adds
+one extension: a top-level "curation" object keyed by agent id carrying the
+curated.yaml metadata (tier, status, added, reason, and optional
+health/divergence), so consumers can see curation state without the repo.
 
 Usage: python3 scripts/build.py
 Stdlib only, no dependencies.
@@ -37,6 +39,7 @@ PLATFORMS = {
 ARCHIVE_EXTS = (".zip", ".tar.gz", ".tgz", ".tar.bz2", ".tbz2")
 ID_RE = re.compile(r"^[a-z][a-z0-9-]*$")
 SEMVER_RE = re.compile(r"^\d+\.\d+\.\d+(-[0-9A-Za-z.-]+)?$")
+SHA256_RE = re.compile(r"^[0-9a-f]{64}$")
 
 
 def version_url_variants(version):
@@ -107,6 +110,9 @@ def validate_agent(agent, agent_dir, errors):
                 fail(errors, f"{ctx}: binary.{platform} unsupported archive format: {archive}")
             if not any(v in archive for v in version_url_variants(version)):
                 fail(errors, f"{ctx}: binary.{platform} URL does not contain version {version}")
+            sha256 = target.get("sha256")
+            if sha256 is not None and not SHA256_RE.match(sha256):
+                fail(errors, f"{ctx}: binary.{platform}.sha256 must be a lowercase hex sha256 of the archive")
 
     if not (agent_dir / "icon.svg").is_file():
         fail(errors, f"{ctx}: missing icon.svg")
@@ -119,6 +125,7 @@ CURATED_ALLOWED_KEYS = {
     "status",
     "added",
     "reason",
+    "divergence",
     "health",
     "version_source_url",
     "version_source_pattern",
@@ -129,11 +136,12 @@ CURATED_DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 def validate_curated(agent_dir, errors):
     # Minimal flat "key: value" reader; curated.yaml must stay flat by design.
+    # Returns the parsed values so main() can embed them in registry.json.
     curated = agent_dir / "curated.yaml"
     ctx = f"{agent_dir.name}/curated.yaml"
     if not curated.is_file():
         fail(errors, f"{ctx}: missing file")
-        return
+        return None
     values = {}
     for line in curated.read_text().splitlines():
         line = line.strip()
@@ -171,11 +179,13 @@ def validate_curated(agent_dir, errors):
         fail(errors, f"{ctx}: version_source_url and version_source_pattern must appear together")
     if has_url and not values["version_source_url"].startswith("https://"):
         fail(errors, f"{ctx}: version_source_url must be an https URL")
+    return values
 
 
 def main():
     errors = []
     agents = []
+    curation = {}
 
     for agent_dir in sorted(AGENTS_DIR.iterdir()):
         if not agent_dir.is_dir():
@@ -190,7 +200,18 @@ def main():
             fail(errors, f"{agent_dir.name}: invalid JSON: {e}")
             continue
         validate_agent(agent, agent_dir, errors)
-        validate_curated(agent_dir, errors)
+        values = validate_curated(agent_dir, errors)
+        if values is not None:
+            entry = {
+                "tier": int(values.get("tier", 0) or 0),
+                "status": values.get("status", ""),
+                "added": values.get("added", ""),
+                "reason": values.get("reason", ""),
+            }
+            for opt in ("health", "divergence"):
+                if values.get(opt):
+                    entry[opt] = values[opt].split(" #", 1)[0].strip()
+            curation[agent["id"]] = entry
         agent["icon"] = f"{ICON_BASE_URL}/{agent['id']}.svg"
         agents.append(agent)
 
@@ -200,7 +221,7 @@ def main():
         sys.exit(1)
 
     agents.sort(key=lambda a: a["id"])
-    registry = {"version": "1.0.0", "agents": agents}
+    registry = {"version": "1.0.0", "agents": agents, "curation": curation}
 
     DIST_DIR.mkdir(exist_ok=True)
     out = DIST_DIR / "registry.json"

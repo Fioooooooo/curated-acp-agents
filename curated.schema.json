@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/curated.schema.json",
   "title": "curated.yaml",
-  "description": "Curation metadata for one agent entry (agents/<id>/curated.yaml). Not part of the ACP registry schema and never merged into dist/registry.json. To add a new field, extend this schema first — scripts/build.py rejects unknown keys.",
+  "description": "Curation metadata for one agent entry (agents/<id>/curated.yaml). Kept out of official-schema agent objects and published separately in dist/registry.json's top-level curation map. To add a new field, extend this schema first — scripts/build.py rejects unknown keys.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -37,6 +37,11 @@
       "type": "string",
       "minLength": 1,
       "description": "Why this agent is curated"
+    },
+    "divergence": {
+      "type": "string",
+      "minLength": 1,
+      "description": "How and why this entry's manifest differs from the official registry's entry for the same agent (different distribution, launch args, ID, or version form). Omit when there is no official entry or no difference."
     },
     "health": {
       "type": "string",

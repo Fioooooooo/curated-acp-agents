@@ -17,12 +17,15 @@ read it before adding or troubleshooting agent entries.
 - `agents/<id>/agent.json` — entry, **strictly** the official ACP registry
   schema (no custom fields)
 - `agents/<id>/curated.yaml` — curation metadata; allowed keys are governed by
-  [curated.schema.json](curated.schema.json)
+  [curated.schema.json](curated.schema.json). Embedded into `dist/registry.json`
+  as a top-level `curation` map keyed by agent id (`agents[]` entries
+  themselves stay strictly official-schema).
 - `agents/<id>/icon.svg` — 16x16 monochrome `currentColor` SVG
 - `scripts/build.py` — validate all entries, build `dist/registry.json`, copy
   icons to `dist/icons/` (stdlib only)
 - `scripts/check_updates.py` — bump versions from npm/PyPI/GitHub
-  Releases/custom sources
+  Releases/custom sources; refreshes binary `sha256` only from upstream
+  GitHub Release digests or npm `dist.integrity`
 - `scripts/health_check.py` — ACP `initialize` handshake smoke test
 - `dist/` — published static site (render.com): `index.html`, `registry.json`,
   `icons/`
@@ -54,6 +57,14 @@ Local downloads may need the user's proxy: `export HTTPS_PROXY=http://127.0.0.1:
 - Versions in `agent.json` are semver, optionally with prerelease
   (`2026.8.11-e8db854`); distribution URLs must contain the version (a
   zero-padded variant is accepted).
+- A binary `sha256`, when present, must be 64-character lowercase hex and
+  traceable to an upstream integrity value. `check_updates.py` uses GitHub
+  Release asset digests directly; for npm tarballs it verifies
+  `dist.integrity` before deriving SHA-256. If upstream publishes no digest,
+  omit `sha256` rather than treating a self-downloaded hash as proof of origin.
+- When an entry's manifest differs from the official registry's entry for the
+  same agent (distribution, args, ID, version form), record how and why in
+  `curated.yaml`'s optional `divergence` field.
 - Verify the ACP handshake (`health_check.py --agent <id>`) before admitting
   or after changing an entry's distribution.
 - README.md's agent table must stay in sync with `agents/`.

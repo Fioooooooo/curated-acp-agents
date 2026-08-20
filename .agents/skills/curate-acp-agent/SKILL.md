@@ -9,9 +9,11 @@ whenToUse: When adding, updating, removing, or troubleshooting agent entries or 
 
 This repo curates ACP agents (goal: **curate**, not registry). Source of truth:
 `agents/<id>/{agent.json, curated.yaml, icon.svg}` → `scripts/build.py` validates
-and aggregates into `dist/registry.json` (format strictly identical to the
-official ACP registry) + copies icons to `dist/icons/`. `dist/` is published as
-a static site (render.com), with `index.html` rendering cards from registry.json.
+and aggregates into `dist/registry.json` + copies icons to `dist/icons/`.
+`agents[]` entries are strictly official ACP registry schema; the envelope adds
+a top-level `curation` map (keyed by agent id) with the curated.yaml metadata.
+`dist/` is published as a static site (render.com), with `index.html` rendering
+cards from registry.json.
 
 ## Golden rules
 
@@ -20,6 +22,16 @@ a static site (render.com), with `index.html` rendering cards from registry.json
   whose allowed keys are governed by `curated.schema.json` (unknown keys fail
   the build; extend the schema file first, then `CURATED_ALLOWED_KEYS` in
   `scripts/build.py`).
+- A binary `sha256`, when present, must be lowercase hex and traceable to an
+  upstream integrity value. Follow the official registry workflow: import
+  GitHub Release asset `digest` values; for npm tarballs, verify
+  `dist.integrity` before deriving SHA-256. If upstream publishes no digest,
+  omit the field rather than presenting a self-downloaded hash as proof of
+  origin. `build.py` validates present hashes but accepts their absence, as
+  allowed by the official schema.
+- If an entry diverges from the official registry's entry for the same agent
+  (distribution, args, ID, version form), record the how/why in
+  `curated.yaml`'s `divergence` field.
 - **No agent-specific special-casing in generic scripts.** Anything per-agent
   must be declarative data in `curated.yaml` (e.g. `version_source_url` /
   `version_source_pattern`, `health: requires-auth`).
@@ -36,7 +48,9 @@ a static site (render.com), with `index.html` rendering cards from registry.json
    repos (301) and archived ones — the official registry lists several stale
    ones (`zed-industries/codex-acp` is archived; claude-acp/goose/junie moved).
 2. Choose distribution: `npx`/`uvx` (pinned `pkg@version`) preferred; `binary`
-   with version in the archive URL otherwise. Icon: 16x16 monochrome
+   with version in the archive URL otherwise. Include `sha256` only when it
+   comes from an upstream GitHub Release asset digest or from a download
+   verified against npm `dist.integrity`. Icon: 16x16 monochrome
    `currentColor` SVG (fetch from the official CDN when the agent is listed
    there: `https://cdn.agentclientprotocol.com/registry/v1/latest/<id>.svg`).
 3. Verify the ACP handshake **before** admitting:
@@ -80,6 +94,10 @@ group = version) when:
 - Some npm packages (qoder, codebuddy) rely on `postinstall` downloads; a
   killed/slow install leaves a broken tree (`enoent` on reinstall — wipe
   `node_modules` first).
+- `@github/copilot`'s bin is an `npm-loader.js` that `import.meta.resolve`s
+  the platform package and spawns the native binary inside. A first `npx`
+  run can fail with `TAR_ENTRY_ERROR ENOENT` / `sh: copilot: command not
+  found`; simply re-running npx repairs the tree (no manual wipe needed).
 
 ## Automation
 

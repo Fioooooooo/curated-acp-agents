@@ -16,7 +16,7 @@
           "package": "@agentclientprotocol/claude-agent-acp@0.70.0"
         }
       },
-      "icon": "https://curated-acp-agents.onrender.com/icons/claude-acp.svg"
+      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/claude-acp.svg"
     },
     {
       "id": "cline",
@@ -57,10 +57,24 @@
             "args": [
               "--acp"
             ]
+          },
+          "windows-aarch64": {
+            "archive": "https://registry.npmjs.org/@cline/cli-windows-arm64/-/cli-windows-arm64-3.0.55.tgz",
+            "cmd": "./package/bin/cline.exe",
+            "args": [
+              "--acp"
+            ]
+          },
+          "windows-x86_64": {
+            "archive": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.55.tgz",
+            "cmd": "./package/bin/cline.exe",
+            "args": [
+              "--acp"
+            ]
           }
         }
       },
-      "icon": "https://curated-acp-agents.onrender.com/icons/cline.svg"
+      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/cline.svg"
     },
     {
       "id": "codebuddy-code",
@@ -80,7 +94,7 @@
           ]
         }
       },
-      "icon": "https://curated-acp-agents.onrender.com/icons/codebuddy-code.svg"
+      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/codebuddy-code.svg"
     },
     {
       "id": "codex-acp",
@@ -98,7 +112,7 @@
           "package": "@agentclientprotocol/codex-acp@1.6.0"
         }
       },
-      "icon": "https://curated-acp-agents.onrender.com/icons/codex-acp.svg"
+      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/codex-acp.svg"
     },
     {
       "id": "cursor",
@@ -139,10 +153,24 @@
             "args": [
               "acp"
             ]
+          },
+          "windows-aarch64": {
+            "archive": "https://downloads.cursor.com/lab/2026.08.11-e8db854/windows/arm64/agent-cli-package.zip",
+            "cmd": "./dist-package\\cursor-agent.cmd",
+            "args": [
+              "acp"
+            ]
+          },
+          "windows-x86_64": {
+            "archive": "https://downloads.cursor.com/lab/2026.08.11-e8db854/windows/x64/agent-cli-package.zip",
+            "cmd": "./dist-package\\cursor-agent.cmd",
+            "args": [
+              "acp"
+            ]
           }
         }
       },
-      "icon": "https://curated-acp-agents.onrender.com/icons/cursor.svg"
+      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/cursor.svg"
     },
     {
       "id": "gemini",
@@ -158,31 +186,32 @@
         "npx": {
           "package": "@google/gemini-cli@0.56.0",
           "args": [
-            "--experimental-acp"
+            "--acp"
           ]
         }
       },
-      "icon": "https://curated-acp-agents.onrender.com/icons/gemini.svg"
+      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/gemini.svg"
     },
     {
-      "id": "github-copilot",
+      "id": "github-copilot-cli",
       "name": "GitHub Copilot",
-      "version": "1.533.0",
+      "version": "1.0.80",
       "description": "GitHub's AI pair programmer",
-      "repository": "https://github.com/github/copilot-language-server-release",
+      "repository": "https://github.com/github/copilot-cli",
+      "website": "https://github.com/features/copilot/cli/",
       "authors": [
-        "Microsoft"
+        "GitHub"
       ],
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@github/copilot-language-server@1.533.0",
+          "package": "@github/copilot@1.0.80",
           "args": [
             "--acp"
           ]
         }
       },
-      "icon": "https://curated-acp-agents.onrender.com/icons/github-copilot.svg"
+      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/github-copilot-cli.svg"
     },
     {
       "id": "goose",
@@ -201,39 +230,44 @@
             "cmd": "./goose",
             "args": [
               "acp"
-            ]
+            ],
+            "sha256": "de263fb06839de31345dff08aeba999ba165b023cd3cec7ec3bef20f6f4f7e73"
           },
           "darwin-x86_64": {
             "archive": "https://github.com/aaif-goose/goose/releases/download/v1.46.0/goose-x86_64-apple-darwin.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
-            ]
+            ],
+            "sha256": "b5b66f5d4966aac74998c63420c98b3e289ae498f0c120463ac0b8dbc2a40083"
           },
           "linux-aarch64": {
             "archive": "https://github.com/aaif-goose/goose/releases/download/v1.46.0/goose-aarch64-unknown-linux-gnu.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
-            ]
+            ],
+            "sha256": "b56da65ab1004832ce5524ed40ec6fbe38ba84dae654d0a8eb86be9d90086cf6"
           },
           "linux-x86_64": {
             "archive": "https://github.com/aaif-goose/goose/releases/download/v1.46.0/goose-x86_64-unknown-linux-gnu.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
-            ]
+            ],
+            "sha256": "a1cf4856a765d07d6b95689a53c7bca21fcc6e6d65c0dfd064fc704052b85a7b"
           },
           "windows-x86_64": {
             "archive": "https://github.com/aaif-goose/goose/releases/download/v1.46.0/goose-x86_64-pc-windows-msvc.zip",
             "cmd": "goose.exe",
             "args": [
               "acp"
-            ]
+            ],
+            "sha256": "a903273d165c4b2ac3d30aa861f2e00753b07a5d24d24e37b65e36c86f937a76"
           }
         }
       },
-      "icon": "https://curated-acp-agents.onrender.com/icons/goose.svg"
+      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/goose.svg"
     },
     {
       "id": "kimi-code",
@@ -253,7 +287,7 @@
           ]
         }
       },
-      "icon": "https://curated-acp-agents.onrender.com/icons/kimi-code.svg"
+      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/kimi-code.svg"
     },
     {
       "id": "mistral-vibe",
@@ -269,27 +303,32 @@
         "binary": {
           "darwin-aarch64": {
             "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.2/vibe-acp-darwin-aarch64-2.24.2.zip",
-            "cmd": "./vibe-acp"
+            "cmd": "./vibe-acp",
+            "sha256": "985bc71036de532c335accb71120e70b21b59b06b07f8b925a2d9b34a7ac4434"
           },
           "darwin-x86_64": {
             "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.2/vibe-acp-darwin-x86_64-2.24.2.zip",
-            "cmd": "./vibe-acp"
+            "cmd": "./vibe-acp",
+            "sha256": "77848f2b4be18bc1be5a074d878831bb2cc4acede68b63288b73b684da1a9af5"
           },
           "linux-aarch64": {
             "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.2/vibe-acp-linux-aarch64-2.24.2.zip",
-            "cmd": "./vibe-acp"
+            "cmd": "./vibe-acp",
+            "sha256": "6bf6893b54068e5b4d013af6e0f9bffe67fd15600e5feddd63e4eb3544fa236c"
           },
           "linux-x86_64": {
             "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.2/vibe-acp-linux-x86_64-2.24.2.zip",
-            "cmd": "./vibe-acp"
+            "cmd": "./vibe-acp",
+            "sha256": "57a07c8d40027c3b70c697d7976273d97f5b5c1f8ca6eef78b81da63ed493a27"
           },
           "windows-x86_64": {
             "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.2/vibe-acp-windows-x86_64-2.24.2.zip",
-            "cmd": "./vibe-acp.exe"
+            "cmd": "./vibe-acp.exe",
+            "sha256": "dcc3f70185e91200b09c364075c54d4269015bcfdb3db67a7c0457d8356aba52"
           }
         }
       },
-      "icon": "https://curated-acp-agents.onrender.com/icons/mistral-vibe.svg"
+      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/mistral-vibe.svg"
     },
     {
       "id": "opencode",
@@ -308,39 +347,44 @@
             "cmd": "./opencode",
             "args": [
               "acp"
-            ]
+            ],
+            "sha256": "0026326bd77a3277ab3726be237410b19389f7829e8bb3c82dfaf9044162067c"
           },
           "darwin-x86_64": {
             "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.19/opencode-darwin-x64.zip",
             "cmd": "./opencode",
             "args": [
               "acp"
-            ]
+            ],
+            "sha256": "ee495d7c30263c2cecb81a4558a9c4d29ac7b27c1df822e9d344a69cb56a75c3"
           },
           "linux-aarch64": {
             "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.19/opencode-linux-arm64.tar.gz",
             "cmd": "./opencode",
             "args": [
               "acp"
-            ]
+            ],
+            "sha256": "506f98a1f618551f1f6fc5dcf591f824bef9d6819d40b27928ad7febcb7c363b"
           },
           "linux-x86_64": {
             "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.19/opencode-linux-x64.tar.gz",
             "cmd": "./opencode",
             "args": [
               "acp"
-            ]
+            ],
+            "sha256": "7bb35487c55f9957f5d91ae60be6fa49fc8f74629c210c1719ed75fdbf7e2bd9"
           },
           "windows-x86_64": {
             "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.19/opencode-windows-x64.zip",
             "cmd": "opencode.exe",
             "args": [
               "acp"
-            ]
+            ],
+            "sha256": "4381328bf6d611996c33d98daef27e89d274cb8391709fa1e36723f1d2899877"
           }
         }
       },
-      "icon": "https://curated-acp-agents.onrender.com/icons/opencode.svg"
+      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/opencode.svg"
     },
     {
       "id": "qoder",
@@ -359,7 +403,7 @@
           ]
         }
       },
-      "icon": "https://curated-acp-agents.onrender.com/icons/qoder.svg"
+      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/qoder.svg"
     },
     {
       "id": "qwen-code",
@@ -380,7 +424,89 @@
           ]
         }
       },
-      "icon": "https://curated-acp-agents.onrender.com/icons/qwen-code.svg"
+      "icon": "https://raw.githubusercontent.com/Fioooooooo/curated-acp-agents/main/agents/qwen-code.svg"
     }
-  ]
+  ],
+  "curation": {
+    "claude-acp": {
+      "tier": 1,
+      "status": "active",
+      "added": "2026-08-20",
+      "reason": "Official ACP adapter for Claude, maintained in the agentclientprotocol org. Repo moved from zed-industries."
+    },
+    "cline": {
+      "tier": 1,
+      "status": "active",
+      "added": "2026-08-20",
+      "reason": "60k+ stars, active releases. Distributed as binary from the @cline/cli-* platform tarballs because the meta package's npx bin is broken upstream (bin name conflict with platform packages). ACP handshake verified without login.",
+      "divergence": "Official registry distributes via npx cline@<version>; we ship platform binaries from the @cline/cli-* npm tarballs because the meta package's bin never links (bin name conflict). Same upstream version, same --acp entrypoint."
+    },
+    "codebuddy-code": {
+      "tier": 2,
+      "status": "active",
+      "added": "2026-08-20",
+      "reason": "Tencent Cloud official CLI with --acp support. Proprietary, no public source repo; version tracking via npm. ACP handshake verified without login."
+    },
+    "codex-acp": {
+      "tier": 1,
+      "status": "active",
+      "added": "2026-08-20",
+      "reason": "Official ACP adapter for OpenAI Codex, maintained in the agentclientprotocol org. Old zed-industries repo is archived; npx-only distribution."
+    },
+    "cursor": {
+      "tier": 1,
+      "status": "active",
+      "added": "2026-08-20",
+      "reason": "Cursor's official CLI with a native 'agent acp' ACP server. Binary-only distribution via downloads.cursor.com; no public source repo or upstream-published archive digest.",
+      "divergence": "Same archives as the official registry entry, but the version keeps the full build hash as a semver prerelease ('2026.8.11-e8db854' vs official '2026.08.11') so every archive URL stays version-pinned and reproducible."
+    },
+    "gemini": {
+      "tier": 1,
+      "status": "active",
+      "added": "2026-08-20",
+      "reason": "Google's official CLI, 100k+ stars, active releases, ACP via --acp."
+    },
+    "github-copilot-cli": {
+      "tier": 1,
+      "status": "active",
+      "added": "2026-08-20",
+      "reason": "GitHub's official Copilot CLI (@github/copilot) with --acp support, active releases. Entry aligned with the official registry's github-copilot-cli (same ID and package)."
+    },
+    "goose": {
+      "tier": 1,
+      "status": "active",
+      "added": "2026-08-20",
+      "reason": "Block's open source agent, 50k+ stars, repo moved to aaif-goose org, native acp subcommand."
+    },
+    "kimi-code": {
+      "tier": 1,
+      "status": "active",
+      "added": "2026-08-20",
+      "reason": "Successor to the Python kimi-cli (being wound down upstream). Node.js rewrite, native 'kimi acp' subcommand, active releases."
+    },
+    "mistral-vibe": {
+      "tier": 1,
+      "status": "active",
+      "added": "2026-08-20",
+      "reason": "Mistral's official open source assistant, ships dedicated vibe-acp binaries."
+    },
+    "opencode": {
+      "tier": 1,
+      "status": "active",
+      "added": "2026-08-20",
+      "reason": "Most-starred open source coding agent, active releases, native acp subcommand."
+    },
+    "qoder": {
+      "tier": 2,
+      "status": "active",
+      "added": "2026-08-20",
+      "reason": "Qoder AI CLI with --acp support. Proprietary, no public source repo; version tracking via npm. ACP handshake verified without login."
+    },
+    "qwen-code": {
+      "tier": 1,
+      "status": "active",
+      "added": "2026-08-20",
+      "reason": "Alibaba's official Qwen coding CLI, active releases, ACP via --acp."
+    }
+  }
 }

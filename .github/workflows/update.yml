@@ -7,9 +7,22 @@ name: Update versions
 # committed.
 
 on:
+  # Re-run the checksum backfill when its trust/verification logic changes.
+  # Commits made by this workflow use GITHUB_TOKEN and do not recursively
+  # trigger another workflow run.
+  push:
+    branches: [main]
+    paths:
+      - "scripts/check_updates.py"
   schedule:
     - cron: "41 3,15 * * *"
   workflow_dispatch:
+    inputs:
+      refresh_checksums:
+        description: "Refresh binary checksums from upstream integrity values"
+        required: false
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -24,7 +37,12 @@ jobs:
         with:
           python-version: "3.12"
       - name: Check for new versions
-        run: python3 scripts/check_updates.py
+        run: |
+          args=()
+          if [ "${{ github.event_name }}" = "push" ] || [ "${{ inputs.refresh_checksums }}" = "true" ]; then
+            args+=(--refresh-checksums)
+          fi
+          python3 scripts/check_updates.py "${args[@]}"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Rebuild registry.json (fails the job on invalid entries)

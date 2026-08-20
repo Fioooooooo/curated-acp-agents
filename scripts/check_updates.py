@@ -16,6 +16,17 @@ numeric parts are stripped, so a vendor's "2026.08.11" matches a stored
 "2026.8.11"). When rewriting agent.json, both the stored form and its
 zero-padded variant are replaced, so versioned URLs keep working.
 
+After a binary distribution is bumped, checksums are refreshed from an
+upstream integrity source when one is available:
+  - GitHub Release asset digests for GitHub-hosted release archives
+  - npm's dist.integrity for registry.npmjs.org tarballs (the tarball is
+    downloaded, verified against that SHA-512 SRI value, then SHA-256 is
+    recorded for the ACP manifest)
+
+If no upstream integrity source exists, any checksum for the old URL is
+removed and a warning is emitted.  A checksum of bytes we merely downloaded
+would pin those bytes, but would not establish their upstream authenticity.
+
 Version strings embedded in package specs and archive URLs are rewritten
 in place, which assumes upstream keeps a stable URL pattern across
 releases (true for all currently curated agents; re-verify on failure).
@@ -26,10 +37,15 @@ Stdlib only; set GITHUB_TOKEN to raise the GitHub API rate limit.
 HTTP(S)_PROXY environment variables are honored for all requests.
 """
 
+import argparse
+import base64
+import hashlib
+import hmac
 import json
 import os
 import re
 import sys
+import urllib.parse
 import urllib.request
 from pathlib import Path
 
@@ -65,6 +81,107 @@ def github_latest_version(repo_url):
         return None
     tag = http_json(f"https://api.github.com/repos/{m.group(1)}/{m.group(2)}/releases/latest").get("tag_name", "")
     return tag.lstrip("v") or None
+
+
+def github_release_digests(repo_url, version):
+    """Return GitHub's SHA-256 digests keyed by release asset filename."""
+    m = re.search(r"github\.com/([^/]+)/([^/]+)", repo_url or "")
+    if not m:
+        return {}
+    owner, repo = m.group(1), m.group(2).removesuffix(".git")
+    for tag in (f"v{version}", version):
+        try:
+            release = http_json(
+                f"https://api.github.com/repos/{owner}/{repo}/releases/tags/{tag}"
+            )
+        except Exception:
+            continue
+        digests = {}
+        for asset in release.get("assets", []):
+            digest = asset.get("digest", "")
+            if asset.get("name") and digest.startswith("sha256:"):
+                digests[asset["name"]] = digest.removeprefix("sha256:").lower()
+        return digests
+    return {}
+
+
+def npm_package_from_tarball(url):
+    """Extract an npm package name from its canonical registry tarball URL."""
+    parsed = urllib.parse.urlparse(url)
+    if parsed.hostname != "registry.npmjs.org":
+        return None
+    parts = urllib.parse.unquote(parsed.path).strip("/").split("/")
+    try:
+        separator = parts.index("-")
+    except ValueError:
+        return None
+    package_parts = parts[:separator]
+    if len(package_parts) == 1:
+        return package_parts[0]
+    if len(package_parts) == 2 and package_parts[0].startswith("@"):
+        return "/".join(package_parts)
+    return None
+
+
+def sha256_verified_by_npm_integrity(url, version):
+    """Verify an npm tarball against dist.integrity and return its SHA-256."""
+    package = npm_package_from_tarball(url)
+    if not package:
+        return None
+    encoded_package = urllib.parse.quote(package, safe="")
+    metadata = http_json(f"https://registry.npmjs.org/{encoded_package}/{version}")
+    dist = metadata.get("dist", {})
+    if dist.get("tarball") != url:
+        raise ValueError(f"npm metadata tarball URL mismatch for {package}@{version}")
+    integrity = dist.get("integrity", "")
+    algorithm, separator, encoded_digest = integrity.partition("-")
+    if separator != "-" or algorithm not in hashlib.algorithms_available:
+        raise ValueError(f"unsupported npm integrity for {package}@{version}: {integrity!r}")
+    try:
+        expected_digest = base64.b64decode(encoded_digest, validate=True)
+    except ValueError as e:
+        raise ValueError(f"invalid npm integrity for {package}@{version}") from e
+
+    upstream_hasher = hashlib.new(algorithm)
+    sha256_hasher = hashlib.sha256()
+    req = urllib.request.Request(url, headers={"User-Agent": "curated-acp-agents"})
+    with urllib.request.urlopen(req, timeout=300) as resp:
+        while chunk := resp.read(1 << 20):
+            upstream_hasher.update(chunk)
+            sha256_hasher.update(chunk)
+    if not hmac.compare_digest(upstream_hasher.digest(), expected_digest):
+        raise ValueError(f"npm integrity mismatch for {package}@{version}")
+    return sha256_hasher.hexdigest()
+
+
+def refresh_binary_checksums(agent, version, remove_unverifiable=False):
+    """Refresh checksums only when backed by an upstream integrity value."""
+    binary = agent.get("distribution", {}).get("binary", {})
+    repository = agent.get("repository", "")
+    release_digests = None
+    for platform, target in sorted(binary.items()):
+        archive = target["archive"]
+        digest = sha256_verified_by_npm_integrity(archive, version)
+        source = "npm dist.integrity"
+        if digest is None and "github.com/" in archive and "/releases/download/" in archive:
+            if release_digests is None:
+                release_digests = github_release_digests(repository, version)
+            digest = release_digests.get(archive.rsplit("/", 1)[-1])
+            source = "GitHub release digest"
+        if digest:
+            target["sha256"] = digest
+            print(f"  sha256 {agent['id']}/{platform} ({source}): {digest[:16]}…")
+        else:
+            if remove_unverifiable:
+                target.pop("sha256", None)
+            checksum_state = (
+                "omitted" if "sha256" not in target else "existing value preserved"
+            )
+            print(
+                f"WARN: {agent['id']}/{platform}: no upstream checksum; "
+                f"sha256 {checksum_state}",
+                file=sys.stderr,
+            )
 
 
 def curated_values(agent_dir):
@@ -139,7 +256,16 @@ def latest_version_for(agent, agent_dir):
 
 
 def main():
+    parser = argparse.ArgumentParser(description="Update curated ACP agent versions")
+    parser.add_argument(
+        "--refresh-checksums",
+        action="store_true",
+        help="refresh checksums for existing binary versions from upstream integrity values",
+    )
+    args = parser.parse_args()
+
     updated = []
+    checksum_updated = []
     failures = []
     for agent_file in sorted(AGENTS_DIR.glob("*/agent.json")):
         agent = json.loads(agent_file.read_text())
@@ -156,6 +282,13 @@ def main():
             failures.append({"agent": agent_id, "error": "no upstream version found"})
             continue
         if new == old:
+            if args.refresh_checksums and "binary" in agent.get("distribution", {}):
+                before = json.dumps(agent, sort_keys=True)
+                refresh_binary_checksums(agent, old)
+                if json.dumps(agent, sort_keys=True) != before:
+                    agent_file.write_text(json.dumps(agent, indent=2, ensure_ascii=False) + "\n")
+                    checksum_updated.append(agent_id)
+                    print(f"CHECKSUMS: {agent_id} {old}")
             print(f"up-to-date: {agent_id} {old}")
             continue
         # Rewrites the version field plus every pinned package spec and
@@ -170,6 +303,12 @@ def main():
         for src, dst in pairs:
             if src != dst:
                 text = text.replace(src, dst)
+        bumped = json.loads(text)
+        if "binary" in bumped.get("distribution", {}):
+            # Never carry an old URL's hash forward.  Refresh only from an
+            # upstream-published integrity value; otherwise omit and warn.
+            refresh_binary_checksums(bumped, new, remove_unverifiable=True)
+            text = json.dumps(bumped, indent=2, ensure_ascii=False) + "\n"
         agent_file.write_text(text)
         updated.append((agent_id, old, new))
         print(f"UPDATED: {agent_id} {old} -> {new}")
@@ -185,7 +324,12 @@ def main():
     elif report_path.exists():
         report_path.unlink()
 
-    print(f"\n{len(updated)} agent(s) updated, {len(failures)} failure(s)", file=sys.stderr)
+    print(
+        f"\n{len(updated)} agent(s) updated, "
+        f"{len(checksum_updated)} checksum set(s) refreshed, "
+        f"{len(failures)} failure(s)",
+        file=sys.stderr,
+    )
     sys.exit(0)
 
 

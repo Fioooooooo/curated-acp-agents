@@ -1,5 +1,0 @@
-# Curation metadata for github-copilot. Not part of the ACP registry schema.
-tier: 1
-status: active   # active | stale
-added: "2026-08-20"
-reason: "Microsoft's official copilot-language-server with --acp support, active releases."

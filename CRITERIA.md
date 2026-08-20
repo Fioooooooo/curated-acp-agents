@@ -19,7 +19,14 @@ An agent must meet all of the following:
    (rule of thumb: ≥1k GitHub stars).
 4. **Pinned, verifiable distribution**: at least one of `npx`, `uvx`, or
    `binary`, with versions pinned (no `@latest`, no `/latest/` URLs) and a
-   public source repository we can monitor.
+   public source repository we can monitor. Binary checksums are included
+   when the upstream channel publishes a verifiable digest (GitHub Release
+   asset digest or npm `dist.integrity`); a locally observed download hash is
+   not treated as proof of origin. Exception: proprietary agents without a
+   public repository or published checksum (e.g. Cursor, Qoder) may be
+   admitted when their distribution channel is version-trackable (npm/PyPI
+   or a declared `version_source_url`); the exception must be stated in the
+   entry's `reason`.
 5. **License allows redistribution** of the package/archive as referenced.
 
 ## Adding an agent
