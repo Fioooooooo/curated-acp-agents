@@ -1,0 +1,29 @@
+name: Validate
+
+on:
+  pull_request:
+    paths:
+      - "agents/**"
+      - "scripts/**"
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate entries and build registry.json
+        run: python3 scripts/build.py
+        env:
+          ICON_BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/main/agents
+      - uses: actions/upload-artifact@v4
+        with:
+          name: registry
+          path: dist/registry.json

@@ -1,0 +1,5 @@
+# Curation metadata for opencode. Not part of the ACP registry schema.
+tier: 1
+status: active   # active | stale
+added: "2026-08-20"
+reason: "Most-starred open source coding agent, active releases, native acp subcommand."

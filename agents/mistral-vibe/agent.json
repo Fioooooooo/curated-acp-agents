@@ -1,0 +1,35 @@
+{
+  "id": "mistral-vibe",
+  "name": "Mistral Vibe",
+  "version": "2.24.2",
+  "description": "Mistral's open-source coding assistant",
+  "repository": "https://github.com/mistralai/mistral-vibe",
+  "authors": [
+    "Mistral AI"
+  ],
+  "license": "Apache-2.0",
+  "distribution": {
+    "binary": {
+      "darwin-aarch64": {
+        "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.2/vibe-acp-darwin-aarch64-2.24.2.zip",
+        "cmd": "./vibe-acp"
+      },
+      "darwin-x86_64": {
+        "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.2/vibe-acp-darwin-x86_64-2.24.2.zip",
+        "cmd": "./vibe-acp"
+      },
+      "linux-aarch64": {
+        "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.2/vibe-acp-linux-aarch64-2.24.2.zip",
+        "cmd": "./vibe-acp"
+      },
+      "linux-x86_64": {
+        "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.2/vibe-acp-linux-x86_64-2.24.2.zip",
+        "cmd": "./vibe-acp"
+      },
+      "windows-x86_64": {
+        "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.2/vibe-acp-windows-x86_64-2.24.2.zip",
+        "cmd": "./vibe-acp.exe"
+      }
+    }
+  }
+}

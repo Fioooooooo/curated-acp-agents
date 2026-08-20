@@ -1,0 +1,42 @@
+name: Update versions
+
+# Daily check for new upstream releases (npm / PyPI / GitHub Releases).
+# Bumped entries are submitted as a pull request for human review.
+
+on:
+  schedule:
+    - cron: "41 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check for new versions
+        run: python3 scripts/check_updates.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Validate bumped entries
+        run: python3 scripts/build.py
+        env:
+          ICON_BASE_URL: https://raw.githubusercontent.com/${{ github.repository }}/main/agents
+      - uses: peter-evans/create-pull-request@v7
+        with:
+          branch: chore/version-bump
+          delete-branch: true
+          commit-message: "chore: bump agent versions"
+          title: "chore: bump agent versions"
+          body: |
+            Automated version bump from upstream releases (npm / PyPI / GitHub Releases).
+
+            Review checklist:
+            - [ ] Distribution URLs still follow the expected pattern
+            - [ ] Weekly health check is green for the bumped agents

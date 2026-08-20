@@ -1,0 +1,49 @@
+name: Health check
+
+# Weekly ACP handshake smoke test for every curated agent.
+# Opens an issue when any agent fails; repeated failures are input for
+# the stale/removal process described in CRITERIA.md.
+
+on:
+  schedule:
+    - cron: "23 2 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: astral-sh/setup-uv@v5
+      - name: Run ACP handshake smoke tests
+        run: python3 scripts/health_check.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: health-report
+          path: dist/health.json
+      - name: Open issue on failure
+        if: failure()
+        run: |
+          {
+            echo "## ACP health check failed ($(date +%F))"
+            echo
+            echo '```json'
+            cat dist/health.json
+            echo '```'
+            echo
+            echo "Run: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+          > /tmp/issue.md
+          gh issue create --title "Health check failed $(date +%F)" --body-file /tmp/issue.md --label health
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

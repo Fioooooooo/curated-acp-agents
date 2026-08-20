@@ -1,0 +1,5 @@
+# Curation metadata for codex-acp. Not part of the ACP registry schema.
+tier: 1
+status: active   # active | stale
+added: "2026-08-20"
+reason: "Official ACP adapter for OpenAI Codex, maintained in the agentclientprotocol org. Old zed-industries repo is archived; npx-only distribution."

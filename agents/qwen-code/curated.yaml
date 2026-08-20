@@ -1,0 +1,5 @@
+# Curation metadata for qwen-code. Not part of the ACP registry schema.
+tier: 1
+status: active   # active | stale
+added: "2026-08-20"
+reason: "Alibaba's official Qwen coding CLI, active releases, ACP via --acp."
