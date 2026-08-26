@@ -21,7 +21,7 @@
     {
       "id": "cline",
       "name": "Cline",
-      "version": "3.0.58",
+      "version": "3.0.60",
       "description": "Autonomous coding agent CLI - capable of creating/editing files, running commands, using the browser, and more",
       "repository": "https://github.com/cline/cline",
       "authors": [
@@ -31,52 +31,52 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-darwin-arm64/-/cli-darwin-arm64-3.0.58.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-darwin-arm64/-/cli-darwin-arm64-3.0.60.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "531976af75963457d7f7dca4333a28a7e4903a9cb5c144fea9f2f6c399106ad4"
+            "sha256": "7b508f8e071d2775fc5a9921a196fe7a3b8876c53cb1758dcc9e000d8dd64b73"
           },
           "darwin-x86_64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-darwin-x64/-/cli-darwin-x64-3.0.58.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-darwin-x64/-/cli-darwin-x64-3.0.60.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "8f09bd215ddac52f855a16c4cdf319a3855bdab84c9201ed6db6d4e22947e085"
+            "sha256": "ba015f1750bee687dfe58c32bec4f45aead4af6fb34222f800300beb45cf65d8"
           },
           "linux-aarch64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-linux-arm64/-/cli-linux-arm64-3.0.58.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-linux-arm64/-/cli-linux-arm64-3.0.60.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "3953228a6f2de70b0145cb2c504f4f229f9d44e824e46708aca905446af6c22e"
+            "sha256": "91b25b9a7bd5564ba214b7a380987f34401efe8d649e0ae9cdd7efb5151bd773"
           },
           "linux-x86_64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-linux-x64/-/cli-linux-x64-3.0.58.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-linux-x64/-/cli-linux-x64-3.0.60.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "7d10a3f540fb51c4b8cf50958612b8f8704b2da8a2834bfa1988abdd147f474c"
+            "sha256": "b11b17bf0ac0dcba4d6a894ab353e6a55b64c6fe79fe9af0693033c3c7007bc2"
           },
           "windows-aarch64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-windows-arm64/-/cli-windows-arm64-3.0.58.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-windows-arm64/-/cli-windows-arm64-3.0.60.tgz",
             "cmd": "./package/bin/cline.exe",
             "args": [
               "--acp"
             ],
-            "sha256": "8af15520be9d8ad977177865afc98db76ccbc8a79797d273e157e2ca8255f16d"
+            "sha256": "1df1c063f20f1d8ad83a84cb23a563d829209fc4ee91f08f74e6b45584006955"
           },
           "windows-x86_64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.58.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.60.tgz",
             "cmd": "./package/bin/cline.exe",
             "args": [
               "--acp"
             ],
-            "sha256": "7c666cb5aa91b2cda417868d77eb96f05de6be2ac43b2337420af701dd89b708"
+            "sha256": "6e4155e95a8c8e4def7d81dbf7bba62e6d26aacb8be2085c57a94f9462b9eb5b"
           }
         }
       },
@@ -85,7 +85,7 @@
     {
       "id": "codebuddy-code",
       "name": "CodeBuddy Code",
-      "version": "2.139.0",
+      "version": "2.140.0",
       "description": "Tencent Cloud's official intelligent coding tool",
       "website": "https://www.codebuddy.cn/cli/",
       "authors": [
@@ -94,7 +94,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@tencent-ai/codebuddy-code@2.139.0",
+          "package": "@tencent-ai/codebuddy-code@2.140.0",
           "args": [
             "--acp"
           ]
@@ -298,7 +298,7 @@
     {
       "id": "mistral-vibe",
       "name": "Mistral Vibe",
-      "version": "2.24.3",
+      "version": "2.24.4",
       "description": "Mistral's open-source coding assistant",
       "repository": "https://github.com/mistralai/mistral-vibe",
       "authors": [
@@ -308,29 +308,29 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.3/vibe-acp-darwin-aarch64-2.24.3.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.4/vibe-acp-darwin-aarch64-2.24.4.zip",
             "cmd": "./vibe-acp",
-            "sha256": "b0e37720a6e9c7a72c3fc015bc116ce44424f98ceaba1d39f00ae3482de70c88"
+            "sha256": "241404187846a68af77a2e8228eb0058f29ca27ddded5683473400620674193d"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.3/vibe-acp-darwin-x86_64-2.24.3.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.4/vibe-acp-darwin-x86_64-2.24.4.zip",
             "cmd": "./vibe-acp",
-            "sha256": "f8b8bfa0ae549c6e86c75e229e928ea64cc168fee2784389b370488457328a6c"
+            "sha256": "d955d051af5f4b82b30c4bd41c2762ab63633af45885b33eb78f0fdeba3e0df6"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.3/vibe-acp-linux-aarch64-2.24.3.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.4/vibe-acp-linux-aarch64-2.24.4.zip",
             "cmd": "./vibe-acp",
-            "sha256": "bcdad566b186c3b2c07c08a96aaa5aaab3ecfcd63401860cde63187ca244f0f5"
+            "sha256": "2e2782546a21db52b484f3fe4a50294c84d70c1e63fc9636d47625316b33b522"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.3/vibe-acp-linux-x86_64-2.24.3.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.4/vibe-acp-linux-x86_64-2.24.4.zip",
             "cmd": "./vibe-acp",
-            "sha256": "da4659d936f9ef5182569fddc6122bc66939f1af1f5ce8a4a12999b55db5915a"
+            "sha256": "66dfab4d9413dbee9c383fb3f018afe21f083fcb10bf00b83e7663ec8f519981"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.3/vibe-acp-windows-x86_64-2.24.3.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.4/vibe-acp-windows-x86_64-2.24.4.zip",
             "cmd": "./vibe-acp.exe",
-            "sha256": "61d55e89522d218dfb96a8354393c74e495d80836f5562a69c87d1649d09acae"
+            "sha256": "d0914d6d6958ad66bb0c2bdd201a7eec9e12ba721e5d51dcf39be35acfcc54b0"
           }
         }
       },
@@ -395,7 +395,7 @@
     {
       "id": "qoder",
       "name": "Qoder CLI",
-      "version": "1.1.30",
+      "version": "1.1.31",
       "description": "AI coding assistant with agentic capabilities",
       "authors": [
         "Qoder AI"
@@ -403,7 +403,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@qoder-ai/qodercli@1.1.30",
+          "package": "@qoder-ai/qodercli@1.1.31",
           "args": [
             "--acp"
           ]
@@ -414,7 +414,7 @@
     {
       "id": "qwen-code",
       "name": "Qwen Code",
-      "version": "0.22.1",
+      "version": "0.22.2",
       "description": "Alibaba's Qwen coding assistant",
       "repository": "https://github.com/QwenLM/qwen-code",
       "authors": [
@@ -423,7 +423,7 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@qwen-code/qwen-code@0.22.1",
+          "package": "@qwen-code/qwen-code@0.22.2",
           "args": [
             "--acp",
             "--experimental-skills"
