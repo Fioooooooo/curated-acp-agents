@@ -201,7 +201,7 @@
     {
       "id": "github-copilot-cli",
       "name": "GitHub Copilot",
-      "version": "1.0.80",
+      "version": "1.0.81",
       "description": "GitHub's AI pair programmer",
       "repository": "https://github.com/github/copilot-cli",
       "website": "https://github.com/features/copilot/cli/",
@@ -211,7 +211,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@github/copilot@1.0.80",
+          "package": "@github/copilot@1.0.81",
           "args": [
             "--acp"
           ]
@@ -222,7 +222,7 @@
     {
       "id": "goose",
       "name": "goose",
-      "version": "1.47.0",
+      "version": "1.48.0",
       "description": "A local, extensible, open source AI agent that automates engineering tasks",
       "repository": "https://github.com/aaif-goose/goose",
       "authors": [
@@ -232,44 +232,44 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.47.0/goose-aarch64-apple-darwin.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.48.0/goose-aarch64-apple-darwin.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "2ec6bb5d2051de0d1c50151f62c0071b82353098e6b1e377ba01bdebe891df09"
+            "sha256": "a0568e64ab21d0defd2c8dfd9e236b876b6357fb752c8e451f4bfe706aeb40c0"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.47.0/goose-x86_64-apple-darwin.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.48.0/goose-x86_64-apple-darwin.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "91c70ca0fa323c30cb567b650f9714246c6a76984039091abe4a97e8e48fdc88"
+            "sha256": "89ee04ac95b1c512904a390af72add7bd777cb7c5c9f8a52f2c4cf162c2839f3"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.47.0/goose-aarch64-unknown-linux-gnu.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.48.0/goose-aarch64-unknown-linux-gnu.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "ebf4f573d7ce06707a5e5ce81002fc2f0703d7b2e3e8d4c03863aaf3aa378958"
+            "sha256": "b9700875ccfd4b976439aae11ebe7c315790e412abd1f702ddd1e69cd8d674bc"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.47.0/goose-x86_64-unknown-linux-gnu.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.48.0/goose-x86_64-unknown-linux-gnu.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "a8340f47db1d33726fb031ca56e6d8bf05a7df923abdc96ae4bcbf6472de1664"
+            "sha256": "fbe2f128ff68383cdab57431c577ed771e2ada035a9639520b2e28a871a56a1f"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.47.0/goose-x86_64-pc-windows-msvc.zip",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.48.0/goose-x86_64-pc-windows-msvc.zip",
             "cmd": "goose.exe",
             "args": [
               "acp"
             ],
-            "sha256": "7639a726b0166deaf209af30a4b9282a54869bd53f9c7a6d225d1bc555d01029"
+            "sha256": "046a471c253581e5945ec5353305c08981403abbcbf769d344e29a7da094bf24"
           }
         }
       },
@@ -298,7 +298,7 @@
     {
       "id": "mistral-vibe",
       "name": "Mistral Vibe",
-      "version": "2.24.4",
+      "version": "2.24.5",
       "description": "Mistral's open-source coding assistant",
       "repository": "https://github.com/mistralai/mistral-vibe",
       "authors": [
@@ -308,29 +308,29 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.4/vibe-acp-darwin-aarch64-2.24.4.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.5/vibe-acp-darwin-aarch64-2.24.5.zip",
             "cmd": "./vibe-acp",
-            "sha256": "241404187846a68af77a2e8228eb0058f29ca27ddded5683473400620674193d"
+            "sha256": "17e441ae543c6f5967e2714b299f3769a5c0057dab8eaa4d561f55026249e9b2"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.4/vibe-acp-darwin-x86_64-2.24.4.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.5/vibe-acp-darwin-x86_64-2.24.5.zip",
             "cmd": "./vibe-acp",
-            "sha256": "d955d051af5f4b82b30c4bd41c2762ab63633af45885b33eb78f0fdeba3e0df6"
+            "sha256": "d85ac3ddab67c8f294608bb64054a2cd7491757d135aada21c1f4b2f26faa676"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.4/vibe-acp-linux-aarch64-2.24.4.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.5/vibe-acp-linux-aarch64-2.24.5.zip",
             "cmd": "./vibe-acp",
-            "sha256": "2e2782546a21db52b484f3fe4a50294c84d70c1e63fc9636d47625316b33b522"
+            "sha256": "d3bd74320fd2a6c11bdb830001593ecc761296cf74a1a702f4d09a837017f613"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.4/vibe-acp-linux-x86_64-2.24.4.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.5/vibe-acp-linux-x86_64-2.24.5.zip",
             "cmd": "./vibe-acp",
-            "sha256": "66dfab4d9413dbee9c383fb3f018afe21f083fcb10bf00b83e7663ec8f519981"
+            "sha256": "dd2aaf8248104c35b83c329937c658c56391d248370160a3d8375fc547b500d7"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.4/vibe-acp-windows-x86_64-2.24.4.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.5/vibe-acp-windows-x86_64-2.24.5.zip",
             "cmd": "./vibe-acp.exe",
-            "sha256": "d0914d6d6958ad66bb0c2bdd201a7eec9e12ba721e5d51dcf39be35acfcc54b0"
+            "sha256": "36be958dbf39d995437cb9214069764b2059a7b29d28445d11982151fbacebdb"
           }
         }
       },
