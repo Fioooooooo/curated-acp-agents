@@ -4,7 +4,7 @@
     {
       "id": "claude-acp",
       "name": "Claude Agent",
-      "version": "0.71.0",
+      "version": "0.73.0",
       "description": "ACP adapter for Anthropic's Claude",
       "repository": "https://github.com/agentclientprotocol/claude-agent-acp",
       "authors": [
@@ -13,7 +13,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@agentclientprotocol/claude-agent-acp@0.71.0"
+          "package": "@agentclientprotocol/claude-agent-acp@0.73.0"
         }
       },
       "icon": "https://curated-acp-agents.onrender.com/icons/claude-acp.svg"
@@ -21,7 +21,7 @@
     {
       "id": "cline",
       "name": "Cline",
-      "version": "3.0.60",
+      "version": "3.0.61",
       "description": "Autonomous coding agent CLI - capable of creating/editing files, running commands, using the browser, and more",
       "repository": "https://github.com/cline/cline",
       "authors": [
@@ -31,52 +31,52 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-darwin-arm64/-/cli-darwin-arm64-3.0.60.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-darwin-arm64/-/cli-darwin-arm64-3.0.61.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "7b508f8e071d2775fc5a9921a196fe7a3b8876c53cb1758dcc9e000d8dd64b73"
+            "sha256": "63f48b56b180b2f59374982fef89d24c7131300740ab77f3a9b66556a86b57b8"
           },
           "darwin-x86_64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-darwin-x64/-/cli-darwin-x64-3.0.60.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-darwin-x64/-/cli-darwin-x64-3.0.61.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "ba015f1750bee687dfe58c32bec4f45aead4af6fb34222f800300beb45cf65d8"
+            "sha256": "13890eda085242131a691a0fde32826b00dc33eb46e370739275abba551bbf97"
           },
           "linux-aarch64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-linux-arm64/-/cli-linux-arm64-3.0.60.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-linux-arm64/-/cli-linux-arm64-3.0.61.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "91b25b9a7bd5564ba214b7a380987f34401efe8d649e0ae9cdd7efb5151bd773"
+            "sha256": "80e5b4de8b83c8abea6c652ca7be104b0f17c6ba12f044ecbca5b60d72253466"
           },
           "linux-x86_64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-linux-x64/-/cli-linux-x64-3.0.60.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-linux-x64/-/cli-linux-x64-3.0.61.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "b11b17bf0ac0dcba4d6a894ab353e6a55b64c6fe79fe9af0693033c3c7007bc2"
+            "sha256": "e0f15667a5ce6d902e61546605b40f32c242ac05f3f4ce8df8e0bac96b0972d0"
           },
           "windows-aarch64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-windows-arm64/-/cli-windows-arm64-3.0.60.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-windows-arm64/-/cli-windows-arm64-3.0.61.tgz",
             "cmd": "./package/bin/cline.exe",
             "args": [
               "--acp"
             ],
-            "sha256": "1df1c063f20f1d8ad83a84cb23a563d829209fc4ee91f08f74e6b45584006955"
+            "sha256": "58a1c3761abf7bf3524aa8dad069f11b98665b7e554acbddcbd783cc6f16e343"
           },
           "windows-x86_64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.60.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.61.tgz",
             "cmd": "./package/bin/cline.exe",
             "args": [
               "--acp"
             ],
-            "sha256": "6e4155e95a8c8e4def7d81dbf7bba62e6d26aacb8be2085c57a94f9462b9eb5b"
+            "sha256": "cf77b065b288df8f3313e11bbbaeec93f83890c96e10e3ca6effda15b3e60723"
           }
         }
       },
@@ -181,7 +181,7 @@
     {
       "id": "gemini",
       "name": "Gemini CLI",
-      "version": "0.57.0",
+      "version": "0.58.0",
       "description": "Google's official CLI for Gemini",
       "repository": "https://github.com/google-gemini/gemini-cli",
       "authors": [
@@ -190,7 +190,7 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@google/gemini-cli@0.57.0",
+          "package": "@google/gemini-cli@0.58.0",
           "args": [
             "--acp"
           ]
@@ -278,7 +278,7 @@
     {
       "id": "kimi-code",
       "name": "Kimi Code CLI",
-      "version": "0.39.1",
+      "version": "0.40.0",
       "description": "Moonshot AI's terminal coding agent, successor to Kimi CLI",
       "repository": "https://github.com/MoonshotAI/kimi-code",
       "authors": [
@@ -287,7 +287,7 @@
       "license": "MIT",
       "distribution": {
         "npx": {
-          "package": "@moonshot-ai/kimi-code@0.39.1",
+          "package": "@moonshot-ai/kimi-code@0.40.0",
           "args": [
             "acp"
           ]
@@ -339,7 +339,7 @@
     {
       "id": "opencode",
       "name": "OpenCode",
-      "version": "1.18.25",
+      "version": "1.18.26",
       "description": "The open source coding agent",
       "repository": "https://github.com/anomalyco/opencode",
       "authors": [
@@ -349,44 +349,44 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.25/opencode-darwin-arm64.zip",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.26/opencode-darwin-arm64.zip",
             "cmd": "./opencode",
             "args": [
               "acp"
             ],
-            "sha256": "606b09722d98069605e16037fb8c3c7c8ebbfed9ba713079a5efb2e5b065ae27"
+            "sha256": "b05d383149a5a417140e8edebd83064142fa36e74fdfcd5f791919dcb12fd33a"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.25/opencode-darwin-x64.zip",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.26/opencode-darwin-x64.zip",
             "cmd": "./opencode",
             "args": [
               "acp"
             ],
-            "sha256": "6c5c569f779b197e1df6390c62278bbdf0e73e7cc248a429648680c63a6f3f1c"
+            "sha256": "dc1c641bc391f28370c30e5ca95d51b0bb355ab5deb387f2d2adc3d5ad56c68b"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.25/opencode-linux-arm64.tar.gz",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.26/opencode-linux-arm64.tar.gz",
             "cmd": "./opencode",
             "args": [
               "acp"
             ],
-            "sha256": "35ef77897425e41b5183a2c21ac4fb1d4d944d82a94e3c920f57b5490af11ac5"
+            "sha256": "90b99cc2356fea188d67352418ad7223559841178142f719848ca2c88a689c3e"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.25/opencode-linux-x64.tar.gz",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.26/opencode-linux-x64.tar.gz",
             "cmd": "./opencode",
             "args": [
               "acp"
             ],
-            "sha256": "58a3729a6f3432dd6d2917fcc4a949788891a035818646ad480e12c947f56e78"
+            "sha256": "7c20c1ffa91bcca0ac903752260bcc36307dff656833baead2f5ef3b224b16c6"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.25/opencode-windows-x64.zip",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.26/opencode-windows-x64.zip",
             "cmd": "opencode.exe",
             "args": [
               "acp"
             ],
-            "sha256": "831e213e5f454d6e8b26f0fb24c7b3d42b40e47d73d154672a9192702eb08416"
+            "sha256": "c7af81e288dff3cf4378c9f3509208ef8bf060d7109589fee2cd943845d87786"
           }
         }
       },
