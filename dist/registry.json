@@ -278,7 +278,7 @@
     {
       "id": "kimi-code",
       "name": "Kimi Code CLI",
-      "version": "0.40.0",
+      "version": "0.40.1",
       "description": "Moonshot AI's terminal coding agent, successor to Kimi CLI",
       "repository": "https://github.com/MoonshotAI/kimi-code",
       "authors": [
@@ -287,7 +287,7 @@
       "license": "MIT",
       "distribution": {
         "npx": {
-          "package": "@moonshot-ai/kimi-code@0.40.0",
+          "package": "@moonshot-ai/kimi-code@0.40.1",
           "args": [
             "acp"
           ]
@@ -395,7 +395,7 @@
     {
       "id": "qoder",
       "name": "Qoder CLI",
-      "version": "1.1.40",
+      "version": "1.1.41",
       "description": "AI coding assistant with agentic capabilities",
       "authors": [
         "Qoder AI"
@@ -403,7 +403,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@qoder-ai/qodercli@1.1.40",
+          "package": "@qoder-ai/qodercli@1.1.41",
           "args": [
             "--acp"
           ]
