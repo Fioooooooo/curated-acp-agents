@@ -4,7 +4,7 @@
     {
       "id": "claude-acp",
       "name": "Claude Agent",
-      "version": "0.73.0",
+      "version": "0.74.0",
       "description": "ACP adapter for Anthropic's Claude",
       "repository": "https://github.com/agentclientprotocol/claude-agent-acp",
       "authors": [
@@ -13,7 +13,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@agentclientprotocol/claude-agent-acp@0.73.0"
+          "package": "@agentclientprotocol/claude-agent-acp@0.74.0"
         }
       },
       "icon": "https://curated-acp-agents.onrender.com/icons/claude-acp.svg"
@@ -85,7 +85,7 @@
     {
       "id": "codebuddy-code",
       "name": "CodeBuddy Code",
-      "version": "2.143.1",
+      "version": "2.144.0",
       "description": "Tencent Cloud's official intelligent coding tool",
       "website": "https://www.codebuddy.cn/cli/",
       "authors": [
@@ -94,7 +94,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@tencent-ai/codebuddy-code@2.143.1",
+          "package": "@tencent-ai/codebuddy-code@2.144.0",
           "args": [
             "--acp"
           ]
@@ -105,7 +105,7 @@
     {
       "id": "codex-acp",
       "name": "Codex CLI",
-      "version": "1.8.0",
+      "version": "1.9.0",
       "description": "ACP adapter for OpenAI's coding assistant",
       "repository": "https://github.com/agentclientprotocol/codex-acp",
       "authors": [
@@ -115,7 +115,7 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@agentclientprotocol/codex-acp@1.8.0"
+          "package": "@agentclientprotocol/codex-acp@1.9.0"
         }
       },
       "icon": "https://curated-acp-agents.onrender.com/icons/codex-acp.svg"
@@ -201,7 +201,7 @@
     {
       "id": "github-copilot-cli",
       "name": "GitHub Copilot",
-      "version": "1.0.82",
+      "version": "1.0.83",
       "description": "GitHub's AI pair programmer",
       "repository": "https://github.com/github/copilot-cli",
       "website": "https://github.com/features/copilot/cli/",
@@ -211,7 +211,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@github/copilot@1.0.82",
+          "package": "@github/copilot@1.0.83",
           "args": [
             "--acp"
           ]
@@ -278,7 +278,7 @@
     {
       "id": "kimi-code",
       "name": "Kimi Code CLI",
-      "version": "0.40.1",
+      "version": "0.41.0",
       "description": "Moonshot AI's terminal coding agent, successor to Kimi CLI",
       "repository": "https://github.com/MoonshotAI/kimi-code",
       "authors": [
@@ -287,7 +287,7 @@
       "license": "MIT",
       "distribution": {
         "npx": {
-          "package": "@moonshot-ai/kimi-code@0.40.1",
+          "package": "@moonshot-ai/kimi-code@0.41.0",
           "args": [
             "acp"
           ]
@@ -298,7 +298,7 @@
     {
       "id": "mistral-vibe",
       "name": "Mistral Vibe",
-      "version": "2.24.5",
+      "version": "2.25.0",
       "description": "Mistral's open-source coding assistant",
       "repository": "https://github.com/mistralai/mistral-vibe",
       "authors": [
@@ -308,29 +308,29 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.5/vibe-acp-darwin-aarch64-2.24.5.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.0/vibe-acp-darwin-aarch64-2.25.0.zip",
             "cmd": "./vibe-acp",
-            "sha256": "17e441ae543c6f5967e2714b299f3769a5c0057dab8eaa4d561f55026249e9b2"
+            "sha256": "101cf43bb3b6fd73e90702f7421317cf7a1e09c003e1ae7081b4f2188e9f2646"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.5/vibe-acp-darwin-x86_64-2.24.5.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.0/vibe-acp-darwin-x86_64-2.25.0.zip",
             "cmd": "./vibe-acp",
-            "sha256": "d85ac3ddab67c8f294608bb64054a2cd7491757d135aada21c1f4b2f26faa676"
+            "sha256": "23e3277bd77f768710d4e52ca3e6402c7324d515555e887304fa4ed16303d84e"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.5/vibe-acp-linux-aarch64-2.24.5.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.0/vibe-acp-linux-aarch64-2.25.0.zip",
             "cmd": "./vibe-acp",
-            "sha256": "d3bd74320fd2a6c11bdb830001593ecc761296cf74a1a702f4d09a837017f613"
+            "sha256": "8687f30c0f6dc080aec723c1709e2babab24ae96e2c3a91821b8a6c74892ca59"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.5/vibe-acp-linux-x86_64-2.24.5.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.0/vibe-acp-linux-x86_64-2.25.0.zip",
             "cmd": "./vibe-acp",
-            "sha256": "dd2aaf8248104c35b83c329937c658c56391d248370160a3d8375fc547b500d7"
+            "sha256": "5f4a0412d0078c1a12b2b81cd4c1e7fd040c655b3fd03a909255b3c7602c4a7c"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.5/vibe-acp-windows-x86_64-2.24.5.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.0/vibe-acp-windows-x86_64-2.25.0.zip",
             "cmd": "./vibe-acp.exe",
-            "sha256": "36be958dbf39d995437cb9214069764b2059a7b29d28445d11982151fbacebdb"
+            "sha256": "4ddafad59f4e2b0b571a408a491e8792c5164cf3dd6703a5dcccffb509a557f5"
           }
         }
       },
@@ -339,7 +339,7 @@
     {
       "id": "opencode",
       "name": "OpenCode",
-      "version": "1.18.27",
+      "version": "1.18.28",
       "description": "The open source coding agent",
       "repository": "https://github.com/anomalyco/opencode",
       "authors": [
@@ -349,44 +349,44 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.27/opencode-darwin-arm64.zip",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.28/opencode-darwin-arm64.zip",
             "cmd": "./opencode",
             "args": [
               "acp"
             ],
-            "sha256": "149b0c6d272d0059b8b5ffcd18c84b24f1d6cbf585942b10e60c601211992eb1"
+            "sha256": "405bda35587a0d140f2b691ba77b0e22492e34c822ed1de6869adfa344f50f47"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.27/opencode-darwin-x64.zip",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.28/opencode-darwin-x64.zip",
             "cmd": "./opencode",
             "args": [
               "acp"
             ],
-            "sha256": "e182eab3a6bf095ff773d303bbc7938d3551a636eab00625b599ad6383fabd88"
+            "sha256": "9e3443c5c57d32a93a4f401e2afa377ff46817053e1050fcbd9d2362816f4cd0"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.27/opencode-linux-arm64.tar.gz",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.28/opencode-linux-arm64.tar.gz",
             "cmd": "./opencode",
             "args": [
               "acp"
             ],
-            "sha256": "8cbc134eb5e100baf61ee7196150f503e352056e703276e2d8637c38bafd2c39"
+            "sha256": "ccb0d39467eeccc52cdfe1cccad0114304366cb42073b906d970a487ca5b4497"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.27/opencode-linux-x64.tar.gz",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.28/opencode-linux-x64.tar.gz",
             "cmd": "./opencode",
             "args": [
               "acp"
             ],
-            "sha256": "4af5494f9433f59db8c1e344198f0ee72a50c06ec009fb4a8aeab4c2d4abd702"
+            "sha256": "42add0fb1f13bdfd13855adc11cdaf2944c149377a873732168cdfd234fec7c3"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.27/opencode-windows-x64.zip",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.28/opencode-windows-x64.zip",
             "cmd": "opencode.exe",
             "args": [
               "acp"
             ],
-            "sha256": "ac26bb6f0309e9a6de279b64dc7bec5e69ab9b79c1a4e2d947d68d213b7eb575"
+            "sha256": "f7f569b4cdffcdb3675e5b21d14044544e4f713e8d7a0d1d761bb73e595e2d86"
           }
         }
       },
@@ -395,7 +395,7 @@
     {
       "id": "qoder",
       "name": "Qoder CLI",
-      "version": "1.1.42",
+      "version": "1.1.43",
       "description": "AI coding assistant with agentic capabilities",
       "authors": [
         "Qoder AI"
@@ -403,7 +403,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@qoder-ai/qodercli@1.1.42",
+          "package": "@qoder-ai/qodercli@1.1.43",
           "args": [
             "--acp"
           ]
