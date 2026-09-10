@@ -298,7 +298,7 @@
     {
       "id": "mistral-vibe",
       "name": "Mistral Vibe",
-      "version": "2.25.1",
+      "version": "2.25.2",
       "description": "Mistral's open-source coding assistant",
       "repository": "https://github.com/mistralai/mistral-vibe",
       "authors": [
@@ -308,29 +308,29 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.1/vibe-acp-darwin-aarch64-2.25.1.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.2/vibe-acp-darwin-aarch64-2.25.2.zip",
             "cmd": "./vibe-acp",
-            "sha256": "7210a0c065308dae7f3fcc652002bc568931d322f6149c1640b316cbaafba51d"
+            "sha256": "9b06aac1dc359af29b7b86a80f47a4d517ea35e4f792ff7d0b04b762b35146ef"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.1/vibe-acp-darwin-x86_64-2.25.1.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.2/vibe-acp-darwin-x86_64-2.25.2.zip",
             "cmd": "./vibe-acp",
-            "sha256": "ddc2f1295905a613b7a66f0997ed239ba2f196c3125bb334180ad5ecfcbfa745"
+            "sha256": "40803ca37884c0f9239a22c824702beaa102747c6c3ae8e85cfabef68a750b87"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.1/vibe-acp-linux-aarch64-2.25.1.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.2/vibe-acp-linux-aarch64-2.25.2.zip",
             "cmd": "./vibe-acp",
-            "sha256": "ea59a8b51f4ae2e495ad8d49ac658f3307ed5ad6cca5c548a4ae313afba657a3"
+            "sha256": "620e3150eda1949e15f21a8ba5aa616ed42253b0897beacb8ca04f4063695e37"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.1/vibe-acp-linux-x86_64-2.25.1.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.2/vibe-acp-linux-x86_64-2.25.2.zip",
             "cmd": "./vibe-acp",
-            "sha256": "3b6e12e47ea6aaa26cfc37ec59c5d57436982e33a2b82d90cb83a239f09f6def"
+            "sha256": "a942e008c8f946b0efc892841a5e98a0e36e3317e49878552cd71ba945f8844e"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.1/vibe-acp-windows-x86_64-2.25.1.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.2/vibe-acp-windows-x86_64-2.25.2.zip",
             "cmd": "./vibe-acp.exe",
-            "sha256": "7d09b586cf0462530b213c9808af1b5a3ef36a076697924d04ee32d2eb46d798"
+            "sha256": "e04d83b1cf19b33dad4b2235fd473c7b11b367d68fc6e93fd6fcb9153a22bdbd"
           }
         }
       },
@@ -395,7 +395,7 @@
     {
       "id": "qoder",
       "name": "Qoder CLI",
-      "version": "1.1.48",
+      "version": "1.1.49",
       "description": "AI coding assistant with agentic capabilities",
       "authors": [
         "Qoder AI"
@@ -403,7 +403,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@qoder-ai/qodercli@1.1.48",
+          "package": "@qoder-ai/qodercli@1.1.49",
           "args": [
             "--acp"
           ]
@@ -414,7 +414,7 @@
     {
       "id": "qwen-code",
       "name": "Qwen Code",
-      "version": "0.23.2",
+      "version": "0.23.3",
       "description": "Alibaba's Qwen coding assistant",
       "repository": "https://github.com/QwenLM/qwen-code",
       "authors": [
@@ -423,7 +423,7 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@qwen-code/qwen-code@0.23.2",
+          "package": "@qwen-code/qwen-code@0.23.3",
           "args": [
             "--acp",
             "--experimental-skills"
