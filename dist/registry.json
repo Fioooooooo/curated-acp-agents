@@ -4,7 +4,7 @@
     {
       "id": "claude-acp",
       "name": "Claude Agent",
-      "version": "0.77.0",
+      "version": "0.78.0",
       "description": "ACP adapter for Anthropic's Claude",
       "repository": "https://github.com/agentclientprotocol/claude-agent-acp",
       "authors": [
@@ -13,7 +13,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@agentclientprotocol/claude-agent-acp@0.77.0"
+          "package": "@agentclientprotocol/claude-agent-acp@0.78.0"
         }
       },
       "icon": "https://curated-acp-agents.onrender.com/icons/claude-acp.svg"
@@ -105,7 +105,7 @@
     {
       "id": "codex-acp",
       "name": "Codex CLI",
-      "version": "1.11.0",
+      "version": "1.12.0",
       "description": "ACP adapter for OpenAI's coding assistant",
       "repository": "https://github.com/agentclientprotocol/codex-acp",
       "authors": [
@@ -115,7 +115,7 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@agentclientprotocol/codex-acp@1.11.0"
+          "package": "@agentclientprotocol/codex-acp@1.12.0"
         }
       },
       "icon": "https://curated-acp-agents.onrender.com/icons/codex-acp.svg"
@@ -181,7 +181,7 @@
     {
       "id": "gemini",
       "name": "Gemini CLI",
-      "version": "0.59.0",
+      "version": "0.60.0",
       "description": "Google's official CLI for Gemini",
       "repository": "https://github.com/google-gemini/gemini-cli",
       "authors": [
@@ -190,7 +190,7 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@google/gemini-cli@0.59.0",
+          "package": "@google/gemini-cli@0.60.0",
           "args": [
             "--acp"
           ]
@@ -201,7 +201,7 @@
     {
       "id": "github-copilot-cli",
       "name": "GitHub Copilot",
-      "version": "1.0.83",
+      "version": "1.0.85",
       "description": "GitHub's AI pair programmer",
       "repository": "https://github.com/github/copilot-cli",
       "website": "https://github.com/features/copilot/cli/",
@@ -211,7 +211,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@github/copilot@1.0.83",
+          "package": "@github/copilot@1.0.85",
           "args": [
             "--acp"
           ]
