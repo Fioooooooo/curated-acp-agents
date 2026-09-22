@@ -4,7 +4,7 @@
     {
       "id": "claude-acp",
       "name": "Claude Agent",
-      "version": "0.79.0",
+      "version": "0.81.0",
       "description": "ACP adapter for Anthropic's Claude",
       "repository": "https://github.com/agentclientprotocol/claude-agent-acp",
       "authors": [
@@ -13,7 +13,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@agentclientprotocol/claude-agent-acp@0.79.0"
+          "package": "@agentclientprotocol/claude-agent-acp@0.81.0"
         }
       },
       "icon": "https://curated-acp-agents.onrender.com/icons/claude-acp.svg"
@@ -105,7 +105,7 @@
     {
       "id": "codex-acp",
       "name": "Codex CLI",
-      "version": "1.12.0",
+      "version": "1.13.0",
       "description": "ACP adapter for OpenAI's coding assistant",
       "repository": "https://github.com/agentclientprotocol/codex-acp",
       "authors": [
@@ -115,7 +115,7 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@agentclientprotocol/codex-acp@1.12.0"
+          "package": "@agentclientprotocol/codex-acp@1.13.0"
         }
       },
       "icon": "https://curated-acp-agents.onrender.com/icons/codex-acp.svg"
@@ -395,7 +395,7 @@
     {
       "id": "qoder",
       "name": "Qoder CLI",
-      "version": "1.1.60",
+      "version": "1.1.61",
       "description": "AI coding assistant with agentic capabilities",
       "authors": [
         "Qoder AI"
@@ -403,7 +403,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@qoder-ai/qodercli@1.1.60",
+          "package": "@qoder-ai/qodercli@1.1.61",
           "args": [
             "--acp"
           ]
@@ -414,7 +414,7 @@
     {
       "id": "qwen-code",
       "name": "Qwen Code",
-      "version": "0.24.3",
+      "version": "0.24.4",
       "description": "Alibaba's Qwen coding assistant",
       "repository": "https://github.com/QwenLM/qwen-code",
       "authors": [
@@ -423,7 +423,7 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@qwen-code/qwen-code@0.24.3",
+          "package": "@qwen-code/qwen-code@0.24.4",
           "args": [
             "--acp",
             "--experimental-skills"
