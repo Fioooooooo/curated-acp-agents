@@ -21,7 +21,7 @@
     {
       "id": "cline",
       "name": "Cline",
-      "version": "3.0.62",
+      "version": "3.0.64",
       "description": "Autonomous coding agent CLI - capable of creating/editing files, running commands, using the browser, and more",
       "repository": "https://github.com/cline/cline",
       "authors": [
@@ -31,52 +31,52 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-darwin-arm64/-/cli-darwin-arm64-3.0.62.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-darwin-arm64/-/cli-darwin-arm64-3.0.64.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "491b1c06a29b76896b1a421450a6ce202ccb5eddc9adfdb0c792190553d73b37"
+            "sha256": "b4a96a7f0d08bbce3447ef54fc97ffc95e4af397ffc1f677208c2f1300e9f369"
           },
           "darwin-x86_64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-darwin-x64/-/cli-darwin-x64-3.0.62.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-darwin-x64/-/cli-darwin-x64-3.0.64.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "c80d2ea9a4cbd6032f22cb1b9fc2bee1e8f3ef60bf78482a9a1952202d2c3503"
+            "sha256": "00ad831f4842ceee190b6efb0bf3b5096586a51ffa04e7c40e0cfe68553e6af8"
           },
           "linux-aarch64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-linux-arm64/-/cli-linux-arm64-3.0.62.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-linux-arm64/-/cli-linux-arm64-3.0.64.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "b3c1d9cac9f6f3a0696cdcfe8a29778271baee5dbb1ded5b1b6f52c662e48aae"
+            "sha256": "f4ede81a83884e6b9ff0b529dcc431939e44c34e46aebda37caff375223302ff"
           },
           "linux-x86_64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-linux-x64/-/cli-linux-x64-3.0.62.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-linux-x64/-/cli-linux-x64-3.0.64.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "f1fdf64dab9ea37546fe39662ad0336712e31497eee954fd82003d7c79b35320"
+            "sha256": "d4e2022038f8dbe82dec8e14b2e8a43381203de55db13a467add739e0345258f"
           },
           "windows-aarch64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-windows-arm64/-/cli-windows-arm64-3.0.62.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-windows-arm64/-/cli-windows-arm64-3.0.64.tgz",
             "cmd": "./package/bin/cline.exe",
             "args": [
               "--acp"
             ],
-            "sha256": "860dbacfe52a051b0ca020df6e6e18acdcf12a7bb3f50563b8bbc39336ce9e76"
+            "sha256": "a1b3a31f0592e75947962b4930c46f7fdc9596453dffb7c5a2adfd56509cbdc3"
           },
           "windows-x86_64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.62.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.64.tgz",
             "cmd": "./package/bin/cline.exe",
             "args": [
               "--acp"
             ],
-            "sha256": "bc324aa7f045c36792bc39195bb33b7157b72448c129ba1909c5b47573393c69"
+            "sha256": "721d3ad535c1b85eab035ffd581394ed26565b3d06ae3d26dc28cf50da3ddc24"
           }
         }
       },
@@ -298,7 +298,7 @@
     {
       "id": "mistral-vibe",
       "name": "Mistral Vibe",
-      "version": "2.25.5",
+      "version": "2.25.7",
       "description": "Mistral's open-source coding assistant",
       "repository": "https://github.com/mistralai/mistral-vibe",
       "authors": [
@@ -308,29 +308,29 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.5/vibe-acp-darwin-aarch64-2.25.5.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.7/vibe-acp-darwin-aarch64-2.25.7.zip",
             "cmd": "./vibe-acp",
-            "sha256": "741325d62643bbd275e8992f8541e9ca74d6550f8ea9fc1a6f261eb52b2ba999"
+            "sha256": "f25651a2756ea99f31035a789ee89c8d3303c2ce20c6ee9007f9e5a339e2f702"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.5/vibe-acp-darwin-x86_64-2.25.5.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.7/vibe-acp-darwin-x86_64-2.25.7.zip",
             "cmd": "./vibe-acp",
-            "sha256": "238e2cba7a7876523a0737b932142749fd51d1faada3abec82bba7d7eef22c5f"
+            "sha256": "013eab1d2f7191a846ffca09aadfe2ea2814be509a66d6f63a6bed99447a7003"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.5/vibe-acp-linux-aarch64-2.25.5.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.7/vibe-acp-linux-aarch64-2.25.7.zip",
             "cmd": "./vibe-acp",
-            "sha256": "a67833f9f99c1b4ef7d819c90e89c2ab878ec712b1ec66b7dece52683ec60f33"
+            "sha256": "fd5cdecf7a0e0b668f1eb75cb008f80a960251d549eb4ae766514f18c2bc2ade"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.5/vibe-acp-linux-x86_64-2.25.5.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.7/vibe-acp-linux-x86_64-2.25.7.zip",
             "cmd": "./vibe-acp",
-            "sha256": "3029e796009162951757a842be3bbb69998d6c2685729b50d252019a09beb3ba"
+            "sha256": "a732df7844f6b33990fbea680b653fd164fd894ac428cc6c8a521fd5678bd2c9"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.5/vibe-acp-windows-x86_64-2.25.5.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.7/vibe-acp-windows-x86_64-2.25.7.zip",
             "cmd": "./vibe-acp.exe",
-            "sha256": "9aaa01e43142bd65308f5131f88977ad5e0a9b6bf849e5c9486d6ee521c3e2ed"
+            "sha256": "d320220ef4a44860c199768af12291fd834a68262039cf89f828ed56476ab163"
           }
         }
       },
@@ -339,7 +339,7 @@
     {
       "id": "opencode",
       "name": "OpenCode",
-      "version": "1.18.31",
+      "version": "1.18.32",
       "description": "The open source coding agent",
       "repository": "https://github.com/anomalyco/opencode",
       "authors": [
@@ -349,44 +349,44 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.31/opencode-darwin-arm64.zip",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.32/opencode-darwin-arm64.zip",
             "cmd": "./opencode",
             "args": [
               "acp"
             ],
-            "sha256": "caf7f31fa1aec2353ea859d4ef9ab824c6273d941b016e88d51193fa3028d34e"
+            "sha256": "fa643f93401c13508d8d513780e54ce9cc01203d501114be9b88d62408b8101f"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.31/opencode-darwin-x64.zip",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.32/opencode-darwin-x64.zip",
             "cmd": "./opencode",
             "args": [
               "acp"
             ],
-            "sha256": "f8510eaf400f07c3a2014e3a517e3650c705bcd6ac3e6740351b723ee685042f"
+            "sha256": "a24bf10499382f8855e19d2a081b8683e4ab99c7c2affb32dc89b17c8a00ccd6"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.31/opencode-linux-arm64.tar.gz",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.32/opencode-linux-arm64.tar.gz",
             "cmd": "./opencode",
             "args": [
               "acp"
             ],
-            "sha256": "d4e332f46b227448582c0d9fc75f6f826dfe95c9f751bc2011fc4d937a042be6"
+            "sha256": "568461b7d4d8c19865c97e9a1102e613049c6039d01fe772154de873c1865840"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.31/opencode-linux-x64.tar.gz",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.32/opencode-linux-x64.tar.gz",
             "cmd": "./opencode",
             "args": [
               "acp"
             ],
-            "sha256": "e9312be75ed803b7415fc2aeabda1f4fe938912a39673762dc0c38c0e11ebde4"
+            "sha256": "3046e0404fdc60fb80307e7a47824ba07477364178a4d09baa8548496dd6d43b"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.31/opencode-windows-x64.zip",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.32/opencode-windows-x64.zip",
             "cmd": "opencode.exe",
             "args": [
               "acp"
             ],
-            "sha256": "0ecd7ffc7f26390ce7799e7bcd409e4f11c410144308a6a5b0fcdce63d871006"
+            "sha256": "1483c72d5adced825590a0ecf8cc18b3e87e535960a125dbf539d33bce135d0f"
           }
         }
       },
