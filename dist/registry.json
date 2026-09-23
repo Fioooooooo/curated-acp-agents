@@ -4,7 +4,7 @@
     {
       "id": "claude-acp",
       "name": "Claude Agent",
-      "version": "0.81.0",
+      "version": "0.81.1",
       "description": "ACP adapter for Anthropic's Claude",
       "repository": "https://github.com/agentclientprotocol/claude-agent-acp",
       "authors": [
@@ -13,7 +13,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@agentclientprotocol/claude-agent-acp@0.81.0"
+          "package": "@agentclientprotocol/claude-agent-acp@0.81.1"
         }
       },
       "icon": "https://curated-acp-agents.onrender.com/icons/claude-acp.svg"
@@ -85,7 +85,7 @@
     {
       "id": "codebuddy-code",
       "name": "CodeBuddy Code",
-      "version": "2.156.0",
+      "version": "2.157.0",
       "description": "Tencent Cloud's official intelligent coding tool",
       "website": "https://www.codebuddy.cn/cli/",
       "authors": [
@@ -94,7 +94,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@tencent-ai/codebuddy-code@2.156.0",
+          "package": "@tencent-ai/codebuddy-code@2.157.0",
           "args": [
             "--acp"
           ]
@@ -105,7 +105,7 @@
     {
       "id": "codex-acp",
       "name": "Codex CLI",
-      "version": "1.13.0",
+      "version": "1.13.1",
       "description": "ACP adapter for OpenAI's coding assistant",
       "repository": "https://github.com/agentclientprotocol/codex-acp",
       "authors": [
@@ -115,7 +115,7 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@agentclientprotocol/codex-acp@1.13.0"
+          "package": "@agentclientprotocol/codex-acp@1.13.1"
         }
       },
       "icon": "https://curated-acp-agents.onrender.com/icons/codex-acp.svg"
@@ -222,7 +222,7 @@
     {
       "id": "goose",
       "name": "goose",
-      "version": "1.51.0",
+      "version": "1.52.0",
       "description": "A local, extensible, open source AI agent that automates engineering tasks",
       "repository": "https://github.com/aaif-goose/goose",
       "authors": [
@@ -232,44 +232,44 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.51.0/goose-aarch64-apple-darwin.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.52.0/goose-aarch64-apple-darwin.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "6cbb36e1b0b9c44d05ff8b3d526d2191eb02610b3fd18f475faa4edab2514535"
+            "sha256": "10f7aca02d265750f43ec6948a63757ea372b1ef52b5c116f55b79d382769ae7"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.51.0/goose-x86_64-apple-darwin.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.52.0/goose-x86_64-apple-darwin.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "0c34ceb1e245db40f9261eef82b4d7b2adb7ce89c126f5ef66cfd63ed84e31cf"
+            "sha256": "a71d9357b560ba6a07b2f73ff5d211411a358e5e3f7a1727e98659cc8f58393b"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.51.0/goose-aarch64-unknown-linux-gnu.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.52.0/goose-aarch64-unknown-linux-gnu.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "f3419d00648d0f5aeb408ca5716f78e3f9489f3866267a1328aa8c034ab115ba"
+            "sha256": "7923f7b7c76f0ebf29b8622c8b9a4c486f6ce60475967f0f63246e7399f0097c"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.51.0/goose-x86_64-unknown-linux-gnu.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.52.0/goose-x86_64-unknown-linux-gnu.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "de5bf71c6bf470fbb55276de871bbbd65c844aa066d3b09b1552da83f8e367e2"
+            "sha256": "2609109a43012ddece0f78e1e4a179b82749c424f2164b97186d3ad38518d262"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.51.0/goose-x86_64-pc-windows-msvc.zip",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.52.0/goose-x86_64-pc-windows-msvc.zip",
             "cmd": "goose.exe",
             "args": [
               "acp"
             ],
-            "sha256": "55af3e3c574e2de4d306626d0e71fcf6f730b02e53ffee497a9dba6df5357c4f"
+            "sha256": "13f51e2294a8c92ce440988beb1873ed688e33d8fc72c0f75755b2ed5b3d54bc"
           }
         }
       },
@@ -278,7 +278,7 @@
     {
       "id": "kimi-code",
       "name": "Kimi Code CLI",
-      "version": "2.0.2",
+      "version": "2.1.0",
       "description": "Moonshot AI's terminal coding agent, successor to Kimi CLI",
       "repository": "https://github.com/MoonshotAI/kimi-code",
       "authors": [
@@ -287,7 +287,7 @@
       "license": "MIT",
       "distribution": {
         "npx": {
-          "package": "@moonshot-ai/kimi-code@2.0.2",
+          "package": "@moonshot-ai/kimi-code@2.1.0",
           "args": [
             "acp"
           ]
@@ -298,7 +298,7 @@
     {
       "id": "mistral-vibe",
       "name": "Mistral Vibe",
-      "version": "2.25.7",
+      "version": "2.25.8",
       "description": "Mistral's open-source coding assistant",
       "repository": "https://github.com/mistralai/mistral-vibe",
       "authors": [
@@ -308,29 +308,29 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.7/vibe-acp-darwin-aarch64-2.25.7.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.8/vibe-acp-darwin-aarch64-2.25.8.zip",
             "cmd": "./vibe-acp",
-            "sha256": "f25651a2756ea99f31035a789ee89c8d3303c2ce20c6ee9007f9e5a339e2f702"
+            "sha256": "cdbb6b040d0ec63de64ddd2363ba0f9a2c3b77501b8ed6d94dee6d497bfd5bb9"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.7/vibe-acp-darwin-x86_64-2.25.7.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.8/vibe-acp-darwin-x86_64-2.25.8.zip",
             "cmd": "./vibe-acp",
-            "sha256": "013eab1d2f7191a846ffca09aadfe2ea2814be509a66d6f63a6bed99447a7003"
+            "sha256": "dbbbb4a18a216aac93ad337596e2922225715c6dad888b64064748aa03e678f3"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.7/vibe-acp-linux-aarch64-2.25.7.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.8/vibe-acp-linux-aarch64-2.25.8.zip",
             "cmd": "./vibe-acp",
-            "sha256": "fd5cdecf7a0e0b668f1eb75cb008f80a960251d549eb4ae766514f18c2bc2ade"
+            "sha256": "49ecd2bd0b1b48226c71694c4b3de2c1304fad4ad0658eb897eab61ee410bae7"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.7/vibe-acp-linux-x86_64-2.25.7.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.8/vibe-acp-linux-x86_64-2.25.8.zip",
             "cmd": "./vibe-acp",
-            "sha256": "a732df7844f6b33990fbea680b653fd164fd894ac428cc6c8a521fd5678bd2c9"
+            "sha256": "a64b0cc314a24d834f44e3a7a9711400f6912b1cc1623d2e346e8140939f7c7d"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.7/vibe-acp-windows-x86_64-2.25.7.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.8/vibe-acp-windows-x86_64-2.25.8.zip",
             "cmd": "./vibe-acp.exe",
-            "sha256": "d320220ef4a44860c199768af12291fd834a68262039cf89f828ed56476ab163"
+            "sha256": "4eb3099bd06b034f62582f7b5ed701febbce3cf013ef95490aca9c79e82c4bd1"
           }
         }
       },
@@ -395,7 +395,7 @@
     {
       "id": "qoder",
       "name": "Qoder CLI",
-      "version": "1.1.61",
+      "version": "1.1.62",
       "description": "AI coding assistant with agentic capabilities",
       "authors": [
         "Qoder AI"
@@ -403,7 +403,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@qoder-ai/qodercli@1.1.61",
+          "package": "@qoder-ai/qodercli@1.1.62",
           "args": [
             "--acp"
           ]
