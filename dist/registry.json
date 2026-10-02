@@ -4,7 +4,7 @@
     {
       "id": "claude-acp",
       "name": "Claude Agent",
-      "version": "0.85.0",
+      "version": "0.85.1",
       "description": "ACP adapter for Anthropic's Claude",
       "repository": "https://github.com/agentclientprotocol/claude-agent-acp",
       "authors": [
@@ -13,7 +13,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@agentclientprotocol/claude-agent-acp@0.85.0"
+          "package": "@agentclientprotocol/claude-agent-acp@0.85.1"
         }
       },
       "icon": "https://curated-acp-agents.onrender.com/icons/claude-acp.svg"
@@ -21,7 +21,7 @@
     {
       "id": "cline",
       "name": "Cline",
-      "version": "3.0.67",
+      "version": "3.0.68",
       "description": "Autonomous coding agent CLI - capable of creating/editing files, running commands, using the browser, and more",
       "repository": "https://github.com/cline/cline",
       "authors": [
@@ -31,52 +31,52 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-darwin-arm64/-/cli-darwin-arm64-3.0.67.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-darwin-arm64/-/cli-darwin-arm64-3.0.68.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "ddd190374b941e733a003f28654b5f801299f848431bad3bb0772cf995a3aec3"
+            "sha256": "e203a3905ba7fd6dea88d749e4153e3bd0e5ddbd034bf31c458e3d96078f13b5"
           },
           "darwin-x86_64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-darwin-x64/-/cli-darwin-x64-3.0.67.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-darwin-x64/-/cli-darwin-x64-3.0.68.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "e9a1487029efa0b03a1b99d7e931a18ab2873e86d8c264e70c7a4d164a843c84"
+            "sha256": "36b28d60786f5db8d4824dfdd3b1486941e680c2c61428e6a570546120c6fcd9"
           },
           "linux-aarch64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-linux-arm64/-/cli-linux-arm64-3.0.67.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-linux-arm64/-/cli-linux-arm64-3.0.68.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "c1b34ea3d356619d7d57c6dd1099296d746332673011341abe0011e05a08ccb9"
+            "sha256": "5e0ad56ba4c494c437f6dcdc2557c165478e05e1800e1fe6f7d476e4fd4c84f2"
           },
           "linux-x86_64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-linux-x64/-/cli-linux-x64-3.0.67.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-linux-x64/-/cli-linux-x64-3.0.68.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "ada74eac8b0a71a9b09390b7b06dd4942260a63e8861cd9e27085e7e084d41ed"
+            "sha256": "a979929090eb9a934b3907e2cf519368964d6a35e96079d6db4fc89caad98ab1"
           },
           "windows-aarch64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-windows-arm64/-/cli-windows-arm64-3.0.67.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-windows-arm64/-/cli-windows-arm64-3.0.68.tgz",
             "cmd": "./package/bin/cline.exe",
             "args": [
               "--acp"
             ],
-            "sha256": "56097a04459b1099d1141eff55623ac3f083c96233645527a128e25532f8f70b"
+            "sha256": "03825181b2f9fa95412a6007d07edc5e3c0dd08549a7d153b3449aa9d2d84170"
           },
           "windows-x86_64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.67.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.68.tgz",
             "cmd": "./package/bin/cline.exe",
             "args": [
               "--acp"
             ],
-            "sha256": "59d22447f7528025c08d6d0f298e7adb9a41d9764bc70567aa69b2815894d004"
+            "sha256": "6b74427cbb946337e3f994eab06b4d4dd5cc1cc69a49b2054d3c8d9f68ae67a4"
           }
         }
       },
@@ -123,7 +123,7 @@
     {
       "id": "cursor",
       "name": "Cursor CLI",
-      "version": "2026.10.1-14929f9",
+      "version": "2026.10.1-e373342",
       "description": "Cursor's coding agent CLI with a native ACP server",
       "website": "https://cursor.com/cli",
       "authors": [
@@ -133,42 +133,42 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://downloads.cursor.com/lab/2026.10.01-14929f9/darwin/arm64/agent-cli-package.tar.gz",
+            "archive": "https://downloads.cursor.com/lab/2026.10.01-e373342/darwin/arm64/agent-cli-package.tar.gz",
             "cmd": "./dist-package/cursor-agent",
             "args": [
               "acp"
             ]
           },
           "darwin-x86_64": {
-            "archive": "https://downloads.cursor.com/lab/2026.10.01-14929f9/darwin/x64/agent-cli-package.tar.gz",
+            "archive": "https://downloads.cursor.com/lab/2026.10.01-e373342/darwin/x64/agent-cli-package.tar.gz",
             "cmd": "./dist-package/cursor-agent",
             "args": [
               "acp"
             ]
           },
           "linux-aarch64": {
-            "archive": "https://downloads.cursor.com/lab/2026.10.01-14929f9/linux/arm64/agent-cli-package.tar.gz",
+            "archive": "https://downloads.cursor.com/lab/2026.10.01-e373342/linux/arm64/agent-cli-package.tar.gz",
             "cmd": "./dist-package/cursor-agent",
             "args": [
               "acp"
             ]
           },
           "linux-x86_64": {
-            "archive": "https://downloads.cursor.com/lab/2026.10.01-14929f9/linux/x64/agent-cli-package.tar.gz",
+            "archive": "https://downloads.cursor.com/lab/2026.10.01-e373342/linux/x64/agent-cli-package.tar.gz",
             "cmd": "./dist-package/cursor-agent",
             "args": [
               "acp"
             ]
           },
           "windows-aarch64": {
-            "archive": "https://downloads.cursor.com/lab/2026.10.01-14929f9/windows/arm64/agent-cli-package.zip",
+            "archive": "https://downloads.cursor.com/lab/2026.10.01-e373342/windows/arm64/agent-cli-package.zip",
             "cmd": "./dist-package\\cursor-agent.cmd",
             "args": [
               "acp"
             ]
           },
           "windows-x86_64": {
-            "archive": "https://downloads.cursor.com/lab/2026.10.01-14929f9/windows/x64/agent-cli-package.zip",
+            "archive": "https://downloads.cursor.com/lab/2026.10.01-e373342/windows/x64/agent-cli-package.zip",
             "cmd": "./dist-package\\cursor-agent.cmd",
             "args": [
               "acp"
