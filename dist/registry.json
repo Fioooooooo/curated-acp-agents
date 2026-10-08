@@ -4,7 +4,7 @@
     {
       "id": "claude-acp",
       "name": "Claude Agent",
-      "version": "0.87.0",
+      "version": "0.88.0",
       "description": "ACP adapter for Anthropic's Claude",
       "repository": "https://github.com/agentclientprotocol/claude-agent-acp",
       "authors": [
@@ -13,7 +13,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@agentclientprotocol/claude-agent-acp@0.87.0"
+          "package": "@agentclientprotocol/claude-agent-acp@0.88.0"
         }
       },
       "icon": "https://curated-acp-agents.onrender.com/icons/claude-acp.svg"
@@ -85,7 +85,7 @@
     {
       "id": "codebuddy-code",
       "name": "CodeBuddy Code",
-      "version": "2.162.0",
+      "version": "2.163.0",
       "description": "Tencent Cloud's official intelligent coding tool",
       "website": "https://www.codebuddy.cn/cli/",
       "authors": [
@@ -94,7 +94,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@tencent-ai/codebuddy-code@2.162.0",
+          "package": "@tencent-ai/codebuddy-code@2.163.0",
           "args": [
             "--acp"
           ]
@@ -201,7 +201,7 @@
     {
       "id": "github-copilot-cli",
       "name": "GitHub Copilot",
-      "version": "1.0.93",
+      "version": "1.0.94",
       "description": "GitHub's AI pair programmer",
       "repository": "https://github.com/github/copilot-cli",
       "website": "https://github.com/features/copilot/cli/",
@@ -211,7 +211,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@github/copilot@1.0.93",
+          "package": "@github/copilot@1.0.94",
           "args": [
             "--acp"
           ]
@@ -222,7 +222,7 @@
     {
       "id": "goose",
       "name": "goose",
-      "version": "1.53.0",
+      "version": "1.54.0",
       "description": "A local, extensible, open source AI agent that automates engineering tasks",
       "repository": "https://github.com/aaif-goose/goose",
       "authors": [
@@ -232,44 +232,44 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.53.0/goose-aarch64-apple-darwin.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.54.0/goose-aarch64-apple-darwin.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "49cf9cfd6195f558d0d9f39ccd691213004bccb2c626e2b40b244059ff9dbdba"
+            "sha256": "63738f0eed2fe9d8585a4ba988c3ffb23d600db0b43858a6cd868fa6b035a7af"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.53.0/goose-x86_64-apple-darwin.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.54.0/goose-x86_64-apple-darwin.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "5d96ae149294fbeda930e693144bf333bbc9c1121d949f1ed77f176eb6a35f49"
+            "sha256": "81fd55f4003950bb72719402e2defb1375eef4b9a739d901a365fb737b73aeee"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.53.0/goose-aarch64-unknown-linux-gnu.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.54.0/goose-aarch64-unknown-linux-gnu.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "e156799760a174bfbc5d14443aacef064ce7592f9099dc9ce04c3db74e72224b"
+            "sha256": "8c7ad233bdaf05f10a52ef36f3ce50f839cb1d2d1df5b31b172af7150c1c288e"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.53.0/goose-x86_64-unknown-linux-gnu.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.54.0/goose-x86_64-unknown-linux-gnu.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "2d010c66dfd4348bb437b3a94001882468a5db1aa556858920481522f57752d7"
+            "sha256": "bf01cb6359f7a2b1acb54ca4827e1d059b18aabb3d2b75202e21066cfd3a3396"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.53.0/goose-x86_64-pc-windows-msvc.zip",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.54.0/goose-x86_64-pc-windows-msvc.zip",
             "cmd": "goose.exe",
             "args": [
               "acp"
             ],
-            "sha256": "3a951c661f12415f7947daac2bb4651af1a7b41532f34d7c2f05ea6636eadaa9"
+            "sha256": "5c39bc91c3eadc231847e21a8a469e778431084437b233a63a950fee22db6239"
           }
         }
       },
@@ -395,7 +395,7 @@
     {
       "id": "qoder",
       "name": "Qoder CLI",
-      "version": "1.1.65",
+      "version": "1.1.66",
       "description": "AI coding assistant with agentic capabilities",
       "authors": [
         "Qoder AI"
@@ -403,7 +403,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@qoder-ai/qodercli@1.1.65",
+          "package": "@qoder-ai/qodercli@1.1.66",
           "args": [
             "--acp"
           ]
