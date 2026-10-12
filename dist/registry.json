@@ -201,7 +201,7 @@
     {
       "id": "github-copilot-cli",
       "name": "GitHub Copilot",
-      "version": "1.0.95",
+      "version": "1.0.96",
       "description": "GitHub's AI pair programmer",
       "repository": "https://github.com/github/copilot-cli",
       "website": "https://github.com/features/copilot/cli/",
@@ -211,7 +211,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@github/copilot@1.0.95",
+          "package": "@github/copilot@1.0.96",
           "args": [
             "--acp"
           ]
@@ -395,7 +395,7 @@
     {
       "id": "qoder",
       "name": "Qoder CLI",
-      "version": "1.1.68",
+      "version": "1.1.69",
       "description": "AI coding assistant with agentic capabilities",
       "authors": [
         "Qoder AI"
@@ -403,7 +403,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@qoder-ai/qodercli@1.1.68",
+          "package": "@qoder-ai/qodercli@1.1.69",
           "args": [
             "--acp"
           ]
