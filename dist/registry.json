@@ -85,7 +85,7 @@
     {
       "id": "codebuddy-code",
       "name": "CodeBuddy Code",
-      "version": "2.164.0",
+      "version": "2.167.0",
       "description": "Tencent Cloud's official intelligent coding tool",
       "website": "https://www.codebuddy.cn/cli/",
       "authors": [
@@ -94,7 +94,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@tencent-ai/codebuddy-code@2.164.0",
+          "package": "@tencent-ai/codebuddy-code@2.167.0",
           "args": [
             "--acp"
           ]
@@ -278,7 +278,7 @@
     {
       "id": "kimi-code",
       "name": "Kimi Code CLI",
-      "version": "2.1.1",
+      "version": "2.2.0",
       "description": "Moonshot AI's terminal coding agent, successor to Kimi CLI",
       "repository": "https://github.com/MoonshotAI/kimi-code",
       "authors": [
@@ -287,7 +287,7 @@
       "license": "MIT",
       "distribution": {
         "npx": {
-          "package": "@moonshot-ai/kimi-code@2.1.1",
+          "package": "@moonshot-ai/kimi-code@2.2.0",
           "args": [
             "acp"
           ]
@@ -395,7 +395,7 @@
     {
       "id": "qoder",
       "name": "Qoder CLI",
-      "version": "1.1.70",
+      "version": "1.1.71",
       "description": "AI coding assistant with agentic capabilities",
       "authors": [
         "Qoder AI"
@@ -403,7 +403,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@qoder-ai/qodercli@1.1.70",
+          "package": "@qoder-ai/qodercli@1.1.71",
           "args": [
             "--acp"
           ]
