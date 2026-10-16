@@ -1,7 +1,7 @@
 {
   "id": "cline",
   "name": "Cline",
-  "version": "3.0.71",
+  "version": "3.0.72",
   "description": "Autonomous coding agent CLI - capable of creating/editing files, running commands, using the browser, and more",
   "repository": "https://github.com/cline/cline",
   "authors": [
@@ -11,52 +11,52 @@
   "distribution": {
     "binary": {
       "darwin-aarch64": {
-        "archive": "https://registry.npmjs.org/@cline/cli-darwin-arm64/-/cli-darwin-arm64-3.0.71.tgz",
+        "archive": "https://registry.npmjs.org/@cline/cli-darwin-arm64/-/cli-darwin-arm64-3.0.72.tgz",
         "cmd": "./package/bin/cline",
         "args": [
           "--acp"
         ],
-        "sha256": "22b46e9debe98be4d605a0ab95294380980e487bd407eaf6804f165908a95e06"
+        "sha256": "66e3db0054672708bc074f9c6f3e127264bc64e38671e40748420c134ce22b9d"
       },
       "darwin-x86_64": {
-        "archive": "https://registry.npmjs.org/@cline/cli-darwin-x64/-/cli-darwin-x64-3.0.71.tgz",
+        "archive": "https://registry.npmjs.org/@cline/cli-darwin-x64/-/cli-darwin-x64-3.0.72.tgz",
         "cmd": "./package/bin/cline",
         "args": [
           "--acp"
         ],
-        "sha256": "90c70ec0860c4f0bfb6e0188875a5b13e059c3b3d95cb263d0a019f3773e586c"
+        "sha256": "bdd7fd9953e665ad5ac6ba4cb94e351e5c1dadfb0e336e0b1523a64e5eb72b8f"
       },
       "linux-aarch64": {
-        "archive": "https://registry.npmjs.org/@cline/cli-linux-arm64/-/cli-linux-arm64-3.0.71.tgz",
+        "archive": "https://registry.npmjs.org/@cline/cli-linux-arm64/-/cli-linux-arm64-3.0.72.tgz",
         "cmd": "./package/bin/cline",
         "args": [
           "--acp"
         ],
-        "sha256": "f953626919c8b4e2971c2c45f6d4ea242a475f5bed825a433117b0949b537d72"
+        "sha256": "a626c8252b9df71c95070a3c881c118926bd8d5579c102ce67ee90f2148acc49"
       },
       "linux-x86_64": {
-        "archive": "https://registry.npmjs.org/@cline/cli-linux-x64/-/cli-linux-x64-3.0.71.tgz",
+        "archive": "https://registry.npmjs.org/@cline/cli-linux-x64/-/cli-linux-x64-3.0.72.tgz",
         "cmd": "./package/bin/cline",
         "args": [
           "--acp"
         ],
-        "sha256": "561573c3caf56cfc17477adf2b70c69f799775a807746f25f1a9747210d78104"
+        "sha256": "27db30ca047edca2f2468c9d111e0007d2d62c231359032ae3f84d77e869151d"
       },
       "windows-aarch64": {
-        "archive": "https://registry.npmjs.org/@cline/cli-windows-arm64/-/cli-windows-arm64-3.0.71.tgz",
+        "archive": "https://registry.npmjs.org/@cline/cli-windows-arm64/-/cli-windows-arm64-3.0.72.tgz",
         "cmd": "./package/bin/cline.exe",
         "args": [
           "--acp"
         ],
-        "sha256": "821a6ecbc74ca24981b6b494dfb2c867f566791cd26413742782b91c25e1f116"
+        "sha256": "e1fb113f2b7800b50f7feba93035719b5afcce63ab3a92f4952d9c942c2ffec4"
       },
       "windows-x86_64": {
-        "archive": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.71.tgz",
+        "archive": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.72.tgz",
         "cmd": "./package/bin/cline.exe",
         "args": [
           "--acp"
         ],
-        "sha256": "1f4b8ea2cf09100733568885d56f9dfee40bf5f0941a06c1d6cf94d19c766425"
+        "sha256": "cd9f4dd740e29562f4522bfab4d1685b5331201baba748024f9e3a2936c96413"
       }
     }
   }
