@@ -4,7 +4,7 @@
     {
       "id": "claude-acp",
       "name": "Claude Agent",
-      "version": "0.91.0",
+      "version": "0.92.0",
       "description": "ACP adapter for Anthropic's Claude",
       "repository": "https://github.com/agentclientprotocol/claude-agent-acp",
       "authors": [
@@ -13,7 +13,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@agentclientprotocol/claude-agent-acp@0.91.0"
+          "package": "@agentclientprotocol/claude-agent-acp@0.92.0"
         }
       },
       "icon": "https://curated-acp-agents.onrender.com/icons/claude-acp.svg"
@@ -85,7 +85,7 @@
     {
       "id": "codebuddy-code",
       "name": "CodeBuddy Code",
-      "version": "2.168.0",
+      "version": "2.168.2",
       "description": "Tencent Cloud's official intelligent coding tool",
       "website": "https://www.codebuddy.cn/cli/",
       "authors": [
@@ -94,7 +94,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@tencent-ai/codebuddy-code@2.168.0",
+          "package": "@tencent-ai/codebuddy-code@2.168.2",
           "args": [
             "--acp"
           ]
@@ -123,7 +123,7 @@
     {
       "id": "cursor",
       "name": "Cursor CLI",
-      "version": "2026.10.14-941492e",
+      "version": "2026.10.16-e3cb207",
       "description": "Cursor's coding agent CLI with a native ACP server",
       "website": "https://cursor.com/cli",
       "authors": [
@@ -133,42 +133,42 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://downloads.cursor.com/lab/2026.10.14-941492e/darwin/arm64/agent-cli-package.tar.gz",
+            "archive": "https://downloads.cursor.com/lab/2026.10.16-e3cb207/darwin/arm64/agent-cli-package.tar.gz",
             "cmd": "./dist-package/cursor-agent",
             "args": [
               "acp"
             ]
           },
           "darwin-x86_64": {
-            "archive": "https://downloads.cursor.com/lab/2026.10.14-941492e/darwin/x64/agent-cli-package.tar.gz",
+            "archive": "https://downloads.cursor.com/lab/2026.10.16-e3cb207/darwin/x64/agent-cli-package.tar.gz",
             "cmd": "./dist-package/cursor-agent",
             "args": [
               "acp"
             ]
           },
           "linux-aarch64": {
-            "archive": "https://downloads.cursor.com/lab/2026.10.14-941492e/linux/arm64/agent-cli-package.tar.gz",
+            "archive": "https://downloads.cursor.com/lab/2026.10.16-e3cb207/linux/arm64/agent-cli-package.tar.gz",
             "cmd": "./dist-package/cursor-agent",
             "args": [
               "acp"
             ]
           },
           "linux-x86_64": {
-            "archive": "https://downloads.cursor.com/lab/2026.10.14-941492e/linux/x64/agent-cli-package.tar.gz",
+            "archive": "https://downloads.cursor.com/lab/2026.10.16-e3cb207/linux/x64/agent-cli-package.tar.gz",
             "cmd": "./dist-package/cursor-agent",
             "args": [
               "acp"
             ]
           },
           "windows-aarch64": {
-            "archive": "https://downloads.cursor.com/lab/2026.10.14-941492e/windows/arm64/agent-cli-package.zip",
+            "archive": "https://downloads.cursor.com/lab/2026.10.16-e3cb207/windows/arm64/agent-cli-package.zip",
             "cmd": "./dist-package\\cursor-agent.cmd",
             "args": [
               "acp"
             ]
           },
           "windows-x86_64": {
-            "archive": "https://downloads.cursor.com/lab/2026.10.14-941492e/windows/x64/agent-cli-package.zip",
+            "archive": "https://downloads.cursor.com/lab/2026.10.16-e3cb207/windows/x64/agent-cli-package.zip",
             "cmd": "./dist-package\\cursor-agent.cmd",
             "args": [
               "acp"
@@ -222,7 +222,7 @@
     {
       "id": "goose",
       "name": "goose",
-      "version": "1.54.0",
+      "version": "1.55.0",
       "description": "A local, extensible, open source AI agent that automates engineering tasks",
       "repository": "https://github.com/aaif-goose/goose",
       "authors": [
@@ -232,44 +232,44 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.54.0/goose-aarch64-apple-darwin.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.55.0/goose-aarch64-apple-darwin.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "63738f0eed2fe9d8585a4ba988c3ffb23d600db0b43858a6cd868fa6b035a7af"
+            "sha256": "007322bcd885f29b4ff5a0d4c4aaa15bfc5dc8b1ac9b57f3a8a8818e5c88d407"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.54.0/goose-x86_64-apple-darwin.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.55.0/goose-x86_64-apple-darwin.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "81fd55f4003950bb72719402e2defb1375eef4b9a739d901a365fb737b73aeee"
+            "sha256": "a6fbe20c2b23cc92d1d5561b4977348bcb47593de30c61d388baecde1cb4fcf1"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.54.0/goose-aarch64-unknown-linux-gnu.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.55.0/goose-aarch64-unknown-linux-gnu.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "8c7ad233bdaf05f10a52ef36f3ce50f839cb1d2d1df5b31b172af7150c1c288e"
+            "sha256": "e6cded0c5d7d8227f052928eed22a4d64043c3d6551275faa96a9be7d26a9068"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.54.0/goose-x86_64-unknown-linux-gnu.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.55.0/goose-x86_64-unknown-linux-gnu.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "bf01cb6359f7a2b1acb54ca4827e1d059b18aabb3d2b75202e21066cfd3a3396"
+            "sha256": "d9afefe7b8f4e372ebefd8b465ab6eea1f297304d058e8e9379ed627e0329708"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.54.0/goose-x86_64-pc-windows-msvc.zip",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.55.0/goose-x86_64-pc-windows-msvc.zip",
             "cmd": "goose.exe",
             "args": [
               "acp"
             ],
-            "sha256": "5c39bc91c3eadc231847e21a8a469e778431084437b233a63a950fee22db6239"
+            "sha256": "1df27bbe5178123f29246f069865a7451e1d7a70d143cdae6e2f930078ce6a71"
           }
         }
       },
@@ -339,7 +339,7 @@
     {
       "id": "opencode",
       "name": "OpenCode",
-      "version": "1.19.2",
+      "version": "1.19.3",
       "description": "The open source coding agent",
       "repository": "https://github.com/anomalyco/opencode",
       "authors": [
@@ -349,44 +349,44 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.19.2/opencode-darwin-arm64.zip",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.19.3/opencode-darwin-arm64.zip",
             "cmd": "./opencode",
             "args": [
               "acp"
             ],
-            "sha256": "1c9da110bbf3e13c480e0a2e55f61b09ebdb33cfc67029b61ffbb9f8566d67cd"
+            "sha256": "c2d0fecd27acf6e08be02c1f5d384614d07495587766bcc4a6bff3971749bb64"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.19.2/opencode-darwin-x64.zip",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.19.3/opencode-darwin-x64.zip",
             "cmd": "./opencode",
             "args": [
               "acp"
             ],
-            "sha256": "9df7a1c7552a9573b9556ab9c1eb2b3cac46b380e25106a3d89b9ec662f44194"
+            "sha256": "4e29dbe2f61ace728370523c88027d0742b3a79edcdd2c70e404f616d4ef8f36"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.19.2/opencode-linux-arm64.tar.gz",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.19.3/opencode-linux-arm64.tar.gz",
             "cmd": "./opencode",
             "args": [
               "acp"
             ],
-            "sha256": "3f73a474065b4b7c4a64cef2395a6123ae1039c2e41f0acbe29ae6521b50df66"
+            "sha256": "7900818a6a98881edbbadab4b7525940eff3b9750040c200481f9f56cacee405"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.19.2/opencode-linux-x64.tar.gz",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.19.3/opencode-linux-x64.tar.gz",
             "cmd": "./opencode",
             "args": [
               "acp"
             ],
-            "sha256": "4eff8d2cf8614ead97eadf1123d46033dc975eadeac3df04644a64bae0f9e819"
+            "sha256": "13a8fb2978302071b86f9d7e00da9c8895f9cd846978379c3bdc6a5333536c9b"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.19.2/opencode-windows-x64.zip",
+            "archive": "https://github.com/anomalyco/opencode/releases/download/v1.19.3/opencode-windows-x64.zip",
             "cmd": "opencode.exe",
             "args": [
               "acp"
             ],
-            "sha256": "86e6279183d5fc68e2c1c66160943551a427cf45bf700d6e492f03603db35f05"
+            "sha256": "e4ce9117f55fc068414513789f8c7d1049f855d7518bb4e350b9170a3a20d8c3"
           }
         }
       },
@@ -395,7 +395,7 @@
     {
       "id": "qoder",
       "name": "Qoder CLI",
-      "version": "1.1.72",
+      "version": "1.1.73",
       "description": "AI coding assistant with agentic capabilities",
       "authors": [
         "Qoder AI"
@@ -403,7 +403,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@qoder-ai/qodercli@1.1.72",
+          "package": "@qoder-ai/qodercli@1.1.73",
           "args": [
             "--acp"
           ]
