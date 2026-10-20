@@ -85,7 +85,7 @@
     {
       "id": "codebuddy-code",
       "name": "CodeBuddy Code",
-      "version": "2.170.0",
+      "version": "2.171.0",
       "description": "Tencent Cloud's official intelligent coding tool",
       "website": "https://www.codebuddy.cn/cli/",
       "authors": [
@@ -94,7 +94,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@tencent-ai/codebuddy-code@2.170.0",
+          "package": "@tencent-ai/codebuddy-code@2.171.0",
           "args": [
             "--acp"
           ]
@@ -201,7 +201,7 @@
     {
       "id": "github-copilot-cli",
       "name": "GitHub Copilot",
-      "version": "1.0.100",
+      "version": "1.0.101",
       "description": "GitHub's AI pair programmer",
       "repository": "https://github.com/github/copilot-cli",
       "website": "https://github.com/features/copilot/cli/",
@@ -211,7 +211,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@github/copilot@1.0.100",
+          "package": "@github/copilot@1.0.101",
           "args": [
             "--acp"
           ]
@@ -298,7 +298,7 @@
     {
       "id": "mistral-vibe",
       "name": "Mistral Vibe",
-      "version": "3.0.0",
+      "version": "3.0.1",
       "description": "Mistral's open-source coding assistant",
       "repository": "https://github.com/mistralai/mistral-vibe",
       "authors": [
@@ -308,29 +308,29 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.0.0/vibe-acp-darwin-aarch64-3.0.0.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.0.1/vibe-acp-darwin-aarch64-3.0.1.zip",
             "cmd": "./vibe-acp",
-            "sha256": "7f7a536e182c0a7d05f409e4ea02bff0cb9397c8f2c5ae0bf9b64ec3ee3745ad"
+            "sha256": "0263da82e97195cbcc3b9c01128bddd51cd37a3a291e56ea351e0b9ab909647f"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.0.0/vibe-acp-darwin-x86_64-3.0.0.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.0.1/vibe-acp-darwin-x86_64-3.0.1.zip",
             "cmd": "./vibe-acp",
-            "sha256": "669e66d63afe24f8901ff4f347efdd945875363892f3038f4f6107827271d4a1"
+            "sha256": "66801ca3a61fcc926dad6defae7d59d5bf2e7883245086e207dc301bfbc48176"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.0.0/vibe-acp-linux-aarch64-3.0.0.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.0.1/vibe-acp-linux-aarch64-3.0.1.zip",
             "cmd": "./vibe-acp",
-            "sha256": "d81e2f24228ee506f5947e42a64e784dd378eb6312b56f98c19fd4e4963a2e06"
+            "sha256": "dcc0a55ad047a2557232c099384b9e5c7317c1a145f4e240d364ce2c9e7adb6e"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.0.0/vibe-acp-linux-x86_64-3.0.0.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.0.1/vibe-acp-linux-x86_64-3.0.1.zip",
             "cmd": "./vibe-acp",
-            "sha256": "72a5d541a242ea1d9b13d0d11dbbacebd56541716c91739c7c61afee5bd8bd10"
+            "sha256": "d8324a7fd4c1321fbbf4d9512d970e1cac869b8d1a3f4f2e24a3e8d3e6b10bc9"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.0.0/vibe-acp-windows-x86_64-3.0.0.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.0.1/vibe-acp-windows-x86_64-3.0.1.zip",
             "cmd": "./vibe-acp.exe",
-            "sha256": "9b62523a3872b4a054fa581d70945f6b493a690f8a2f8543bc9819841ee1d580"
+            "sha256": "63398f233948da074a3e0c00aa78c3709aed11847b8d4b403cdbdc325883bc52"
           }
         }
       },
@@ -395,7 +395,7 @@
     {
       "id": "qoder",
       "name": "Qoder CLI",
-      "version": "1.1.74",
+      "version": "1.1.75",
       "description": "AI coding assistant with agentic capabilities",
       "authors": [
         "Qoder AI"
@@ -403,7 +403,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@qoder-ai/qodercli@1.1.74",
+          "package": "@qoder-ai/qodercli@1.1.75",
           "args": [
             "--acp"
           ]
