@@ -181,7 +181,7 @@
     {
       "id": "gemini",
       "name": "Gemini CLI",
-      "version": "0.64.0",
+      "version": "0.65.0",
       "description": "Google's official CLI for Gemini",
       "repository": "https://github.com/google-gemini/gemini-cli",
       "authors": [
@@ -190,7 +190,7 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@google/gemini-cli@0.64.0",
+          "package": "@google/gemini-cli@0.65.0",
           "args": [
             "--acp"
           ]
@@ -278,7 +278,7 @@
     {
       "id": "kimi-code",
       "name": "Kimi Code CLI",
-      "version": "2.2.0",
+      "version": "2.3.0",
       "description": "Moonshot AI's terminal coding agent, successor to Kimi CLI",
       "repository": "https://github.com/MoonshotAI/kimi-code",
       "authors": [
@@ -287,7 +287,7 @@
       "license": "MIT",
       "distribution": {
         "npx": {
-          "package": "@moonshot-ai/kimi-code@2.2.0",
+          "package": "@moonshot-ai/kimi-code@2.3.0",
           "args": [
             "acp"
           ]
