@@ -4,7 +4,7 @@
     {
       "id": "claude-acp",
       "name": "Claude Agent",
-      "version": "0.101.0",
+      "version": "0.102.0",
       "description": "ACP adapter for Anthropic's Claude",
       "repository": "https://github.com/agentclientprotocol/claude-agent-acp",
       "authors": [
@@ -13,7 +13,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@agentclientprotocol/claude-agent-acp@0.101.0"
+          "package": "@agentclientprotocol/claude-agent-acp@0.102.0"
         }
       },
       "icon": "https://curated-acp-agents.onrender.com/icons/claude-acp.svg"
@@ -85,7 +85,7 @@
     {
       "id": "codebuddy-code",
       "name": "CodeBuddy Code",
-      "version": "2.181.0",
+      "version": "2.182.0",
       "description": "Tencent Cloud's official intelligent coding tool",
       "website": "https://www.codebuddy.cn/cli/",
       "authors": [
@@ -94,7 +94,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@tencent-ai/codebuddy-code@2.181.0",
+          "package": "@tencent-ai/codebuddy-code@2.182.0",
           "args": [
             "--acp"
           ]
@@ -201,7 +201,7 @@
     {
       "id": "github-copilot-cli",
       "name": "GitHub Copilot",
-      "version": "1.0.107",
+      "version": "1.0.108",
       "description": "GitHub's AI pair programmer",
       "repository": "https://github.com/github/copilot-cli",
       "website": "https://github.com/features/copilot/cli/",
@@ -211,7 +211,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@github/copilot@1.0.107",
+          "package": "@github/copilot@1.0.108",
           "args": [
             "--acp"
           ]
@@ -222,7 +222,7 @@
     {
       "id": "goose",
       "name": "goose",
-      "version": "1.57.0",
+      "version": "1.58.0",
       "description": "A local, extensible, open source AI agent that automates engineering tasks",
       "repository": "https://github.com/aaif-goose/goose",
       "authors": [
@@ -232,44 +232,44 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.57.0/goose-aarch64-apple-darwin.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.58.0/goose-aarch64-apple-darwin.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "2fbafa227ab28654c47065f1c9ebcd12f527f017e30c08e618bc6fcf363d7935"
+            "sha256": "38c39a131ed8bf333d9a461fb5d96b6affeb47ad07119693c857733c6d78b119"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.57.0/goose-x86_64-apple-darwin.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.58.0/goose-x86_64-apple-darwin.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "e48fe024891a4c272a89c74b9ae843d76a73229643c917b785b0680fef9c647a"
+            "sha256": "de9ef3da2c4ce5a1189cb5bdfd5b0b8348dcce76f865a6a4326e7305565c050b"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.57.0/goose-aarch64-unknown-linux-gnu.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.58.0/goose-aarch64-unknown-linux-gnu.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "17c6b090db6acc5605da904bbe19cc2765bc7a6786019d85a6d0a361de06dbf7"
+            "sha256": "b1d92a2ac27cff17df2d1ce5520b042a5b59e7b1cd75b503b456d4c9afd66384"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.57.0/goose-x86_64-unknown-linux-gnu.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.58.0/goose-x86_64-unknown-linux-gnu.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "e54036f3b7f95d3b0d7854c09465af5ef52a28c7fa03d2497d0ea68a6382282d"
+            "sha256": "95a51039211ce21af1527c3ba9af849146e6f429ff0c96cf14759e3fa84876e6"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.57.0/goose-x86_64-pc-windows-msvc.zip",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.58.0/goose-x86_64-pc-windows-msvc.zip",
             "cmd": "goose.exe",
             "args": [
               "acp"
             ],
-            "sha256": "1ab2117ceec37f95be4d3ad0cdb921d3e97fd8b0fa244046631ecf4b7619d502"
+            "sha256": "f3b6b1a550890874ab93d560c58d97b356dc625a58cfeba8fecca9bdb0ba3ffd"
           }
         }
       },
@@ -298,7 +298,7 @@
     {
       "id": "mistral-vibe",
       "name": "Mistral Vibe",
-      "version": "3.1.0",
+      "version": "3.1.1",
       "description": "Mistral's open-source coding assistant",
       "repository": "https://github.com/mistralai/mistral-vibe",
       "authors": [
@@ -308,29 +308,29 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.1.0/vibe-acp-darwin-aarch64-3.1.0.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.1.1/vibe-acp-darwin-aarch64-3.1.1.zip",
             "cmd": "./vibe-acp",
-            "sha256": "0e303fe55eb53e7719f4bb62f76c1226ed939abc165111d80b364fd6f9162e62"
+            "sha256": "56edecae37c7ca17926e76c8a7dfe4edf985dc752dc7cabd81ba6b8686b58f62"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.1.0/vibe-acp-darwin-x86_64-3.1.0.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.1.1/vibe-acp-darwin-x86_64-3.1.1.zip",
             "cmd": "./vibe-acp",
-            "sha256": "951d8654385ccb6d8cab62b16b31f814b8767754086201aaef4cfeae5ebc4a7b"
+            "sha256": "78bd1f410acb60eaf5ad0c533ebfbac53b4fd6d3986b3e6544afe2f59655c451"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.1.0/vibe-acp-linux-aarch64-3.1.0.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.1.1/vibe-acp-linux-aarch64-3.1.1.zip",
             "cmd": "./vibe-acp",
-            "sha256": "e736fea739a3443ac05f045f8831cffd6cdcb4def58e1e7a6d1bc383c1904e49"
+            "sha256": "44fbf77045581e63cb5f4414ab7d6eb8fcb6682a5afc9021a68a5f25c14c3ed5"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.1.0/vibe-acp-linux-x86_64-3.1.0.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.1.1/vibe-acp-linux-x86_64-3.1.1.zip",
             "cmd": "./vibe-acp",
-            "sha256": "be3dc8903fddb4c903825c2b0cad1ef5326c481dc7e76a0e615589f489c7cad8"
+            "sha256": "d095ddfd396db4c91a14118baa5b57f8ff86b8d74faf1386f7aec8c65b757095"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.1.0/vibe-acp-windows-x86_64-3.1.0.zip",
+            "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v3.1.1/vibe-acp-windows-x86_64-3.1.1.zip",
             "cmd": "./vibe-acp.exe",
-            "sha256": "2b65e70d0dc5cc0a5edba0ae836b225edf2068b6aebd321f047ccfae32275416"
+            "sha256": "ff827873a0506fdb110c9b6080f7a26bac804d6bdc49c6103b2f36873927f2fd"
           }
         }
       },
@@ -395,7 +395,7 @@
     {
       "id": "qoder",
       "name": "Qoder CLI",
-      "version": "1.1.85",
+      "version": "1.1.86",
       "description": "AI coding assistant with agentic capabilities",
       "authors": [
         "Qoder AI"
@@ -403,7 +403,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@qoder-ai/qodercli@1.1.85",
+          "package": "@qoder-ai/qodercli@1.1.86",
           "args": [
             "--acp"
           ]
@@ -414,7 +414,7 @@
     {
       "id": "qwen-code",
       "name": "Qwen Code",
-      "version": "0.27.0",
+      "version": "0.27.1",
       "description": "Alibaba's Qwen coding assistant",
       "repository": "https://github.com/QwenLM/qwen-code",
       "authors": [
@@ -423,7 +423,7 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@qwen-code/qwen-code@0.27.0",
+          "package": "@qwen-code/qwen-code@0.27.1",
           "args": [
             "--acp",
             "--experimental-skills"
