@@ -4,7 +4,7 @@
     {
       "id": "claude-acp",
       "name": "Claude Agent",
-      "version": "0.108.1",
+      "version": "0.109.0",
       "description": "ACP adapter for Anthropic's Claude",
       "repository": "https://github.com/agentclientprotocol/claude-agent-acp",
       "authors": [
@@ -13,7 +13,7 @@
       "license": "proprietary",
       "distribution": {
         "npx": {
-          "package": "@agentclientprotocol/claude-agent-acp@0.108.1"
+          "package": "@agentclientprotocol/claude-agent-acp@0.109.0"
         }
       },
       "icon": "https://curated-acp-agents.onrender.com/icons/claude-acp.svg"
@@ -105,7 +105,7 @@
     {
       "id": "codex-acp",
       "name": "Codex CLI",
-      "version": "2.7.0",
+      "version": "2.8.0",
       "description": "ACP adapter for OpenAI's coding assistant",
       "repository": "https://github.com/agentclientprotocol/codex-acp",
       "authors": [
@@ -115,7 +115,7 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@agentclientprotocol/codex-acp@2.7.0"
+          "package": "@agentclientprotocol/codex-acp@2.8.0"
         }
       },
       "icon": "https://curated-acp-agents.onrender.com/icons/codex-acp.svg"
@@ -181,7 +181,7 @@
     {
       "id": "gemini",
       "name": "Gemini CLI",
-      "version": "0.69.0",
+      "version": "0.70.0",
       "description": "Google's official CLI for Gemini",
       "repository": "https://github.com/google-gemini/gemini-cli",
       "authors": [
@@ -190,7 +190,7 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@google/gemini-cli@0.69.0",
+          "package": "@google/gemini-cli@0.70.0",
           "args": [
             "--acp"
           ]
@@ -395,7 +395,7 @@
     {
       "id": "qoder",
       "name": "Qoder CLI",
-      "version": "1.1.92",
+      "version": "1.1.93",
       "description": "AI coding assistant with agentic capabilities",
       "authors": [
         "Qoder AI"
@@ -403,7 +403,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@qoder-ai/qodercli@1.1.92",
+          "package": "@qoder-ai/qodercli@1.1.93",
           "args": [
             "--acp"
           ]
