@@ -123,7 +123,7 @@
     {
       "id": "cursor",
       "name": "Cursor CLI",
-      "version": "2026.11.17-f532c45",
+      "version": "2026.11.19-f005e9d",
       "description": "Cursor's coding agent CLI with a native ACP server",
       "website": "https://cursor.com/cli",
       "authors": [
@@ -133,42 +133,42 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://downloads.cursor.com/lab/2026.11.17-f532c45/darwin/arm64/agent-cli-package.tar.gz",
+            "archive": "https://downloads.cursor.com/lab/2026.11.19-f005e9d/darwin/arm64/agent-cli-package.tar.gz",
             "cmd": "./dist-package/cursor-agent",
             "args": [
               "acp"
             ]
           },
           "darwin-x86_64": {
-            "archive": "https://downloads.cursor.com/lab/2026.11.17-f532c45/darwin/x64/agent-cli-package.tar.gz",
+            "archive": "https://downloads.cursor.com/lab/2026.11.19-f005e9d/darwin/x64/agent-cli-package.tar.gz",
             "cmd": "./dist-package/cursor-agent",
             "args": [
               "acp"
             ]
           },
           "linux-aarch64": {
-            "archive": "https://downloads.cursor.com/lab/2026.11.17-f532c45/linux/arm64/agent-cli-package.tar.gz",
+            "archive": "https://downloads.cursor.com/lab/2026.11.19-f005e9d/linux/arm64/agent-cli-package.tar.gz",
             "cmd": "./dist-package/cursor-agent",
             "args": [
               "acp"
             ]
           },
           "linux-x86_64": {
-            "archive": "https://downloads.cursor.com/lab/2026.11.17-f532c45/linux/x64/agent-cli-package.tar.gz",
+            "archive": "https://downloads.cursor.com/lab/2026.11.19-f005e9d/linux/x64/agent-cli-package.tar.gz",
             "cmd": "./dist-package/cursor-agent",
             "args": [
               "acp"
             ]
           },
           "windows-aarch64": {
-            "archive": "https://downloads.cursor.com/lab/2026.11.17-f532c45/windows/arm64/agent-cli-package.zip",
+            "archive": "https://downloads.cursor.com/lab/2026.11.19-f005e9d/windows/arm64/agent-cli-package.zip",
             "cmd": "./dist-package\\cursor-agent.cmd",
             "args": [
               "acp"
             ]
           },
           "windows-x86_64": {
-            "archive": "https://downloads.cursor.com/lab/2026.11.17-f532c45/windows/x64/agent-cli-package.zip",
+            "archive": "https://downloads.cursor.com/lab/2026.11.19-f005e9d/windows/x64/agent-cli-package.zip",
             "cmd": "./dist-package\\cursor-agent.cmd",
             "args": [
               "acp"
@@ -181,7 +181,7 @@
     {
       "id": "gemini",
       "name": "Gemini CLI",
-      "version": "0.68.0",
+      "version": "0.69.0",
       "description": "Google's official CLI for Gemini",
       "repository": "https://github.com/google-gemini/gemini-cli",
       "authors": [
@@ -190,7 +190,7 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@google/gemini-cli@0.68.0",
+          "package": "@google/gemini-cli@0.69.0",
           "args": [
             "--acp"
           ]
@@ -278,7 +278,7 @@
     {
       "id": "kimi-code",
       "name": "Kimi Code CLI",
-      "version": "2.6.3",
+      "version": "2.7.0",
       "description": "Moonshot AI's terminal coding agent, successor to Kimi CLI",
       "repository": "https://github.com/MoonshotAI/kimi-code",
       "authors": [
@@ -287,7 +287,7 @@
       "license": "MIT",
       "distribution": {
         "npx": {
-          "package": "@moonshot-ai/kimi-code@2.6.3",
+          "package": "@moonshot-ai/kimi-code@2.7.0",
           "args": [
             "acp"
           ]
