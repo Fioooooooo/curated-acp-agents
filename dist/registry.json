@@ -21,7 +21,7 @@
     {
       "id": "cline",
       "name": "Cline",
-      "version": "3.0.75",
+      "version": "3.0.76",
       "description": "Autonomous coding agent CLI - capable of creating/editing files, running commands, using the browser, and more",
       "repository": "https://github.com/cline/cline",
       "authors": [
@@ -31,52 +31,52 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-darwin-arm64/-/cli-darwin-arm64-3.0.75.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-darwin-arm64/-/cli-darwin-arm64-3.0.76.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "b70e1f0c013a78cce61fe311ea27c85f42cc0682a04b52a3e6e9844e7180bb59"
+            "sha256": "6b62fd6925572a50027d2087432ec3924dc900f19978a3c5081041267d2227c7"
           },
           "darwin-x86_64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-darwin-x64/-/cli-darwin-x64-3.0.75.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-darwin-x64/-/cli-darwin-x64-3.0.76.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "cfa34cb0ec12e7379b434ae6e9f145d669df4685f328563970654d98438a1638"
+            "sha256": "87e04660748d6f7be2bf875e85d41b243811dec61268899e4648c979ffe008f9"
           },
           "linux-aarch64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-linux-arm64/-/cli-linux-arm64-3.0.75.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-linux-arm64/-/cli-linux-arm64-3.0.76.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "8f20880bccb5c626d44c157c3dfa3916147be09cf3ebf6066fc7288f58288743"
+            "sha256": "fbbfc81d9a9d68f6e758b3402cd87bb7947b97a6868f0432350ab22ebb7490e1"
           },
           "linux-x86_64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-linux-x64/-/cli-linux-x64-3.0.75.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-linux-x64/-/cli-linux-x64-3.0.76.tgz",
             "cmd": "./package/bin/cline",
             "args": [
               "--acp"
             ],
-            "sha256": "e2fee40340a2bb248830f8e2a361e4b93b148a9ed90d246e69af3627176ea96d"
+            "sha256": "b73a234182d54400a01b65a59b03f0b5ae58245914826ecf4656b4d775295438"
           },
           "windows-aarch64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-windows-arm64/-/cli-windows-arm64-3.0.75.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-windows-arm64/-/cli-windows-arm64-3.0.76.tgz",
             "cmd": "./package/bin/cline.exe",
             "args": [
               "--acp"
             ],
-            "sha256": "050a605e038e5ebb1f8306134f7b5873abcac707dcba024a0706eb8d27f6afb7"
+            "sha256": "43ba9fd762f12fc0aee41f55eaafe9632809e692004fc6769f22c06e3363b3b9"
           },
           "windows-x86_64": {
-            "archive": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.75.tgz",
+            "archive": "https://registry.npmjs.org/@cline/cli-windows-x64/-/cli-windows-x64-3.0.76.tgz",
             "cmd": "./package/bin/cline.exe",
             "args": [
               "--acp"
             ],
-            "sha256": "d3b144f4b22958b9a2ec45ceabd3fdde144ef007ecf13d6d41b4e31038ba7397"
+            "sha256": "09c154d3fa1d5529311c7f37656470fcfaedb35e81d0c969f53df1774f8f74b5"
           }
         }
       },
@@ -105,7 +105,7 @@
     {
       "id": "codex-acp",
       "name": "Codex CLI",
-      "version": "2.12.0",
+      "version": "2.12.1",
       "description": "ACP adapter for OpenAI's coding assistant",
       "repository": "https://github.com/agentclientprotocol/codex-acp",
       "authors": [
@@ -115,7 +115,7 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@agentclientprotocol/codex-acp@2.12.0"
+          "package": "@agentclientprotocol/codex-acp@2.12.1"
         }
       },
       "icon": "https://curated-acp-agents.onrender.com/icons/codex-acp.svg"
@@ -222,7 +222,7 @@
     {
       "id": "goose",
       "name": "goose",
-      "version": "1.61.0",
+      "version": "1.61.1",
       "description": "A local, extensible, open source AI agent that automates engineering tasks",
       "repository": "https://github.com/aaif-goose/goose",
       "authors": [
@@ -232,44 +232,44 @@
       "distribution": {
         "binary": {
           "darwin-aarch64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.61.0/goose-aarch64-apple-darwin.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.61.1/goose-aarch64-apple-darwin.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "f225bdd7d4b86dc6b83c392e99265e14ca92ba671e263aa29c5c75a2a1c5aa5d"
+            "sha256": "1da551c55be746369e4af58bc6eb5e9dd67fb5ce682cb8683246e0c7dda1d0dc"
           },
           "darwin-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.61.0/goose-x86_64-apple-darwin.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.61.1/goose-x86_64-apple-darwin.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "c649310d54c62d47a9509065c4a3b0ca9841cd18a821e2b740928d0c48c0c398"
+            "sha256": "3887fe49b549d517cd3518ab55ae2a5257ba11a3d4664fa1c3adf49197b2f585"
           },
           "linux-aarch64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.61.0/goose-aarch64-unknown-linux-gnu.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.61.1/goose-aarch64-unknown-linux-gnu.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "535f240b1193525290045a0a10f93f42986a2999fb6e8183baecdfe17eddc1bb"
+            "sha256": "57a5480c7d71c49fb1e1153bb24f08511c2b58cb467babd7659b7020967a4067"
           },
           "linux-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.61.0/goose-x86_64-unknown-linux-gnu.tar.bz2",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.61.1/goose-x86_64-unknown-linux-gnu.tar.bz2",
             "cmd": "./goose",
             "args": [
               "acp"
             ],
-            "sha256": "493c41b6544817b4c2669c3ba465d9d7161185cacfb9088e83dc26566d36f36d"
+            "sha256": "34cd9a484a15564d3f462843359d24e4964ae328be3625024003d29f318e586c"
           },
           "windows-x86_64": {
-            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.61.0/goose-x86_64-pc-windows-msvc.zip",
+            "archive": "https://github.com/aaif-goose/goose/releases/download/v1.61.1/goose-x86_64-pc-windows-msvc.zip",
             "cmd": "goose.exe",
             "args": [
               "acp"
             ],
-            "sha256": "03f7396b9babecb1649ec3e600def93a701d3deadbb704d379774798099f03b7"
+            "sha256": "960d884257d107fafb5dd46170ade1dc07cfd9d0e5562949e9b1d8a31cf14055"
           }
         }
       },
@@ -278,7 +278,7 @@
     {
       "id": "kimi-code",
       "name": "Kimi Code CLI",
-      "version": "2.8.0",
+      "version": "2.8.1",
       "description": "Moonshot AI's terminal coding agent, successor to Kimi CLI",
       "repository": "https://github.com/MoonshotAI/kimi-code",
       "authors": [
@@ -287,7 +287,7 @@
       "license": "MIT",
       "distribution": {
         "npx": {
-          "package": "@moonshot-ai/kimi-code@2.8.0",
+          "package": "@moonshot-ai/kimi-code@2.8.1",
           "args": [
             "acp"
           ]
@@ -395,7 +395,7 @@
     {
       "id": "qoder",
       "name": "Qoder CLI",
-      "version": "1.1.98",
+      "version": "1.1.99",
       "description": "AI coding assistant with agentic capabilities",
       "authors": [
         "Qoder AI"
@@ -403,7 +403,7 @@
       "license": "Proprietary",
       "distribution": {
         "npx": {
-          "package": "@qoder-ai/qodercli@1.1.98",
+          "package": "@qoder-ai/qodercli@1.1.99",
           "args": [
             "--acp"
           ]
@@ -414,7 +414,7 @@
     {
       "id": "qwen-code",
       "name": "Qwen Code",
-      "version": "0.28.4",
+      "version": "0.28.6",
       "description": "Alibaba's Qwen coding assistant",
       "repository": "https://github.com/QwenLM/qwen-code",
       "authors": [
@@ -423,7 +423,7 @@
       "license": "Apache-2.0",
       "distribution": {
         "npx": {
-          "package": "@qwen-code/qwen-code@0.28.4",
+          "package": "@qwen-code/qwen-code@0.28.6",
           "args": [
             "--acp",
             "--experimental-skills"
